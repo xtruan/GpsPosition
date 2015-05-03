@@ -32,7 +32,9 @@ class GpsPositionApp extends App.AppBase {
 class GpsPositionDelegate extends Ui.BehaviorDelegate {
 
     function onMenu() {
-        Ui.pushView(new Rez.Menus.MainMenu(), new GpsPositionMenuDelegate(), Ui.SLIDE_UP);
+        var menu = new Rez.Menus.MainMenu();
+        menu.setTitle("Coordinate Format");
+        Ui.pushView(menu, new GpsPositionMenuDelegate(), Ui.SLIDE_UP);
         return true;
     }
 
