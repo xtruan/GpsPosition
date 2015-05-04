@@ -39,31 +39,34 @@
 <entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="79" pc="268436902" symbol="onUpdate"/>
 <entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="80" pc="268436938" symbol="onUpdate"/>
 <entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="83" pc="268437013" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="84" pc="268437049" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="85" pc="268437072" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="86" pc="268437102" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="90" pc="268437183" symbol="onPosition"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="91" pc="268437193" symbol="onPosition"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="10" pc="268437831" symbol="&lt;init&gt;"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="8" pc="268437213" symbol="onMenuItem"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="9" pc="268437224" symbol="onMenuItem"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="11" pc="268437268" symbol="onMenuItem"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="13" pc="268437312" symbol="onMenuItem"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="15" pc="268437356" symbol="onMenuItem"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="9" pc="268437393" symbol="setGeoFormat"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="13" pc="268437406" symbol="getGeoFormat"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="18" pc="268437418" symbol="onStart"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="27" pc="268437441" symbol="getInitialView"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="35" pc="268437512" symbol="onMenu"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="36" pc="268437548" symbol="onMenu"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="37" pc="268437565" symbol="onMenu"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="38" pc="268437617" symbol="onMenu"/>
-<entry filename="Rez" lineNum="5" pc="268437765" symbol="&lt;init&gt;"/>
-<entry filename="Rez" lineNum="13" pc="268437624" symbol="initialize"/>
-<entry filename="Rez" lineNum="14" pc="268437646" symbol="initialize"/>
-<entry filename="Rez" lineNum="15" pc="268437668" symbol="initialize"/>
-<entry filename="Rez" lineNum="16" pc="268437690" symbol="initialize"/>
-<entry filename="Rez" lineNum="23" pc="268437733" symbol="&lt;init&gt;"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="84" pc="268437036" symbol="onUpdate"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="85" pc="268437047" symbol="onUpdate"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="87" pc="268437097" symbol="onUpdate"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="89" pc="268437136" symbol="onUpdate"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="91" pc="268437172" symbol="onUpdate"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="92" pc="268437202" symbol="onUpdate"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="96" pc="268437283" symbol="onPosition"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="97" pc="268437293" symbol="onPosition"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="10" pc="268437931" symbol="&lt;init&gt;"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="8" pc="268437313" symbol="onMenuItem"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="9" pc="268437324" symbol="onMenuItem"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="11" pc="268437368" symbol="onMenuItem"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="13" pc="268437412" symbol="onMenuItem"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="15" pc="268437456" symbol="onMenuItem"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="9" pc="268437493" symbol="setGeoFormat"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="13" pc="268437506" symbol="getGeoFormat"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="18" pc="268437518" symbol="onStart"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="27" pc="268437541" symbol="getInitialView"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="35" pc="268437612" symbol="onMenu"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="36" pc="268437648" symbol="onMenu"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="37" pc="268437665" symbol="onMenu"/>
+<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="38" pc="268437717" symbol="onMenu"/>
+<entry filename="Rez" lineNum="5" pc="268437865" symbol="&lt;init&gt;"/>
+<entry filename="Rez" lineNum="13" pc="268437724" symbol="initialize"/>
+<entry filename="Rez" lineNum="14" pc="268437746" symbol="initialize"/>
+<entry filename="Rez" lineNum="15" pc="268437768" symbol="initialize"/>
+<entry filename="Rez" lineNum="16" pc="268437790" symbol="initialize"/>
+<entry filename="Rez" lineNum="23" pc="268437833" symbol="&lt;init&gt;"/>
 </pcToLineNum>
 <symbolTable>
 <entry id="8389359" symbol="&lt;gre&gt;"/>
@@ -485,7 +488,6 @@
 <entry id="8389285" method="true" symbol="clearProperties"/>
 <entry field="true" id="8388834" symbol="SPORT_FITNESS_EQUIPMENT"/>
 <entry id="8389369" symbol="&lt;spa&gt;"/>
-<entry id="15" object="true" symbol="MainMenu"/>
 <entry id="8388788" method="true" symbol="put"/>
 <entry id="8389537" object="true" symbol="TextPicker"/>
 <entry id="8389183" method="true" symbol="drawBitmap"/>
@@ -564,6 +566,7 @@
 <entry id="8389028" object="true" symbol="MenuInputDelegate"/>
 <entry id="8388705" method="true" symbol="callback"/>
 <entry field="true" id="8389528" symbol="batteryVoltage"/>
+<entry id="15" object="true" symbol="CoordFormatMenu"/>
 <entry field="true" id="8389314" symbol="latitude"/>
 <entry id="8388688" method="true" symbol="testSystemError"/>
 <entry id="8388686" method="true" symbol="testLocationDegree"/>

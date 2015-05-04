@@ -80,8 +80,14 @@ class GpsPositionView extends Ui.View {
             dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2 ), Gfx.FONT_SMALL, "Position unavailable", Gfx.TEXT_JUSTIFY_CENTER );
         }
         
-        dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
         var battPercent = Sys.getSystemStats().battery;
+        if (battPercent > 50.0) {
+            dc.setColor( Gfx.COLOR_GREEN, Gfx.COLOR_TRANSPARENT );
+        } else if (battPercent > 20.0) {
+            dc.setColor( Gfx.COLOR_YELLOW, Gfx.COLOR_TRANSPARENT );
+        } else {
+            dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
+        }
         string = "Batt: " + battPercent.format("%.1f") + "%";
         dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 50 ), Gfx.FONT_SMALL, string, Gfx.TEXT_JUSTIFY_CENTER );
     }
