@@ -30,6 +30,9 @@ class GpsPositionView extends Ui.View {
         dc.clear();
         
         if( posInfo != null ) {
+        	dc.setColor( Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT );
+        	dc.drawLine(0, (dc.getHeight() / 2) - 62, dc.getWidth(), (dc.getHeight() / 2) - 62);
+            dc.drawLine(0, (dc.getHeight() / 2) - 38, dc.getWidth(), (dc.getHeight() / 2) - 38);
         
             if (posInfo.accuracy == Pos.QUALITY_GOOD) {
                 dc.setColor( Gfx.COLOR_GREEN, Gfx.COLOR_TRANSPARENT );
