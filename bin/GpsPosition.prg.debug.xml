@@ -1,75 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <debugInfo>
 <pcToLineNum>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="17" pc="268435461" symbol="onHide"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="21" pc="268435510" symbol="onShow"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="26" pc="268435559" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="29" pc="268435559" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="30" pc="268435595" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="32" pc="268435607" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="33" pc="268435620" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="34" pc="268435656" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="35" pc="268435730" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="37" pc="268435804" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="38" pc="268435834" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="40" pc="268435903" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="42" pc="268435972" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="44" pc="268436011" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="47" pc="268436047" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="48" pc="268436073" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="49" pc="268436084" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="51" pc="268436135" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="53" pc="268436186" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="55" pc="268436226" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="57" pc="268436263" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="59" pc="268436341" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="60" pc="268436377" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="61" pc="268436393" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="62" pc="268436403" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="63" pc="268436456" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="65" pc="268436534" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="66" pc="268436550" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="67" pc="268436560" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="68" pc="268436613" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="70" pc="268436691" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="71" pc="268436707" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="72" pc="268436717" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="73" pc="268436770" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="75" pc="268436848" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="76" pc="268436888" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="80" pc="268436969" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="81" pc="268437005" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="82" pc="268437086" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="83" pc="268437122" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="86" pc="268437197" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="87" pc="268437220" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="88" pc="268437231" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="90" pc="268437281" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="92" pc="268437320" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="94" pc="268437356" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="95" pc="268437386" symbol="onUpdate"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="99" pc="268437467" symbol="onPosition"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="100" pc="268437477" symbol="onPosition"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionView.mc" lineNum="10" pc="268438115" symbol="&lt;init&gt;"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="8" pc="268437497" symbol="onMenuItem"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="9" pc="268437508" symbol="onMenuItem"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="11" pc="268437552" symbol="onMenuItem"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="13" pc="268437596" symbol="onMenuItem"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionMenuDelegate.mc" lineNum="15" pc="268437640" symbol="onMenuItem"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="9" pc="268437677" symbol="setGeoFormat"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="13" pc="268437690" symbol="getGeoFormat"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="18" pc="268437702" symbol="onStart"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="27" pc="268437725" symbol="getInitialView"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="35" pc="268437796" symbol="onMenu"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="36" pc="268437832" symbol="onMenu"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="37" pc="268437849" symbol="onMenu"/>
-<entry filename="C:\\connectiq\\samples\\PositionSample\\source\\GpsPositionApp.mc" lineNum="38" pc="268437901" symbol="onMenu"/>
-<entry filename="Rez" lineNum="5" pc="268438049" symbol="&lt;init&gt;"/>
-<entry filename="Rez" lineNum="13" pc="268437908" symbol="initialize"/>
-<entry filename="Rez" lineNum="14" pc="268437930" symbol="initialize"/>
-<entry filename="Rez" lineNum="15" pc="268437952" symbol="initialize"/>
-<entry filename="Rez" lineNum="16" pc="268437974" symbol="initialize"/>
-<entry filename="Rez" lineNum="23" pc="268438017" symbol="&lt;init&gt;"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="17" pc="268435461" symbol="onHide"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="21" pc="268435510" symbol="onShow"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="26" pc="268435559" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="29" pc="268435559" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="30" pc="268435595" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="32" pc="268435607" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="33" pc="268435620" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="34" pc="268435656" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="35" pc="268435730" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="37" pc="268435804" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="38" pc="268435834" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="40" pc="268435903" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="42" pc="268435972" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="44" pc="268436011" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="47" pc="268436047" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="48" pc="268436073" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="49" pc="268436084" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="51" pc="268436135" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="53" pc="268436186" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="55" pc="268436226" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="57" pc="268436263" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="59" pc="268436341" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="60" pc="268436377" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="61" pc="268436393" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="62" pc="268436403" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="63" pc="268436456" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="65" pc="268436534" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="66" pc="268436550" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="67" pc="268436560" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="68" pc="268436613" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="70" pc="268436691" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="71" pc="268436707" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="72" pc="268436717" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="73" pc="268436770" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="75" pc="268436848" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="76" pc="268436888" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="80" pc="268436969" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="81" pc="268437005" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="82" pc="268437086" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="83" pc="268437122" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="86" pc="268437197" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="87" pc="268437220" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="88" pc="268437231" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="90" pc="268437281" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="92" pc="268437320" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="94" pc="268437356" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="95" pc="268437386" symbol="onUpdate"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="99" pc="268437467" symbol="onPosition"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="100" pc="268437477" symbol="onPosition"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionView.mc" lineNum="10" pc="268438160" symbol="&lt;init&gt;"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" lineNum="8" pc="268437497" symbol="onMenuItem"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" lineNum="9" pc="268437508" symbol="onMenuItem"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" lineNum="11" pc="268437552" symbol="onMenuItem"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" lineNum="13" pc="268437596" symbol="onMenuItem"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" lineNum="15" pc="268437640" symbol="onMenuItem"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionApp.mc" lineNum="9" pc="268437677" symbol="setGeoFormat"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionApp.mc" lineNum="13" pc="268437690" symbol="getGeoFormat"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionApp.mc" lineNum="18" pc="268437702" symbol="onStart"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionApp.mc" lineNum="27" pc="268437725" symbol="getInitialView"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionApp.mc" lineNum="35" pc="268437796" symbol="onMenu"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionApp.mc" lineNum="36" pc="268437832" symbol="onMenu"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionApp.mc" lineNum="37" pc="268437849" symbol="onMenu"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionApp.mc" lineNum="38" pc="268437901" symbol="onMenu"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionApp.mc" lineNum="43" pc="268437907" symbol="onKey"/>
+<entry filename="U:\\svn\\connectiq\\GpsPosition\\source\\GpsPositionApp.mc" lineNum="44" pc="268437934" symbol="onKey"/>
+<entry filename="Rez" lineNum="5" pc="268438094" symbol="&lt;init&gt;"/>
+<entry filename="Rez" lineNum="13" pc="268437953" symbol="initialize"/>
+<entry filename="Rez" lineNum="14" pc="268437975" symbol="initialize"/>
+<entry filename="Rez" lineNum="15" pc="268437997" symbol="initialize"/>
+<entry filename="Rez" lineNum="16" pc="268438019" symbol="initialize"/>
+<entry filename="Rez" lineNum="23" pc="268438062" symbol="&lt;init&gt;"/>
 </pcToLineNum>
 <symbolTable>
 <entry id="8389359" symbol="&lt;gre&gt;"/>
@@ -1071,6 +1073,10 @@
 <documentation><![CDATA[<div class="description"> Return the initial view of your application here<br/></div>]]></documentation>
 </functionEntry>
 <functionEntry name="onMenu">
+<documentation/>
+</functionEntry>
+<functionEntry name="onKey">
+<param id="key"/>
 <documentation/>
 </functionEntry>
 <functionEntry name="initialize">

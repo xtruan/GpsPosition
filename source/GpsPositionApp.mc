@@ -37,5 +37,12 @@ class GpsPositionDelegate extends Ui.BehaviorDelegate {
         Ui.pushView(menu, new GpsPositionMenuDelegate(), Ui.SLIDE_UP);
         return true;
     }
+    
+    function onKey(key) {
+        //System.println(key.getKey());
+        if (key.getKey() == Ui.KEY_UP) {
+            onMenu();
+        }
+    }
 
 }
