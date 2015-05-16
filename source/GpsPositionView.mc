@@ -51,9 +51,26 @@ class GpsPositionView extends Ui.View {
                 string = posInfo.position.toGeoString(Pos.GEO_DM);
             } else if (geoFormat == :const_dms) {
                 string = posInfo.position.toGeoString(Pos.GEO_DMS);
-            } else { // geoFormat == :const_mgrs
-                string = posInfo.position.toGeoString(Pos.GEO_MGRS);
+            //} else if (geoFormat == :const_mgrs) {
+            //    string = posInfo.position.toGeoString(Pos.GEO_MGRS);
+            } else if (geoFormat == :const_utm || geoFormat == :const_usng || geoFormat == :const_mgrs) {
+                var degrees = posInfo.position.toDegrees();
+                var functions = new GpsPositionFunctions();
+                if (geoFormat == :const_utm) {
+                    var utmcoords = functions.LLtoUTM(degrees[0], degrees[1]);
+                    string = "" + utmcoords[2] + " " + utmcoords[0] + " " + utmcoords[1];
+                } else if (geoFormat == :const_usng) {
+                    var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
+                    string = "" + usngcoords[0] + " " + usngcoords[1] + " " + usngcoords[2] + " " + usngcoords[3];
+                } else { // :const_mgrs
+                    var mgrszone = posInfo.position.toGeoString(Pos.GEO_MGRS).substring(0, 6);
+                    var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
+                    string = "" + mgrszone + " " + usngcoords[2] + " " + usngcoords[3];
+                }
+            } else {
+                string = "Invalid format";
             }
+            //System.println(posInfo.position.toDegrees());
             dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 60 ), Gfx.FONT_SMALL, string, Gfx.TEXT_JUSTIFY_CENTER );
             
             dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
@@ -99,6 +116,4 @@ class GpsPositionView extends Ui.View {
         posInfo = info;
         Ui.requestUpdate();
     }
-
-
 }
