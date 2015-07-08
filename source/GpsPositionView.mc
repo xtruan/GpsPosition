@@ -23,6 +23,10 @@ class GpsPositionView extends Ui.View {
 
     //! Update the view
     function onUpdate(dc) {
+        // holders for position data
+        var navStringTop = "";
+        var navStringBot = "";
+        // holder for misc data
         var string;
 
         // Set background color
@@ -30,10 +34,6 @@ class GpsPositionView extends Ui.View {
         dc.clear();
         
         if( posInfo != null ) {
-            dc.setColor( Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT );
-            dc.drawLine(0, (dc.getHeight() / 2) - 62, dc.getWidth(), (dc.getHeight() / 2) - 62);
-            dc.drawLine(0, (dc.getHeight() / 2) - 38, dc.getWidth(), (dc.getHeight() / 2) - 38);
-        
             if (posInfo.accuracy == Pos.QUALITY_GOOD) {
                 dc.setColor( Gfx.COLOR_GREEN, Gfx.COLOR_TRANSPARENT );
             } else if (posInfo.accuracy == Pos.QUALITY_USABLE) {
@@ -45,59 +45,115 @@ class GpsPositionView extends Ui.View {
             }
             
             var geoFormat = App.getApp().getGeoFormat();
-            if (geoFormat == :const_deg) {
-                string = posInfo.position.toGeoString(Pos.GEO_DEG);
-            } else if (geoFormat == :const_dm) {
-                string = posInfo.position.toGeoString(Pos.GEO_DM);
-            } else if (geoFormat == :const_dms) {
-                string = posInfo.position.toGeoString(Pos.GEO_DMS);
-            //} else if (geoFormat == :const_mgrs) {
-            //    string = posInfo.position.toGeoString(Pos.GEO_MGRS);
+            // this built in helper function (toGeoString) sucks!!!
+            if (geoFormat == :const_deg || geoFormat == :const_dm || geoFormat == :const_dms) {
+                var degrees = posInfo.position.toDegrees();
+                var lat = 0.0;
+                var latHemi = "?";
+                var long = 0.0;
+                var longHemi = "?";
+                // do latitude hemisphere
+                if (degrees[0] < 0) {
+                    lat = degrees[0] * -1;
+                    latHemi = "S";
+                } else {
+                    lat = degrees[0];
+                    latHemi = "N";
+                }
+                // do longitude hemisphere
+                if (degrees[1] < 0) {
+                    long = degrees[1] * -1;
+                    longHemi = "W";
+                } else {
+                    long = degrees[1];
+                    longHemi = "E";
+                }
+                
+                // if decimal degrees, we're done
+                if (geoFormat == :const_deg) {
+                    navStringTop = latHemi + " " + lat.format("%.6f");
+                    navStringBot = longHemi + " " + long.format("%.6f");
+                    //string = posInfo.position.toGeoString(Pos.GEO_DEG);
+                // do conversions for degs mins or degs mins secs
+                } else { // :const_dm OR :const_dms
+                    var latDegs = lat.toNumber();
+                    var latMins = (lat - latDegs) * 60;
+                    var longDegs = long.toNumber();
+                    var longMins = (long - longDegs) * 60;
+                    if (geoFormat == :const_dm) {
+                        navStringTop = latHemi + " " + latDegs.format("%i") + " " + latMins.format("%.4f") + "'"; 
+                        navStringBot = longHemi + " " + longDegs.format("%i") + " " + longMins.format("%.4f") + "'";
+                        //string = posInfo.position.toGeoString(Pos.GEO_DM);
+                    } else { // :const_dms
+                        var latMinsInt = latMins.toNumber();
+                        var latSecs = (latMins - latMinsInt) * 60;
+                        var longMinsInt = longMins.toNumber();
+                        var longSecs = (longMins - longMinsInt) * 60;
+                        navStringTop = latHemi + " " + latDegs.format("%i") + " " + latMinsInt.format("%i") + "' " + latSecs.format("%.2f") + "\""; 
+                        navStringBot = longHemi + " " + longDegs.format("%i") + " " + longMinsInt.format("%i") + "' " + longSecs.format("%.2f") + "\"";
+                        //string = posInfo.position.toGeoString(Pos.GEO_DMS);
+                    }
+                } 
             } else if (geoFormat == :const_utm || geoFormat == :const_usng || geoFormat == :const_mgrs) {
                 var degrees = posInfo.position.toDegrees();
                 var functions = new GpsPositionFunctions();
                 if (geoFormat == :const_utm) {
                     var utmcoords = functions.LLtoUTM(degrees[0], degrees[1]);
-                    string = "" + utmcoords[2] + " " + utmcoords[0] + " " + utmcoords[1];
+                    navStringTop = "" + utmcoords[2] + " " + utmcoords[0] + " " + utmcoords[1];
                 } else if (geoFormat == :const_usng) {
                     var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
-                    string = "" + usngcoords[0] + " " + usngcoords[1] + " " + usngcoords[2] + " " + usngcoords[3];
+                    navStringTop = "" + usngcoords[0] + " " + usngcoords[1] + " " + usngcoords[2] + " " + usngcoords[3];
                 } else { // :const_mgrs
                     var mgrszone = posInfo.position.toGeoString(Pos.GEO_MGRS).substring(0, 6);
                     var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
-                    string = "" + mgrszone + " " + usngcoords[2] + " " + usngcoords[3];
+                    navStringTop = "" + mgrszone + " " + usngcoords[2] + " " + usngcoords[3];
                 }
             } else {
-                string = "Invalid format";
+                navStringTop = "Invalid format";
             }
+            
             //System.println(posInfo.position.toDegrees());
-            dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 60 ), Gfx.FONT_SMALL, string, Gfx.TEXT_JUSTIFY_CENTER );
+            if (navStringBot.length() != 0) {
+                dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 66 ), Gfx.FONT_MEDIUM, navStringTop, Gfx.TEXT_JUSTIFY_CENTER );
+                dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 44 ), Gfx.FONT_MEDIUM, navStringBot, Gfx.TEXT_JUSTIFY_CENTER );
+                
+                //dc.setColor( Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT );
+                //dc.drawLine(0, (dc.getHeight() / 2) - 66, dc.getWidth(), (dc.getHeight() / 2) - 66);
+                //dc.drawLine(0, (dc.getHeight() / 2) - 12, dc.getWidth(), (dc.getHeight() / 2) - 12);
+            }
+            else {
+                dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 44 ), Gfx.FONT_MEDIUM, navStringTop, Gfx.TEXT_JUSTIFY_CENTER );
+                
+                //dc.setColor( Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT );
+                //dc.drawLine(0, (dc.getHeight() / 2) - 62, dc.getWidth(), (dc.getHeight() / 2) - 62);
+                //dc.drawLine(0, (dc.getHeight() / 2) - 18, dc.getWidth(), (dc.getHeight() / 2) - 18);
+            }
             
             dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
             var headingRad = posInfo.heading;
             var headingDeg = headingRad * 57.2957795;
             string = "Hdg: " + headingDeg.format("%.2f") + " deg (" + headingRad.format("%.2f") + " rad)";
-            dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 30 ), Gfx.FONT_SMALL, string, Gfx.TEXT_JUSTIFY_CENTER );
-            
-            var speedMsec = posInfo.speed;
-            var speedMph = speedMsec * 2.23694;
-            string = "Spd: " + speedMsec.format("%.2f") + " m/sec (" + speedMph.format("%.2f") + " mph)";
-            dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 10 ), Gfx.FONT_SMALL, string, Gfx.TEXT_JUSTIFY_CENTER );
+            dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 10 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
             var altMeters = posInfo.altitude;
             var altFeet = altMeters * 3.28084;
             string = "Alt: " + altMeters.format("%.2f") + " m (" + altFeet.format("%.2f") + " ft)";
-            dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 10 ), Gfx.FONT_SMALL, string, Gfx.TEXT_JUSTIFY_CENTER );
+            dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 10 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
-            string = "Fix: " + posInfo.when.value().toString();
-            dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 30 ), Gfx.FONT_SMALL, string, Gfx.TEXT_JUSTIFY_CENTER );
+            var speedMsec = posInfo.speed;
+            var speedMph = speedMsec * 2.23694;
+            string = "Spd: " + speedMsec.format("%.2f") + " m/s (" + speedMph.format("%.2f") + " mph)";
+            dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 30 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
+            
+            //string = "Fix: " + posInfo.when.value().toString();
+            //dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 30 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
         }
         else {
         
             dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
-            dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2 - 20 ), Gfx.FONT_SMALL, "Waiting for GPS...", Gfx.TEXT_JUSTIFY_CENTER );
+            dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2 - 25 ), Gfx.FONT_SMALL, "Waiting for GPS...", Gfx.TEXT_JUSTIFY_CENTER );
             dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
-            dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2 ), Gfx.FONT_SMALL, "Position unavailable", Gfx.TEXT_JUSTIFY_CENTER );
+            dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2 - 5 ), Gfx.FONT_SMALL, "Position unavailable", Gfx.TEXT_JUSTIFY_CENTER );
         }
         
         var battPercent = Sys.getSystemStats().battery;
@@ -109,7 +165,7 @@ class GpsPositionView extends Ui.View {
             dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
         }
         string = "Batt: " + battPercent.format("%.1f") + "%";
-        dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 50 ), Gfx.FONT_SMALL, string, Gfx.TEXT_JUSTIFY_CENTER );
+        dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 50 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
     }
 
     function onPosition(info) {
