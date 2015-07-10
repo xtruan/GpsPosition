@@ -625,6 +625,203 @@ class GpsPositionFunctions extends Ui.View {
     }
 // END lettersHelper() function
 
+//* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+//*  Convert latitude/longitude <=> OS National Grid Reference points (c) Chris Veness 2005-2010   */
+//* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+    
+//*
+//* convert geodesic co-ordinates to OS grid reference
+//*/
+    function LLToOSGrid(latDeg, longDeg) {
+      
+      var osgb36LatLong = Wgs84ToOsgb36(latDeg, longDeg);
+      
+      //Sys.println("wgs84 - lat: " + latDeg.format("%.6f") + ", lon:" + longDeg.format("%.6f"));
+      //Sys.println("osgb36 - lat: " + osgb36LatLong[0].format("%.6f") + ", lon:" + osgb36LatLong[1].format("%.6f"));
+      
+      var lat = DEG_2_RAD * osgb36LatLong[0];
+      var lon = DEG_2_RAD * osgb36LatLong[1];
+      
+      var a = 6377563.396, b = 6356256.910;          // Airy 1830 major & minor semi-axes
+      var F0 = 0.9996012717;                         // NatGrid scale factor on central meridian
+      var lat0 = (DEG_2_RAD * 49), lon0 = (DEG_2_RAD * -2);  // NatGrid true origin
+      var N0 = -100000, E0 = 400000;                 // northing & easting of true origin, metres
+      var e2 = 1 - (b*b)/(a*a);                      // eccentricity squared
+      var n = (a-b)/(a+b), n2 = n*n, n3 = n*n*n;
+    
+      var cosLat = Math.cos(lat);
+      var sinLat = Math.sin(lat);
+      var nu = a*F0/Math.sqrt(1-e2*sinLat*sinLat);              // transverse radius of curvature
+      var rho = a*F0*(1-e2)/Math.pow(1-e2*sinLat*sinLat, 1.5);  // meridional radius of curvature
+      var eta2 = nu/rho-1;
+    
+      var Ma = (1 + n + (5/4)*n2 + (5/4)*n3) * (lat-lat0);
+      var Mb = (3*n + 3*n*n + (21/8)*n3) * Math.sin(lat-lat0) * Math.cos(lat+lat0);
+      var Mc = ((15/8)*n2 + (15/8)*n3) * Math.sin(2*(lat-lat0)) * Math.cos(2*(lat+lat0));
+      var Md = (35/24)*n3 * Math.sin(3*(lat-lat0)) * Math.cos(3*(lat+lat0));
+      var M = b * F0 * (Ma - Mb + Mc - Md);              // meridional arc
+    
+      var cos3lat = cosLat*cosLat*cosLat;
+      var cos5lat = cos3lat*cosLat*cosLat;
+      var tan2lat = Math.tan(lat)*Math.tan(lat);
+      var tan4lat = tan2lat*tan2lat;
+    
+      var I = M + N0;
+      var II = (nu/2)*sinLat*cosLat;
+      var III = (nu/24)*sinLat*cos3lat*(5-tan2lat+9*eta2);
+      var IIIA = (nu/720)*sinLat*cos5lat*(61-58*tan2lat+tan4lat);
+      var IV = nu*cosLat;
+      var V = (nu/6)*cos3lat*(nu/rho-tan2lat);
+      var VI = (nu/120) * cos5lat * (5 - 18*tan2lat + tan4lat + 14*eta2 - 58*tan2lat*eta2);
+    
+      var dLon = lon-lon0;
+      var dLon2 = dLon*dLon;
+      var dLon3 = dLon2*dLon;
+      var dLon4 = dLon3*dLon;
+      var dLon5 = dLon4*dLon;
+      var dLon6 = dLon5*dLon;
+    
+      var N = I + II*dLon2 + III*dLon4 + IIIA*dLon6;
+      var E = E0 + IV*dLon + V*dLon3 + VI*dLon5;
+      
+      //Sys.println("N: " + N.format("%.6f") + ", E:" + E.format("%.6f"));
+    
+      return gridrefNumToLet(E, N, 8);
+    }
+    
+//*
+//* convert numeric grid reference (in metres) to standard-form grid ref
+//*/
+    function gridrefNumToLet(e, n, digits) {
+      // get the 100km-grid indices
+      var e100k = parseInt(e/100000);
+      var n100k = parseInt(n/100000);
+      
+      if (e100k<0 || e100k>6 || n100k<0 || n100k>12) {
+        return "OUTSIDE UK";
+      }
+    
+      // translate those into numeric equivalents of the grid letters
+      var l1 = (19-n100k) - (19-n100k)%5 + parseInt((e100k+10)/5);
+      var l2 = (19-n100k)*5%25 + e100k%5;
+    
+      var alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      // compensate for skipped 'I' and build grid letter-pairs
+      if (l1 > 7) {
+        l1++;
+      }
+      if (l2 > 7) {
+        l2++;
+      }
+      var letPair = alphabet.substring(l1,l1+1) + alphabet.substring(l2,l2+1);
+    
+      // strip 100km-grid indices from easting & northing, and reduce precision
+      var e = parseInt((e%100000)/Math.pow(10,5-digits/2));
+      var n = parseInt((n%100000)/Math.pow(10,5-digits/2));
+      
+      var gridRef = new [3];
+      
+      gridRef[0] = letPair;
+      gridRef[1] = padLZ(e,digits/2);
+      gridRef[2] = padLZ(n,digits/2);
+      
+      // stringify
+      var ukgrid = gridRef[0] + " " + gridRef[1] + " " + gridRef[2];
+    
+      return ukgrid;
+    }
+    
+    
+    function Wgs84ToOsgb36(lat, long) {
+        // to cartesian
+        var phi = lat * DEG_2_RAD;
+        var lambda = long * DEG_2_RAD;
+        var h = 0; // height above ellipsoid - not currently used
+        var a = 6378137.0; // WGS84
+        var b = 6356752.31425; // WGS84
+    
+        var sinphi = Math.sin(phi);
+        var cosphi = Math.cos(phi);
+        var sinlambda = Math.sin(lambda);
+        var coslambda = Math.cos(lambda);
+    
+        var eSq = (a*a - b*b) / (a*a);
+        var v = a / Math.sqrt(1 - eSq*sinphi*sinphi);
+    
+        var x1 = (v+h) * cosphi * coslambda;
+        var y1 = (v+h) * cosphi * sinlambda;
+        var z1 = ((1-eSq)*v + h) * sinphi;
+        
+        // transform datum
+        var tx = -446.448; 
+        var ty = 125.157;
+        var tz = -542.060;
+        var rx = (-0.1502/3600) * DEG_2_RAD; // normalise seconds to radians
+        var ry = (-0.2470/3600) * DEG_2_RAD; // normalise seconds to radians
+        var rz = (-0.8421/3600) * DEG_2_RAD; // normalise seconds to radians
+        var s1 = 20.4894/1000000 + 1;        // normalise ppm to (s+1)
+
+        // apply transform
+        var x2 = tx + x1*s1 - y1*rz + z1*ry;
+        var y2 = ty + x1*rz + y1*s1 - z1*rx;
+        var z2 = tz - x1*ry + y1*rx + z1*s1;
+
+        // to lat lon
+        a = 6377563.396; // Airy1830
+        b = 6356256.909; // Airy1830
+    
+        var e2 = (a*a-b*b) / (a*a); // 1st eccentricity squared
+        var ee2 = (a*a-b*b) / (b*b); // 2nd eccentricity squared
+        var p = Math.sqrt(x2*x2 + y2*y2); // distance from minor axis
+        var R = Math.sqrt(p*p + z2*z2); // polar radius
+    
+        // parametric latitude (Bowring eqn 17, replacing tanbeta = z*a / p*b)
+        var tanbeta = (b*z2)/(a*p) * (1+ee2*b/R);
+        var sinbeta = tanbeta / Math.sqrt(1+tanbeta*tanbeta);
+        var cosbeta = sinbeta / tanbeta;
+    
+        var osgb36LatLong = new [2];
+        
+        // geodetic latitude (Bowring eqn 18)
+        osgb36LatLong[0] = atan2(z2 + ee2*b*sinbeta*sinbeta*sinbeta, p - e2*a*cosbeta*cosbeta*cosbeta) * RAD_2_DEG;
+    
+        // longitude
+        osgb36LatLong[1] = atan2(y2, x2) * RAD_2_DEG;
+        
+        return osgb36LatLong;
+    }
+    
+//* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+    
+//*
+//* pad a number with sufficient leading zeros to make it w chars wide
+//*/
+    function padLZ(num, w) {
+      var n = num.format("%i");
+      for (var i = 0; i < w-n.length(); i++) {
+        n = "0" + n;
+      }
+      return n;
+    }
+    
+//* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+    function atan2(y, x)  {
+        if (x > 0) {
+            return Math.atan(y/x);
+        } else if (y >= 0 && x < 0) {
+            return Math.atan(y/x) + Math.PI;
+        } else if (y < 0 && x < 0) {
+            return Math.atan(y/x) - Math.PI;
+        } else if (y > 0 && x == 0) {
+            return (Math.PI)/2;
+        } else if (y < 0 && x == 0) {
+            return -(Math.PI)/2;
+        } else {
+            return -999;
+        }
+    }
+    
     function parseInt(numeric) {
         return numeric.toNumber();
     }

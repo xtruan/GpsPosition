@@ -94,7 +94,7 @@ class GpsPositionView extends Ui.View {
                         //string = posInfo.position.toGeoString(Pos.GEO_DMS);
                     }
                 } 
-            } else if (geoFormat == :const_utm || geoFormat == :const_usng || geoFormat == :const_mgrs) {
+            } else if (geoFormat == :const_utm || geoFormat == :const_usng || geoFormat == :const_mgrs ||geoFormat == :const_ukgr) {
                 var degrees = posInfo.position.toDegrees();
                 var functions = new GpsPositionFunctions();
                 if (geoFormat == :const_utm) {
@@ -103,6 +103,9 @@ class GpsPositionView extends Ui.View {
                 } else if (geoFormat == :const_usng) {
                     var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
                     navStringTop = "" + usngcoords[0] + " " + usngcoords[1] + " " + usngcoords[2] + " " + usngcoords[3];
+                } else if (geoFormat == :const_ukgr) {
+                    var ukgrid = functions.LLToOSGrid(degrees[0], degrees[1]);
+                    navStringTop = ukgrid;
                 } else { // :const_mgrs
                     var mgrszone = posInfo.position.toGeoString(Pos.GEO_MGRS).substring(0, 6);
                     var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);

@@ -17,6 +17,8 @@ class GpsPositionMenuDelegate extends Ui.MenuInputDelegate {
             App.getApp().setGeoFormat(:const_usng);
         } else if (item == :item_mgrs) {
             App.getApp().setGeoFormat(:const_mgrs);
+        } else if (item == :item_ukgr) {
+            App.getApp().setGeoFormat(:const_ukgr);
         }
     } 
     

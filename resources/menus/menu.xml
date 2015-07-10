@@ -2,7 +2,8 @@
     <menu-item id="item_deg">Degs</menu-item>
     <menu-item id="item_dm">Degs/Mins</menu-item>
     <menu-item id="item_dms">Degs/Mins/Secs</menu-item>
-    <menu-item id="item_utm">UTM</menu-item>
-    <menu-item id="item_usng">USNG</menu-item>
-    <menu-item id="item_mgrs">MGRS</menu-item>
+    <menu-item id="item_utm">UTM (WGS84)</menu-item>
+    <menu-item id="item_usng">USNG (WGS84)</menu-item>
+    <menu-item id="item_mgrs">MGRS (WGS84)</menu-item>
+    <menu-item id="item_ukgr">UK Grid (OSGB36)</menu-item>
 </menu>
