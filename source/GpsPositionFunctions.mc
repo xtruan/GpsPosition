@@ -5,7 +5,10 @@ using Toybox.System as Sys;
 using Toybox.Lang as Lang;
 using Toybox.Position as Pos;
 
-class GpsPositionFunctions extends Ui.View {
+class GpsPositionFunctions {
+
+/// GpsPositionFunctions.mc by Struan Clark (2015)
+/// Major components translated to Monkey C from JavaScript libraries usng.js and osgridref.js
 
 //// ***************************************************************************
 // *  usng.js  (U.S. National Grid functions)
@@ -15,6 +18,12 @@ class GpsPositionFunctions extends Ui.View {
 // ****************************************************************************/
 //
 // Copyright (c) 2009 Larry Moore, jane.larry@gmail.com
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+//  osgridref.js  (Ordnance Survey Grid Reference functions)                                      */
+//  Convert latitude/longitude <=> OS National Grid Reference points (c) Chris Veness 2005-2010   */
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
 // Released under the MIT License; see 
 // http://www.opensource.org/licenses/mit-license.php 
 // or http://en.wikipedia.org/wiki/MIT_License
@@ -41,7 +50,7 @@ class GpsPositionFunctions extends Ui.View {
 // OTHER DEALINGS IN THE SOFTWARE.
 //
 //
-//*****************************************************************************
+//****************************************************************************
 //
 //    References and history of this code:
 //
@@ -79,69 +88,8 @@ class GpsPositionFunctions extends Ui.View {
 //    (NAD27 computations are irrelevant to Google Maps applications)
 //  
 //
-//*************************************************************************
-// programmer interface summary
-//
-// 1) convert lat/lng decimal degrees to a USNG string
-// function LLtoUSNG(lat, lon, precision)
-//    inputs are in decimal degrees, west longitude negative, south latitude negative
-//    'precision' specifies the number of digits in output coordinates
-//         e.g. 5 specifies 1-meter precision (see USNG standard for explanation)
-//         One digit:    10 km precision      eg. "18S UJ 2 1"
-//         Two digits:   1 km precision       eg. "18S UJ 23 06"
-//         Three digits: 100 meters precision eg. "18S UJ 234 064"
-//         Four digits:  10 meters precision  eg. "18S UJ 2348 0647"
-//         Five digits:  1 meter precision    eg. "18S UJ 23480 06470"
-//    return value is a USNG coordinate as a text string
-//    the return value contains spaces to improve readability, as permitted by 
-//        the USNG standard
-//        the form is NNC CC NNNNN NNNNN
-//        if a different format or precision is desired, the calling application 
-//            must make the changes
-//
-// 2) convert a USNG string to lat/lng decimal degrees
-// function USNGtoLL(usng_string,latlng)
-//    the following formats of the input string are supported:
-//        NNCCCNNNNNNNNNN
-//        NNC CC NNNNNNNNNN
-//        NNC CC NNNNN NNNNN
-//        all precisions of the easting and northing coordinate values are also supported
-//             e.g. NNC CC NNN NNN
-//    output is a 2-element array latlng declared by the calling routine
-//        for example, calling routine contains the line var latlng=[]
-//        latlng[0] contains latitude, latlng[1] contains longitude
-//           both in decimal degrees, south negative, west negative
-//
-// 3) convert lat/lng decimal degrees to MGRS string (same as USNG string, but with 
-//    no space delimeters)
-// function LLtoMGRS(lat, lon, precision)
-//   create a string of Military Grid Reference System coordinates
-//   Same as LLtoUSNG, except that output cannot contain space delimiters;
-//   NOTE: this is not a full implementation of MGRS.  It won't deal with numbers 
-//         near the poles, but only in the UTM domain of 84N to 80S
-//
-// 4) wrapper for USNGtoLL to return an instance of GLatLng 
-// function GUsngtoLL(usngstr)
-//   input is a USNG or MGRS string
-//   return value is an instance of GLatLng
-//   use this only with Google Maps applications; USNGtoLL is more generic
-//
-// 5) evaluates a string to see if it is a legal USNG coordinate; if so, returns
-//       the string modified to be all upper-case, non-delimited; if not, returns 0
-// function isUSNG(inputStr)
-//
-// for most purposes, these five function calls are the only things an application programmer
-// needs to know to use this module.
-//
-// Note regarding UTM coordinates: UTM calculations are an intermediate step in lat/lng-USNG
-// conversions, and can also be captured by applications, using functions below that are not
-// summarized in the above list.  
-// The functions in this module use negative numbers for UTM Y values in the southern 
-// hemisphere.  The calling application must check for this, and convert to correct 
-// southern-hemisphere values by adding 10,000,000 meters.
-//
 
-//*****************************************************************************
+//****************************************************************************
 
     var ngFunctionsPresent = true;
     var UNDEFINED_STR = "undefined";
@@ -151,7 +99,7 @@ class GpsPositionFunctions extends Ui.View {
     var zoneNumber;   // integer...two digits
     
     
-//********************************* Constants ********************************/
+//******************************** Constants ********************************/
     
     var FOURTHPI    = Math.PI / 4;
     var DEG_2_RAD   = Math.PI / 180;
@@ -171,7 +119,7 @@ class GpsPositionFunctions extends Ui.View {
     var k0 = 0.9996;
     
     // NAD83/WGS84 datum
-    var EQUATORIAL_RADIUS    = 6378137.0; // GRS80 ellipsoid (meters)
+    var EQUATORIAL_RADIUS = 6378137.0; // GRS80 ellipsoid (meters)
     var ECC_SQUARED = 0.006694380023; 
     
     var ECC_PRIME_SQUARED = ECC_SQUARED / (1 - ECC_SQUARED);
@@ -186,13 +134,13 @@ class GpsPositionFunctions extends Ui.View {
 //  Four digits:  10 meters precision  eg. "18S UJ 2348 0647"
 //  Five digits:  1 meter precision    eg. "18S UJ 23480 06470"
     
-//************* retrieve zone number from latitude, longitude *************
+//************ retrieve zone number from latitude, longitude *************
 
 //    Zone number ranges from 1 - 60 over the range [-180 to +180]. Each
 //    range is 6 degrees wide. Special cases for points outside normal
 //    [-80 to +84] latitude zone.
 
-//*************************************************************************/
+//************************************************************************/
     
     function getZoneNumber(lat, lon) {
     
@@ -236,7 +184,7 @@ class GpsPositionFunctions extends Ui.View {
     
     
     
-//***************** convert latitude, longitude to UTM  *******************
+//**************** convert latitude, longitude to UTM  *******************
 
 //    Converts lat/long to UTM coords.  Equations from USGS Bulletin 1532 
 //    (or USGS Professional Paper 1395 "Map Projections - A Working Manual", 
@@ -251,7 +199,7 @@ class GpsPositionFunctions extends Ui.View {
 //        utmcoords[1] = northing (NEGATIVE value in southern hemisphere)
 //        utmcoords[2] = zone
 
-//***************************************************************************/
+//**************************************************************************/
     function LLtoUTM(lat,lon) {
       var utmcoords = new [3];
       // utmcoords is a 2-D array declared by the calling routine
@@ -330,7 +278,7 @@ class GpsPositionFunctions extends Ui.View {
 // end LLtoUTM
     
     
-//***************** convert latitude, longitude to USNG  *******************
+//**************** convert latitude, longitude to USNG  *******************
 //   Converts lat/lng to USNG coordinates.  Calls LLtoUTM first, then
 //   converts UTM coordinates to a USNG string.
 
@@ -344,7 +292,7 @@ class GpsPositionFunctions extends Ui.View {
 //        utmcoords[1] = zone
 //        utmcoords[2] = letters
 
-//***************************************************************************/
+//**************************************************************************/
     
     function LLtoUSNG(lat, lon, precision) {
     
@@ -412,7 +360,7 @@ class GpsPositionFunctions extends Ui.View {
 // END LLtoUSNG() function
     
     
-//************** retrieve grid zone designator letter **********************
+//************* retrieve grid zone designator letter **********************
 
 //    This routine determines the correct UTM letter designator for the given 
 //    latitude returns 'Z' if latitude is outside the UTM limits of 84N to 80S
@@ -421,7 +369,7 @@ class GpsPositionFunctions extends Ui.View {
 //    Letters range from C (-80 lat) to X (+84 lat), with each zone spanning
 //    8 degrees of latitude.
 
-//***************************************************************************/
+//**************************************************************************/
     
     function UTMLetterDesignator(lat) {
       lat = parseFloat(lat);
@@ -477,7 +425,7 @@ class GpsPositionFunctions extends Ui.View {
 // END UTMLetterDesignator() function
     
     
-//****************** Find the set for a given zone. ************************
+//***************** Find the set for a given zone. ************************
 
 //    There are six unique sets, corresponding to individual grid numbers in 
 //    sets 1-6, 7-12, 13-18, etc. Set 1 is the same as sets 7, 13, ..; Set 2 
@@ -485,7 +433,7 @@ class GpsPositionFunctions extends Ui.View {
 
 //    See p. 10 of the "United States National Grid" white paper.
 
-//***************************************************************************/
+//**************************************************************************/
     
     function findSet(zoneNum) {
     
@@ -512,11 +460,10 @@ class GpsPositionFunctions extends Ui.View {
 // END findSet() function
     
     
-//**************************************************************************  
+//*************************************************************************  
 //  Retrieve the square identification for a given coordinate pair & zone  
 //  See "lettersHelper" function documentation for more details.
-
-//***************************************************************************/
+//**************************************************************************/
     
     function findGridLetters(zoneNum, northing, easting) {
     
@@ -556,7 +503,7 @@ class GpsPositionFunctions extends Ui.View {
 // END findGridLetters() function 
     
     
-//**************************************************************************  
+//*************************************************************************  
 //    Retrieve the Square Identification (two-character letter code), for the
 //    given row, column and set identifier (set refers to the zone set: 
 //    zones 1-6 have a unique set of square identifiers; these identifiers are 
@@ -565,7 +512,7 @@ class GpsPositionFunctions extends Ui.View {
 //    See p. 10 of the "United States National Grid" white paper for a diagram
 //    of the zone sets.
 
-//***************************************************************************/
+//**************************************************************************/
     
     function lettersHelper(set, row, col) {
     
@@ -624,15 +571,23 @@ class GpsPositionFunctions extends Ui.View {
       }
     }
 // END lettersHelper() function
-
-//* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
-//*  Convert latitude/longitude <=> OS National Grid Reference points (c) Chris Veness 2005-2010   */
-//* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
     
-//*
-//* convert geodesic co-ordinates to OS grid reference
-//*/
+//**************** convert latitude, longitude to UK National Grid  ********
+//   Converts lat/lng to UK Grid coordinates. Converts from WGS84 to OSGB36 
+//   datum by calling Wgs84ToOsgb36(). Calculates Northing and Easting and 
+//   calls gridrefNumToLet()
+
+//    output is based on output from gridrefNumToLet()
+//**************************************************************************/
+//
+// convert geodesic co-ordinates to OS grid reference
+//
     function LLToOSGrid(latDeg, longDeg) {
+      
+      // Glasgow, Scotland LL in WGS84 (for testing)
+      //latDeg = 55.86246;
+      //longDeg = -4.253709;
+      // should return NS5905065549
       
       var osgb36LatLong = Wgs84ToOsgb36(latDeg, longDeg);
       
@@ -686,19 +641,30 @@ class GpsPositionFunctions extends Ui.View {
       
       //Sys.println("N: " + N.format("%.6f") + ", E:" + E.format("%.6f"));
     
-      return gridrefNumToLet(E, N, 8);
+      return gridrefNumToLet(E, N, 10);
     }
-    
-//*
-//* convert numeric grid reference (in metres) to standard-form grid ref
-//*/
+    // END findGridLetters() function 
+
+//**************** convert grid ref numeric to standard-form  **************
+//   converts numeric grid reference (in metres) to standard-form grid ref
+
+//    output is in the array gridRef
+//        gridRef[0] = letters (or error message)
+//        gridRef[1] = easting (or blank)
+//        gridRef[2] = northing (or blank)
+//**************************************************************************/
     function gridrefNumToLet(e, n, digits) {
       // get the 100km-grid indices
       var e100k = parseInt(e/100000);
       var n100k = parseInt(n/100000);
       
+      var gridRef = new [3];
+      
       if (e100k<0 || e100k>6 || n100k<0 || n100k>12) {
-        return "OUTSIDE UK";
+        gridRef[0] = "OUTSIDE UK";
+        gridRef[1] = "";
+        gridRef[2] = "";
+        return gridRef;
       }
     
       // translate those into numeric equivalents of the grid letters
@@ -716,22 +682,29 @@ class GpsPositionFunctions extends Ui.View {
       var letPair = alphabet.substring(l1,l1+1) + alphabet.substring(l2,l2+1);
     
       // strip 100km-grid indices from easting & northing, and reduce precision
-      var e = parseInt((e%100000)/Math.pow(10,5-digits/2));
-      var n = parseInt((n%100000)/Math.pow(10,5-digits/2));
-      
-      var gridRef = new [3];
+      var denominator = Math.pow(10, 5-digits/2);
+      var eNumerator = modulo(e,100000);
+      var nNumerator = modulo(n,100000);
+      var e = parseInt(eNumerator / denominator);
+      var n = parseInt(nNumerator / denominator);
       
       gridRef[0] = letPair;
       gridRef[1] = padLZ(e,digits/2);
       gridRef[2] = padLZ(n,digits/2);
       
       // stringify
-      var ukgrid = gridRef[0] + " " + gridRef[1] + " " + gridRef[2];
+      //var ukgrid = gridRef[0] + " " + gridRef[1] + " " + gridRef[2];
     
-      return ukgrid;
+      return gridRef;
     }
     
+//**************** convert lat long from WGS84 datum to OSGB36 datum  *******
+//   converts numeric grid reference (in metres) to standard-form grid ref
     
+//    output is in the array osgb36LatLong
+//        osgb36LatLong[0] = latitude (degrees)
+//        osgb36LatLong[1] = longitude (degrees)
+//**************************************************************************/
     function Wgs84ToOsgb36(lat, long) {
         // to cartesian
         var phi = lat * DEG_2_RAD;
@@ -791,11 +764,9 @@ class GpsPositionFunctions extends Ui.View {
         return osgb36LatLong;
     }
     
-//* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
-    
-//*
-//* pad a number with sufficient leading zeros to make it w chars wide
-//*/
+//
+// pad a number with sufficient leading zeros to make it w chars wide
+//
     function padLZ(num, w) {
       var n = num.format("%i");
       for (var i = 0; i < w-n.length(); i++) {
@@ -803,9 +774,10 @@ class GpsPositionFunctions extends Ui.View {
       }
       return n;
     }
-    
-//* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
+//
+// atan2 function using built in atan function
+//
     function atan2(y, x)  {
         if (x > 0) {
             return Math.atan(y/x);
@@ -822,12 +794,26 @@ class GpsPositionFunctions extends Ui.View {
         }
     }
     
+//
+// cast to number (integer)
+//
     function parseInt(numeric) {
         return numeric.toNumber();
     }
-    
+
+//
+// cast to float (integer)
+//
     function parseFloat(numeric) {
         return numeric.toFloat();
+    }
+    
+//
+// modulo operation
+//
+    function modulo(a, n) {
+        // a % n
+        return a - (n * parseInt(a/n));
     }
     
 }

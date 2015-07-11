@@ -45,7 +45,7 @@ class GpsPositionView extends Ui.View {
             }
             
             var geoFormat = App.getApp().getGeoFormat();
-            // this built in helper function (toGeoString) sucks!!!
+            // the built in helper function (toGeoString) sucks!!!
             if (geoFormat == :const_deg || geoFormat == :const_dm || geoFormat == :const_dms) {
                 var degrees = posInfo.position.toDegrees();
                 var lat = 0.0;
@@ -105,7 +105,11 @@ class GpsPositionView extends Ui.View {
                     navStringTop = "" + usngcoords[0] + " " + usngcoords[1] + " " + usngcoords[2] + " " + usngcoords[3];
                 } else if (geoFormat == :const_ukgr) {
                     var ukgrid = functions.LLToOSGrid(degrees[0], degrees[1]);
-                    navStringTop = ukgrid;
+                    if (ukgrid[1].length() == 0 || ukgrid[2].length() == 0) {
+                        navStringTop = ukgrid[0]; // error message
+                    } else {
+                        navStringTop = ukgrid[0] + " " + ukgrid[1] + " " + ukgrid[2];
+                    }
                 } else { // :const_mgrs
                     var mgrszone = posInfo.position.toGeoString(Pos.GEO_MGRS).substring(0, 6);
                     var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
@@ -152,7 +156,6 @@ class GpsPositionView extends Ui.View {
             //dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 30 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
         }
         else {
-        
             dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
             dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2 - 25 ), Gfx.FONT_SMALL, "Waiting for GPS...", Gfx.TEXT_JUSTIFY_CENTER );
             dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
