@@ -119,49 +119,52 @@ class GpsPositionView extends Ui.View {
                 navStringTop = "Invalid format";
             }
             
-            //System.println(posInfo.position.toDegrees());
+            // display navigation (position) string
             if (navStringBot.length() != 0) {
                 dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 66 ), Gfx.FONT_MEDIUM, navStringTop, Gfx.TEXT_JUSTIFY_CENTER );
                 dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 44 ), Gfx.FONT_MEDIUM, navStringBot, Gfx.TEXT_JUSTIFY_CENTER );
-                
-                //dc.setColor( Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT );
-                //dc.drawLine(0, (dc.getHeight() / 2) - 66, dc.getWidth(), (dc.getHeight() / 2) - 66);
-                //dc.drawLine(0, (dc.getHeight() / 2) - 12, dc.getWidth(), (dc.getHeight() / 2) - 12);
             }
             else {
                 dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 44 ), Gfx.FONT_MEDIUM, navStringTop, Gfx.TEXT_JUSTIFY_CENTER );
-                
-                //dc.setColor( Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT );
-                //dc.drawLine(0, (dc.getHeight() / 2) - 62, dc.getWidth(), (dc.getHeight() / 2) - 62);
-                //dc.drawLine(0, (dc.getHeight() / 2) - 18, dc.getWidth(), (dc.getHeight() / 2) - 18);
             }
             
+            // draw border around position
+            //dc.setColor( Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT );
+            //dc.drawLine(0, (dc.getHeight() / 2) - 62, dc.getWidth(), (dc.getHeight() / 2) - 62);
+            //dc.drawLine(0, (dc.getHeight() / 2) - 18, dc.getWidth(), (dc.getHeight() / 2) - 18);
+            
+            // display heading
             dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
             var headingRad = posInfo.heading;
             var headingDeg = headingRad * 57.2957795;
             string = "Hdg: " + headingDeg.format("%.2f") + " deg (" + headingRad.format("%.2f") + " rad)";
             dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 10 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
+            // display altitude
             var altMeters = posInfo.altitude;
             var altFeet = altMeters * 3.28084;
             string = "Alt: " + altMeters.format("%.2f") + " m (" + altFeet.format("%.2f") + " ft)";
             dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 10 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
+            // display speed
             var speedMsec = posInfo.speed;
             var speedMph = speedMsec * 2.23694;
             string = "Spd: " + speedMsec.format("%.2f") + " m/s (" + speedMph.format("%.2f") + " mph)";
             dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 30 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
+            // display Fix posix time
             //string = "Fix: " + posInfo.when.value().toString();
             //dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 30 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
         }
         else {
+            // display default text for no GPS
             dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
             dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2 - 25 ), Gfx.FONT_SMALL, "Waiting for GPS...", Gfx.TEXT_JUSTIFY_CENTER );
             dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
             dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2 - 5 ), Gfx.FONT_SMALL, "Position unavailable", Gfx.TEXT_JUSTIFY_CENTER );
         }
         
+        // display battery life
         var battPercent = Sys.getSystemStats().battery;
         if (battPercent > 50.0) {
             dc.setColor( Gfx.COLOR_GREEN, Gfx.COLOR_TRANSPARENT );
