@@ -177,6 +177,7 @@ class GpsPositionView extends Ui.View {
         dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 50 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
     }
 
+    // position change callback
     function onPosition(info) {
         posInfo = info;
         Ui.requestUpdate();
