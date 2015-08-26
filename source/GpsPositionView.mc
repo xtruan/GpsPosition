@@ -8,6 +8,7 @@ using Toybox.Position as Pos;
 class GpsPositionView extends Ui.View {
 
     hidden var posInfo = null;
+    hidden var deviceSettings = null;
 
     //! Load your resources here
     function onLayout(dc) {
@@ -19,6 +20,7 @@ class GpsPositionView extends Ui.View {
     //! Restore the state of the app and prepare the view to be shown
     function onShow() {
         Pos.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onPosition));
+        deviceSettings = Sys.getDeviceSettings();
     }
 
     //! Update the view
@@ -146,10 +148,15 @@ class GpsPositionView extends Ui.View {
             string = "Alt: " + altMeters.format("%.2f") + " m (" + altFeet.format("%.2f") + " ft)";
             dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 10 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
-            // display speed
+            // display speed in mph or km/h based on device unit settings
             var speedMsec = posInfo.speed;
-            var speedMph = speedMsec * 2.23694;
-            string = "Spd: " + speedMsec.format("%.2f") + " m/s (" + speedMph.format("%.2f") + " mph)";
+            if (deviceSettings.distanceUnits == Sys.UNIT_METRIC) {
+                var speedKmh = speedMsec * 3.6;
+                string = "Spd: " + speedMsec.format("%.2f") + " m/s (" + speedKmh.format("%.2f") + " km/h)";
+            } else { // deviceSettings.distanceUnits == Sys.UNIT_STATUTE
+                var speedMph = speedMsec * 2.23694;
+                string = "Spd: " + speedMsec.format("%.2f") + " m/s (" + speedMph.format("%.2f") + " mph)";
+            }
             dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 30 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
             // display Fix posix time
