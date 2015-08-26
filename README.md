@@ -7,6 +7,7 @@ Simple app to display current position information in a variety of different for
 Tested on simulator for all supported devices and on vivoactive hardware.
 
 Changelog:
+* 2.3 - Current speed now respects device unit setting (statue displays mph, metric displays km/h).
 * 2.2 - Current position format is now maintained between launches. Thanks to hoanBK for the suggestion!
 * 2.1 - Added UK Grid Reference (Ordnance Survey National Grid) support.
 * 2.0 - Added support for round watches (D2 Bravo and fenix 3), and ForeAthelete/Forerunner 920XT! Rearranged the UI to make the coordinate data bigger. Removed "Fix" field.
