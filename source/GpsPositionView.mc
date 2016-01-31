@@ -121,12 +121,21 @@ class GpsPositionView extends Ui.View {
                         navStringTop = ukgrid[0] + " " + ukgrid[1] + " " + ukgrid[2];
                     }
                 } else { // :const_mgrs
-                    // looks like this function works now for MGRS, yay!
-                    navStringTop = posInfo.position.toGeoString(Pos.GEO_MGRS);
+                    // this function only works in sim, not device for MGRS, boo!
+                    //navStringTop = posInfo.position.toGeoString(Pos.GEO_MGRS);
                     
+                    // even though MGRS letters are provided on device, I think they're wrong
                     //var mgrszone = posInfo.position.toGeoString(Pos.GEO_MGRS).substring(0, 6);
                     //var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
                     //navStringTop = "" + mgrszone + " " + usngcoords[2] + " " + usngcoords[3];
+                    
+                    // so, just do the same thing as USNG since it's using the correct datum to be equivalent to MGRS
+                    var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
+                    if (usngcoords[1].length() == 0 || usngcoords[2].length() == 0 || usngcoords[3].length() == 0) {
+                        navStringTop = usngcoords[0]; // error message
+                    } else {
+                        navStringTop = "" + usngcoords[0] + " " + usngcoords[1] + " " + usngcoords[2] + " " + usngcoords[3];
+                    }
                 }
             } else {
                 navStringTop = "Invalid format";

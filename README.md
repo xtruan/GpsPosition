@@ -7,6 +7,7 @@ Simple app to display current position information in a variety of different for
 Tested on simulator for all supported devices and on vivoactive hardware.
 
 Changelog:
+* 2.5 - Making MGRS use the same logic as USNG since they have the same datum and should be equivalent.
 * 2.4 - Added support for Forerunner 230, Forerunner 235, and Forerunner 630. Fixed southern hemisphere bug with UTM (thanks simonw42 and LeongSC!).
 * 2.3 - Current speed now respects device distance unit setting (statue displays mph, metric displays km/h).
 * 2.2 - Current position format is now maintained between launches. Thanks to hoanBK for the suggestion!

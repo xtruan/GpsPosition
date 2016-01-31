@@ -298,7 +298,7 @@ class GpsPositionFunctions {
       // Constrain reporting USNG coords to the latitude range [80S .. 84N]
       //////////////////////
       if (lat > 84.0 || lat < -80.0){
-          usngcoords[0] = "OUTSIDE USA";
+          usngcoords[0] = "OUTSIDE RANGE";
           usngcoords[1] = "";
           usngcoords[2] = "";
           usngcoords[3] = "";
