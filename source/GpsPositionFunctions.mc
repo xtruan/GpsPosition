@@ -207,13 +207,6 @@ class GpsPositionFunctions {
       lat = parseFloat(lat);
       lon = parseFloat(lon);
     
-      // Constrain reporting USNG coords to the latitude range [80S .. 84N]
-      //////////////////////
-      if (lat > 84.0 || lat < -80.0){
-          return(UNDEFINED_STR);
-      }
-      //////////////////////
-    
       // sanity check on input - turned off when testing with Generic Viewer
       /////////////////////  /*
       if (lon > 360 || lon < -180 || lat > 90 || lat < -90) {
@@ -263,11 +256,12 @@ class GpsPositionFunctions {
                       + (61 - 58 * T + T * T + 600 * C - 330 * ECC_PRIME_SQUARED )
                       * (A * A * A * A * A * A) / 720)));
     
-    // added by LRM 2/08...not entirely sure this doesn't just move a bug somewhere else
-    // utm values in southern hemisphere
-    //  if (UTMNorthing < 0) {
-    //  UTMNorthing += NORTHING_OFFSET;
-    //  }
+      // added by LRM 2/08...not entirely sure this doesn't just move a bug somewhere else
+      // sclark - looks like this was being done here and for USNG, moved it back to here and removed from USNG
+      // utm values in southern hemisphere
+      if (UTMNorthing < 0) {
+          UTMNorthing += NORTHING_OFFSET;
+      }
     
       utmcoords[0] = parseInt(UTMEasting);
       utmcoords[1] = parseInt(UTMNorthing);
@@ -300,6 +294,17 @@ class GpsPositionFunctions {
 
       lat = parseFloat(lat);
       lon = parseFloat(lon);
+      
+      // Constrain reporting USNG coords to the latitude range [80S .. 84N]
+      //////////////////////
+      if (lat > 84.0 || lat < -80.0){
+          usngcoords[0] = "OUTSIDE USA";
+          usngcoords[1] = "";
+          usngcoords[2] = "";
+          usngcoords[3] = "";
+          return usngcoords;
+      }
+      //////////////////////
     
       // convert lat/lon to UTM coordinates
       var coords = LLtoUTM(lat, lon);
@@ -307,12 +312,6 @@ class GpsPositionFunctions {
       var UTMNorthing = coords[1];
     
       // ...then convert UTM to USNG
-    
-      // southern hemispher case
-      if (lat < 0) {
-        // Use offset for southern hemisphere
-        UTMNorthing += NORTHING_OFFSET; 
-      }
     
       var USNGLetters  = findGridLetters(zoneNumber, UTMNorthing, UTMEasting);
       var USNGNorthing = parseInt(UTMNorthing + 0.5) % BLOCK_SIZE;

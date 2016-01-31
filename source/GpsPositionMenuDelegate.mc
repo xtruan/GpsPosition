@@ -4,6 +4,10 @@ using Toybox.System as Sys;
 
 class GpsPositionMenuDelegate extends Ui.MenuInputDelegate {
 
+    function initialize() {
+        MenuInputDelegate.initialize();
+    }
+
     function onMenuItem(item) {
         if (item == :item_deg) {
             App.getApp().setGeoFormat(:const_deg);  // Degs

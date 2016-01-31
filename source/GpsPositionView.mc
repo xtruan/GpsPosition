@@ -9,6 +9,10 @@ class GpsPositionView extends Ui.View {
 
     hidden var posInfo = null;
     hidden var deviceSettings = null;
+    
+    function initialize() {
+        View.initialize();
+    }
 
     //! Load your resources here
     function onLayout(dc) {
@@ -104,7 +108,11 @@ class GpsPositionView extends Ui.View {
                     navStringTop = "" + utmcoords[2] + " " + utmcoords[0] + " " + utmcoords[1];
                 } else if (geoFormat == :const_usng) {
                     var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
-                    navStringTop = "" + usngcoords[0] + " " + usngcoords[1] + " " + usngcoords[2] + " " + usngcoords[3];
+                    if (usngcoords[1].length() == 0 || usngcoords[2].length() == 0 || usngcoords[3].length() == 0) {
+                        navStringTop = usngcoords[0]; // error message
+                    } else {
+                        navStringTop = "" + usngcoords[0] + " " + usngcoords[1] + " " + usngcoords[2] + " " + usngcoords[3];
+                    }
                 } else if (geoFormat == :const_ukgr) {
                     var ukgrid = functions.LLToOSGrid(degrees[0], degrees[1]);
                     if (ukgrid[1].length() == 0 || ukgrid[2].length() == 0) {
@@ -113,9 +121,12 @@ class GpsPositionView extends Ui.View {
                         navStringTop = ukgrid[0] + " " + ukgrid[1] + " " + ukgrid[2];
                     }
                 } else { // :const_mgrs
-                    var mgrszone = posInfo.position.toGeoString(Pos.GEO_MGRS).substring(0, 6);
-                    var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
-                    navStringTop = "" + mgrszone + " " + usngcoords[2] + " " + usngcoords[3];
+                    // looks like this function works now for MGRS, yay!
+                    navStringTop = posInfo.position.toGeoString(Pos.GEO_MGRS);
+                    
+                    //var mgrszone = posInfo.position.toGeoString(Pos.GEO_MGRS).substring(0, 6);
+                    //var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
+                    //navStringTop = "" + mgrszone + " " + usngcoords[2] + " " + usngcoords[3];
                 }
             } else {
                 navStringTop = "Invalid format";

@@ -5,6 +5,10 @@ class GpsPositionApp extends App.AppBase {
 
     hidden var geoFormat;
     
+    function initialize() {
+        AppBase.initialize();
+    }
+    
     // property store can't handle symbol types 
     // this method converts from symbol to number for writing to properties
     function geoFormatSymbolToNumber(sym) {
@@ -80,24 +84,6 @@ class GpsPositionApp extends App.AppBase {
     //! Return the initial view of your application here
     function getInitialView() {
         return [ new GpsPositionView(), new GpsPositionDelegate() ];
-    }
-
-}
-
-class GpsPositionDelegate extends Ui.BehaviorDelegate {
-
-    function onMenu() {
-        var menu = new Rez.Menus.CoordFormatMenu();
-        menu.setTitle("Coordinate Format");
-        Ui.pushView(menu, new GpsPositionMenuDelegate(), Ui.SLIDE_UP);
-        return true;
-    }
-    
-    function onKey(key) {
-        //System.println(key.getKey());
-        if (key.getKey() == Ui.KEY_UP) {
-            onMenu();
-        }
     }
 
 }
