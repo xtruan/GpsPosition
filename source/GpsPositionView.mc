@@ -9,6 +9,8 @@ class GpsPositionView extends Ui.View {
 
     hidden var posInfo = null;
     hidden var deviceSettings = null;
+    hidden var deviceId = null;
+    hidden var showLabels = true;
     
     function initialize() {
         View.initialize();
@@ -25,6 +27,10 @@ class GpsPositionView extends Ui.View {
     function onShow() {
         Pos.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onPosition));
         deviceSettings = Sys.getDeviceSettings();
+        deviceId = Ui.loadResource(Rez.Strings.DeviceId);
+        if (deviceId.equals("vivoactive_hr")) {
+            showLabels = false;
+        }
     }
 
     //! Update the view
@@ -105,20 +111,23 @@ class GpsPositionView extends Ui.View {
                 var functions = new GpsPositionFunctions();
                 if (geoFormat == :const_utm) {
                     var utmcoords = functions.LLtoUTM(degrees[0], degrees[1]);
-                    navStringTop = "" + utmcoords[2] + " " + utmcoords[0] + " " + utmcoords[1];
+                    navStringTop = "" + utmcoords[2] + " " + utmcoords[0];
+                    navStringBot = "" + utmcoords[1];
                 } else if (geoFormat == :const_usng) {
                     var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
                     if (usngcoords[1].length() == 0 || usngcoords[2].length() == 0 || usngcoords[3].length() == 0) {
-                        navStringTop = usngcoords[0]; // error message
+                        navStringTop = "" + usngcoords[0]; // error message
                     } else {
-                        navStringTop = "" + usngcoords[0] + " " + usngcoords[1] + " " + usngcoords[2] + " " + usngcoords[3];
+                        navStringTop = "" + usngcoords[0] + " " + usngcoords[1];
+                        navStringBot = "" + usngcoords[2] + " " + usngcoords[3];
                     }
                 } else if (geoFormat == :const_ukgr) {
                     var ukgrid = functions.LLToOSGrid(degrees[0], degrees[1]);
                     if (ukgrid[1].length() == 0 || ukgrid[2].length() == 0) {
                         navStringTop = ukgrid[0]; // error message
                     } else {
-                        navStringTop = ukgrid[0] + " " + ukgrid[1] + " " + ukgrid[2];
+                        navStringTop = "" + ukgrid[0] + " " + ukgrid[1];
+                        navStringBot =  "" + ukgrid[2];
                     }
                 } else { // :const_mgrs
                     // this function only works in sim, not device for MGRS, boo!
@@ -132,9 +141,10 @@ class GpsPositionView extends Ui.View {
                     // so, just do the same thing as USNG since it's using the correct datum to be equivalent to MGRS
                     var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
                     if (usngcoords[1].length() == 0 || usngcoords[2].length() == 0 || usngcoords[3].length() == 0) {
-                        navStringTop = usngcoords[0]; // error message
+                        navStringTop = "" + usngcoords[0]; // error message
                     } else {
-                        navStringTop = "" + usngcoords[0] + " " + usngcoords[1] + " " + usngcoords[2] + " " + usngcoords[3];
+                        navStringTop = "" + usngcoords[0] + " " + usngcoords[1];
+                        navStringBot = "" + usngcoords[2] + " " + usngcoords[3];
                     }
                 }
             } else {
@@ -159,23 +169,38 @@ class GpsPositionView extends Ui.View {
             dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
             var headingRad = posInfo.heading;
             var headingDeg = headingRad * 57.2957795;
-            string = "Hdg: " + headingDeg.format("%.2f") + " deg (" + headingRad.format("%.2f") + " rad)";
+            if (showLabels) {
+                string = "Hdg: ";
+            } else {
+                string = "";
+            }
+            string = string + headingDeg.format("%.2f") + " deg (" + headingRad.format("%.2f") + " rad)";
             dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 10 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
             // display altitude
             var altMeters = posInfo.altitude;
             var altFeet = altMeters * 3.28084;
-            string = "Alt: " + altMeters.format("%.2f") + " m (" + altFeet.format("%.2f") + " ft)";
+            if (showLabels) {
+                string = "Alt: ";
+            } else {
+                string = "";
+            }
+            string = string + altMeters.format("%.2f") + " m (" + altFeet.format("%.2f") + " ft)";
             dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 10 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
             // display speed in mph or km/h based on device unit settings
             var speedMsec = posInfo.speed;
+            if (showLabels) {
+                string = "Spd: ";
+            } else {
+                string = "";
+            }
             if (deviceSettings.distanceUnits == Sys.UNIT_METRIC) {
                 var speedKmh = speedMsec * 3.6;
-                string = "Spd: " + speedMsec.format("%.2f") + " m/s (" + speedKmh.format("%.2f") + " km/h)";
+                string = string + speedMsec.format("%.2f") + " m/s (" + speedKmh.format("%.2f") + " km/h)";
             } else { // deviceSettings.distanceUnits == Sys.UNIT_STATUTE
                 var speedMph = speedMsec * 2.23694;
-                string = "Spd: " + speedMsec.format("%.2f") + " m/s (" + speedMph.format("%.2f") + " mph)";
+                string = string + speedMsec.format("%.2f") + " m/s (" + speedMph.format("%.2f") + " mph)";
             }
             dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 30 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             

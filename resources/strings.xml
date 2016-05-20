@@ -1,3 +1,4 @@
 <resources>
     <string id="AppName">GPS</string>
+    <string id="DeviceId">default</string>
 </resources>

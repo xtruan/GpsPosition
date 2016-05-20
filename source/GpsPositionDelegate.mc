@@ -15,7 +15,7 @@ class GpsPositionDelegate extends Ui.BehaviorDelegate {
     
     function onKey(key) {
         System.println(key.getKey());
-        if (key.getKey() == Ui.KEY_UP) {
+        if (key.getKey() == Ui.KEY_UP || key.getKey() == Ui.KEY_ENTER) {
             onMenu();
         }
     }

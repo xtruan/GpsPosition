@@ -586,7 +586,7 @@ class GpsPositionFunctions {
       // Glasgow, Scotland LL in WGS84 (for testing)
       //latDeg = 55.86246;
       //longDeg = -4.253709;
-      // should return NS5905065549
+      // should return NS 59050 65549
       
       var osgb36LatLong = Wgs84ToOsgb36(latDeg, longDeg);
       
