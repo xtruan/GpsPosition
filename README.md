@@ -7,6 +7,7 @@ Simple app to display current position information in a variety of different for
 Tested on simulator for all supported devices and on vivoactive hardware.
 
 Changelog:
+* 3.0 - Added support for MANY more devices! Cleaned up layout to work better on more devices.
 * 2.6 - Added support for vivoactive HR and Forerunner 735XT! Minor adjustments to layout.
 * 2.5 - Making MGRS use the same logic as USNG since they have the same datum and should be equivalent.
 * 2.4 - Added support for Forerunner 230, Forerunner 235, and Forerunner 630. Fixed southern hemisphere bug with UTM (thanks simonw42 and LeongSC!).
