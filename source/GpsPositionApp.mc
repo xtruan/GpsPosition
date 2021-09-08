@@ -58,7 +58,7 @@ class GpsPositionApp extends App.AppBase {
     }
     
     // return current geoFormat
-    function getGeoFormat(format) {
+    function getGeoFormat() {
         return geoFormat;
     }
     
@@ -73,12 +73,12 @@ class GpsPositionApp extends App.AppBase {
     }
 
     //! onStart() is called on application start up
-    function onStart() {
+    function onStart(state) {
         initGeoFormat();
     }
 
-    //! onStop() is called when your application is exiting
-    function onStop() {
+    //! onStop() is called on application shutdown
+    function onStop(state) {
     }
 
     //! Return the initial view of your application here

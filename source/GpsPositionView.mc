@@ -17,7 +17,7 @@ class GpsPositionView extends Ui.View {
     }
 
     //! Load your resources here
-    function onLayout(dc) {
+    function onLayout(dc as Dc) {
     }
 
     function onHide() {
@@ -34,7 +34,7 @@ class GpsPositionView extends Ui.View {
     }
 
     //! Update the view
-    function onUpdate(dc) {
+    function onUpdate(dc as Dc) {
         // holders for position data
         var navStringTop = "";
         var navStringBot = "";
@@ -44,6 +44,20 @@ class GpsPositionView extends Ui.View {
         // Set background color
         dc.setColor( Gfx.COLOR_TRANSPARENT, Gfx.COLOR_BLACK );
         dc.clear();
+        var pos = 0;
+        
+        // display battery life
+        var battPercent = Sys.getSystemStats().battery;
+        if (battPercent > 50.0) {
+            dc.setColor( Gfx.COLOR_GREEN, Gfx.COLOR_TRANSPARENT );
+        } else if (battPercent > 20.0) {
+            dc.setColor( Gfx.COLOR_YELLOW, Gfx.COLOR_TRANSPARENT );
+        } else {
+            dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
+        }
+        string = "Bat: " + battPercent.format("%.1f") + "%";
+        pos = pos + Gfx.getFontHeight(Gfx.FONT_TINY) - 4;
+        dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
         
         if( posInfo != null ) {
             if (posInfo.accuracy == Pos.QUALITY_GOOD) {
@@ -148,16 +162,21 @@ class GpsPositionView extends Ui.View {
                     }
                 }
             } else {
-                navStringTop = "Invalid format";
+                navStringTop = "...";
+                App.getApp().setGeoFormat(:const_deg);
             }
             
             // display navigation (position) string
             if (navStringBot.length() != 0) {
-                dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 66 ), Gfx.FONT_MEDIUM, navStringTop, Gfx.TEXT_JUSTIFY_CENTER );
-                dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 44 ), Gfx.FONT_MEDIUM, navStringBot, Gfx.TEXT_JUSTIFY_CENTER );
+            	pos = pos + Gfx.getFontHeight(Gfx.FONT_SMALL);
+                dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_MEDIUM, navStringTop, Gfx.TEXT_JUSTIFY_CENTER );
+                pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - 6;
+                dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_MEDIUM, navStringBot, Gfx.TEXT_JUSTIFY_CENTER );
             }
             else {
-                dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 44 ), Gfx.FONT_MEDIUM, navStringTop, Gfx.TEXT_JUSTIFY_CENTER );
+            	pos = pos + Gfx.getFontHeight(Gfx.FONT_SMALL);
+                dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_MEDIUM, navStringTop, Gfx.TEXT_JUSTIFY_CENTER );
+                pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - 6;
             }
             
             // draw border around position
@@ -174,8 +193,9 @@ class GpsPositionView extends Ui.View {
             } else {
                 string = "";
             }
-            string = string + headingDeg.format("%.2f") + " deg (" + headingRad.format("%.2f") + " rad)";
-            dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) - 10 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
+            string = string + headingDeg.format("%.2f") + " deg";
+            pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - 2;
+            dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
             // display altitude
             var altMeters = posInfo.altitude;
@@ -185,8 +205,13 @@ class GpsPositionView extends Ui.View {
             } else {
                 string = "";
             }
-            string = string + altMeters.format("%.2f") + " m (" + altFeet.format("%.2f") + " ft)";
-            dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 10 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
+            if (deviceSettings.distanceUnits == Sys.UNIT_METRIC) {
+            	string = string + " " + altMeters.format("%.2f") + " m";
+            } else { // deviceSettings.distanceUnits == Sys.UNIT_STATUTE
+            	string = string + " " + altFeet.format("%.2f") + " ft";
+            }
+            pos = pos + Gfx.getFontHeight(Gfx.FONT_TINY);
+            dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
             // display speed in mph or km/h based on device unit settings
             var speedMsec = posInfo.speed;
@@ -197,12 +222,13 @@ class GpsPositionView extends Ui.View {
             }
             if (deviceSettings.distanceUnits == Sys.UNIT_METRIC) {
                 var speedKmh = speedMsec * 3.6;
-                string = string + speedMsec.format("%.2f") + " m/s (" + speedKmh.format("%.2f") + " km/h)";
+                string = string + " " + speedKmh.format("%.2f") + " km/h";
             } else { // deviceSettings.distanceUnits == Sys.UNIT_STATUTE
                 var speedMph = speedMsec * 2.23694;
-                string = string + speedMsec.format("%.2f") + " m/s (" + speedMph.format("%.2f") + " mph)";
+                string = string + " " + speedMph.format("%.2f") + " mph";
             }
-            dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 30 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
+            pos = pos + Gfx.getFontHeight(Gfx.FONT_TINY);
+            dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
             // display Fix posix time
             //string = "Fix: " + posInfo.when.value().toString();
@@ -211,22 +237,11 @@ class GpsPositionView extends Ui.View {
         else {
             // display default text for no GPS
             dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
-            dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2 - 25 ), Gfx.FONT_SMALL, "Waiting for GPS...", Gfx.TEXT_JUSTIFY_CENTER );
+            dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2) - Gfx.getFontHeight(Gfx.FONT_SMALL), Gfx.FONT_SMALL, "Waiting for GPS...", Gfx.TEXT_JUSTIFY_CENTER );
             dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
-            dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2 - 5 ), Gfx.FONT_SMALL, "Position unavailable", Gfx.TEXT_JUSTIFY_CENTER );
+            dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2), Gfx.FONT_SMALL, "Position unavailable", Gfx.TEXT_JUSTIFY_CENTER );
         }
         
-        // display battery life
-        var battPercent = Sys.getSystemStats().battery;
-        if (battPercent > 50.0) {
-            dc.setColor( Gfx.COLOR_GREEN, Gfx.COLOR_TRANSPARENT );
-        } else if (battPercent > 20.0) {
-            dc.setColor( Gfx.COLOR_YELLOW, Gfx.COLOR_TRANSPARENT );
-        } else {
-            dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
-        }
-        string = "Batt: " + battPercent.format("%.1f") + "%";
-        dc.drawText( (dc.getWidth() / 2), ((dc.getHeight() / 2) + 50 ), Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
     }
 
     // position change callback

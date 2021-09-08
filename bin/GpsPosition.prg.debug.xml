@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="C:\S\ws\GpsPosition\manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="3" lineNum="15" pc="268435456" symbol="initialize"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="3" lineNum="16" pc="268435460" symbol="initialize"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="4" lineNum="20" pc="268435479" symbol="onLayout"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="5" lineNum="23" pc="268435484" symbol="onHide"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="5" lineNum="24" pc="268435488" symbol="onHide"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="6" lineNum="27" pc="268435535" symbol="onShow"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="6" lineNum="28" pc="268435539" symbol="onShow"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="6" lineNum="29" pc="268435585" symbol="onShow"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="6" lineNum="30" pc="268435608" symbol="onShow"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="6" lineNum="31" pc="268435651" symbol="onShow"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="6" lineNum="32" pc="268435676" symbol="onShow"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="37" pc="268435690" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="39" pc="268435694" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="40" pc="268435701" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="42" pc="268435708" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="45" pc="268435708" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="46" pc="268435744" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="47" pc="268435756" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="50" pc="268435763" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="51" pc="268435786" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="52" pc="268435797" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="53" pc="268435836" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="54" pc="268435847" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="56" pc="268435886" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="58" pc="268435922" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="59" pc="268435952" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="60" pc="268435990" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="62" pc="268436047" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="63" pc="268436060" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="64" pc="268436090" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="65" pc="268436129" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="66" pc="268436159" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="67" pc="268436198" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="68" pc="268436228" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="70" pc="268436267" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="73" pc="268436303" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="75" pc="268436329" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="76" pc="268436368" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="77" pc="268436393" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="78" pc="268436400" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="79" pc="268436407" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="80" pc="268436414" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="82" pc="268436421" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="83" pc="268436438" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="84" pc="268436454" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="86" pc="268436464" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="87" pc="268436474" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="90" pc="268436481" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="91" pc="268436498" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="92" pc="268436514" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="94" pc="268436524" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="95" pc="268436534" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="99" pc="268436541" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="100" pc="268436552" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="101" pc="268436579" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="105" pc="268436609" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="106" pc="268436622" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="107" pc="268436635" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="108" pc="268436648" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="109" pc="268436661" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="110" pc="268436672" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="111" pc="268436728" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="114" pc="268436787" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="115" pc="268436800" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="116" pc="268436813" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="117" pc="268436826" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="118" pc="268436839" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="119" pc="268436918" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="123" pc="268437000" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="124" pc="268437053" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="125" pc="268437078" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="126" pc="268437102" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="127" pc="268437113" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="128" pc="268437142" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="129" pc="268437173" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="130" pc="268437192" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="131" pc="268437203" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="132" pc="268437237" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="133" pc="268437321" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="135" pc="268437340" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="136" pc="268437371" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="138" pc="268437405" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="139" pc="268437416" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="140" pc="268437445" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="141" pc="268437500" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="143" pc="268437513" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="144" pc="268437544" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="156" pc="268437563" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="157" pc="268437597" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="158" pc="268437681" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="160" pc="268437700" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="161" pc="268437731" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="165" pc="268437765" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="166" pc="268437772" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="170" pc="268437802" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="171" pc="268437822" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="172" pc="268437854" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="173" pc="268437911" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="174" pc="268437949" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="177" pc="268438009" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="178" pc="268438041" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="179" pc="268438098" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="188" pc="268438136" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="189" pc="268438172" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="190" pc="268438188" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="191" pc="268438198" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="192" pc="268438209" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="194" pc="268438219" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="196" pc="268438226" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="197" pc="268438253" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="198" pc="268438291" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="201" pc="268438348" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="202" pc="268438364" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="203" pc="268438374" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="204" pc="268438385" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="206" pc="268438395" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="208" pc="268438402" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="209" pc="268438432" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="211" pc="268438468" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="213" pc="268438501" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="214" pc="268438533" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="217" pc="268438590" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="218" pc="268438606" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="219" pc="268438617" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="221" pc="268438627" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="223" pc="268438634" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="224" pc="268438664" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="225" pc="268438674" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="227" pc="268438710" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="228" pc="268438720" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="230" pc="268438753" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="231" pc="268438785" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="239" pc="268438845" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="240" pc="268438881" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="241" pc="268438984" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="7" lineNum="242" pc="268439020" symbol="onUpdate"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="8" lineNum="248" pc="268439096" symbol="onPosition"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="8" lineNum="249" pc="268439100" symbol="onPosition"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="8" lineNum="250" pc="268439110" symbol="onPosition"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionView.mc" id="8" lineNum="8" pc="268447213" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="10" lineNum="7" pc="268439127" symbol="initialize"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="10" lineNum="8" pc="268439131" symbol="initialize"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="11" pc="268439150" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="12" pc="268439154" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="13" pc="268439165" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="14" pc="268439198" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="15" pc="268439209" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="16" pc="268439242" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="17" pc="268439253" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="18" pc="268439286" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="19" pc="268439297" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="20" pc="268439330" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="21" pc="268439341" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="22" pc="268439374" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="23" pc="268439385" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="24" pc="268439418" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="25" pc="268439429" symbol="onMenuItem"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionMenuDelegate.mc" id="11" lineNum="5" pc="268447232" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="13" lineNum="8" pc="268439463" symbol="initialize"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="13" lineNum="9" pc="268439467" symbol="initialize"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="14" pc="268439486" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="15" pc="268439490" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="16" pc="268439501" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="17" pc="268439510" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="18" pc="268439521" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="19" pc="268439530" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="20" pc="268439541" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="21" pc="268439550" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="22" pc="268439561" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="23" pc="268439570" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="24" pc="268439581" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="25" pc="268439590" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="26" pc="268439601" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="27" pc="268439610" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="28" pc="268439621" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="14" lineNum="30" pc="268439630" symbol="geoFormatSymbolToNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="36" pc="268439637" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="37" pc="268439641" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="38" pc="268439652" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="39" pc="268439661" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="40" pc="268439672" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="41" pc="268439681" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="42" pc="268439692" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="43" pc="268439701" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="44" pc="268439712" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="45" pc="268439721" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="46" pc="268439732" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="47" pc="268439741" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="48" pc="268439752" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="15" lineNum="50" pc="268439761" symbol="geoFormatNumberToSymbol"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="16" lineNum="55" pc="268439768" symbol="setGeoFormat"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="16" lineNum="56" pc="268439772" symbol="setGeoFormat"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="16" lineNum="57" pc="268439782" symbol="setGeoFormat"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="17" lineNum="61" pc="268439813" symbol="getGeoFormat"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="17" lineNum="62" pc="268439817" symbol="getGeoFormat"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="18" lineNum="66" pc="268439827" symbol="initGeoFormat"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="18" lineNum="67" pc="268439831" symbol="initGeoFormat"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="18" lineNum="68" pc="268439849" symbol="initGeoFormat"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="18" lineNum="69" pc="268439870" symbol="initGeoFormat"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="18" lineNum="71" pc="268439898" symbol="initGeoFormat"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="19" lineNum="76" pc="268439916" symbol="onStart"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="19" lineNum="77" pc="268439920" symbol="onStart"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="20" lineNum="81" pc="268439933" symbol="onStop"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="21" lineNum="85" pc="268439938" symbol="getInitialView"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="21" lineNum="86" pc="268439942" symbol="getInitialView"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionApp.mc" id="21" lineNum="4" pc="268447194" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="145" pc="268440010" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="147" pc="268440014" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="148" pc="268440029" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="152" pc="268440044" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="153" pc="268440097" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="158" pc="268440133" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="159" pc="268440181" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="162" pc="268440214" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="163" pc="268440267" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="167" pc="268440277" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="168" pc="268440302" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="169" pc="268440327" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="171" pc="268440337" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="172" pc="268440362" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="174" pc="268440372" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="175" pc="268440397" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="177" pc="268440407" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="178" pc="268440432" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="23" lineNum="181" pc="268440445" symbol="getZoneNumber"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="203" pc="268440449" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="204" pc="268440453" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="207" pc="268440461" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="208" pc="268440476" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="212" pc="268440491" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="213" pc="268440544" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="219" pc="268440580" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="220" pc="268440628" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="221" pc="268440641" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="223" pc="268440654" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="225" pc="268440677" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="226" pc="268440711" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="229" pc="268440724" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="231" pc="268440760" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="233" pc="268440842" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="234" pc="268440883" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="235" pc="268440933" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="240" pc="268440960" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="249" pc="268441339" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="254" pc="268441463" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="262" pc="268441634" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="263" pc="268441651" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="266" pc="268441676" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="267" pc="268441703" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="268" pc="268441730" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="24" lineNum="270" pc="268441746" symbol="LLtoUTM"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="291" pc="268441750" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="293" pc="268441754" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="295" pc="268441762" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="296" pc="268441777" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="300" pc="268441792" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="301" pc="268441817" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="302" pc="268441830" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="303" pc="268441843" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="304" pc="268441856" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="305" pc="268441869" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="310" pc="268441875" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="311" pc="268441892" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="312" pc="268441902" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="316" pc="268441912" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="317" pc="268441937" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="318" pc="268441967" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="321" pc="268441997" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="322" pc="268442043" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="324" pc="268442089" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="325" pc="268442120" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="329" pc="268442124" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="330" pc="268442134" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="331" pc="268442141" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="332" pc="268442162" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="336" pc="268442185" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="339" pc="268442192" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="340" pc="268442202" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="341" pc="268442209" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="342" pc="268442230" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="346" pc="268442253" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="349" pc="268442260" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="350" pc="268442270" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="351" pc="268442280" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="352" pc="268442290" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="25" lineNum="354" pc="268442300" symbol="LLtoUSNG"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="373" pc="268442304" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="374" pc="268442308" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="376" pc="268442323" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="378" pc="268442323" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="379" pc="268442348" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="380" pc="268442358" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="381" pc="268442383" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="382" pc="268442393" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="383" pc="268442418" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="384" pc="268442428" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="385" pc="268442453" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="386" pc="268442463" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="387" pc="268442488" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="388" pc="268442498" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="389" pc="268442523" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="390" pc="268442533" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="391" pc="268442558" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="392" pc="268442568" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="393" pc="268442593" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="394" pc="268442603" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="395" pc="268442628" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="396" pc="268442638" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="397" pc="268442663" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="398" pc="268442673" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="399" pc="268442698" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="400" pc="268442708" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="401" pc="268442733" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="402" pc="268442743" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="403" pc="268442768" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="404" pc="268442778" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="405" pc="268442803" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="406" pc="268442813" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="407" pc="268442838" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="408" pc="268442848" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="409" pc="268442873" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="410" pc="268442883" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="411" pc="268442908" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="412" pc="268442918" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="413" pc="268442943" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="414" pc="268442953" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="415" pc="268442978" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="416" pc="268442988" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="417" pc="268443013" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="419" pc="268443023" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="26" lineNum="422" pc="268443030" symbol="UTMLetterDesignator"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="437" pc="268443034" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="439" pc="268443038" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="440" pc="268443053" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="442" pc="268443063" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="443" pc="268443074" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="444" pc="268443083" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="445" pc="268443094" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="446" pc="268443103" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="447" pc="268443114" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="448" pc="268443123" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="449" pc="268443134" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="450" pc="268443143" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="451" pc="268443154" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="452" pc="268443163" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="453" pc="268443174" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="27" lineNum="455" pc="268443183" symbol="findSet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="467" pc="268443190" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="469" pc="268443194" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="470" pc="268443209" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="471" pc="268443224" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="472" pc="268443239" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="475" pc="268443246" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="478" pc="268443267" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="479" pc="268443281" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="480" pc="268443294" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="484" pc="268443307" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="485" pc="268443320" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="488" pc="268443327" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="491" pc="268443348" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="492" pc="268443362" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="493" pc="268443375" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="497" pc="268443388" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="28" lineNum="499" pc="268443401" symbol="findGridLetters"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="516" pc="268443431" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="519" pc="268443435" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="520" pc="268443446" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="523" pc="268443465" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="527" pc="268443475" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="528" pc="268443486" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="531" pc="268443505" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="536" pc="268443515" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="537" pc="268443515" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="538" pc="268443515" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="539" pc="268443526" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="540" pc="268443533" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="542" pc="268443540" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="543" pc="268443587" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="544" pc="268443598" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="545" pc="268443605" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="547" pc="268443612" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="548" pc="268443659" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="549" pc="268443670" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="550" pc="268443677" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="552" pc="268443684" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="553" pc="268443731" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="554" pc="268443742" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="555" pc="268443749" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="557" pc="268443756" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="558" pc="268443803" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="559" pc="268443814" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="560" pc="268443821" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="562" pc="268443828" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="563" pc="268443875" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="564" pc="268443886" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="565" pc="268443893" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="567" pc="268443900" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="29" lineNum="569" pc="268443947" symbol="lettersHelper"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="584" pc="268443954" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="591" pc="268443958" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="596" pc="268443975" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="597" pc="268443994" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="599" pc="268444013" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="600" pc="268444027" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="601" pc="268444034" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="602" pc="268444066" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="603" pc="268444080" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="604" pc="268444099" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="606" pc="268444129" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="607" pc="268444150" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="608" pc="268444171" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="609" pc="268444210" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="610" pc="268444263" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="612" pc="268444276" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="613" pc="268444310" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="614" pc="268444387" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="615" pc="268444464" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="616" pc="268444532" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="618" pc="268444551" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="619" pc="268444561" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="620" pc="268444571" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="621" pc="268444612" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="623" pc="268444619" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="624" pc="268444626" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="625" pc="268444642" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="626" pc="268444676" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="627" pc="268444710" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="628" pc="268444717" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="629" pc="268444739" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="631" pc="268444791" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="632" pc="268444798" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="633" pc="268444805" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="634" pc="268444812" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="635" pc="268444819" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="636" pc="268444826" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="638" pc="268444833" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="639" pc="268444855" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="30" lineNum="643" pc="268444877" symbol="LLToOSGrid"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="655" pc="268444899" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="657" pc="268444903" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="658" pc="268444924" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="660" pc="268444945" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="662" pc="268444953" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="663" pc="268445006" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="664" pc="268445019" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="665" pc="268445032" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="666" pc="268445045" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="670" pc="268445051" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="671" pc="268445102" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="673" pc="268445133" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="675" pc="268445140" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="676" pc="268445151" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="678" pc="268445164" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="679" pc="268445175" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="681" pc="268445188" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="684" pc="268445233" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="685" pc="268445271" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="686" pc="268445291" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="687" pc="268445311" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="688" pc="268445329" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="690" pc="268445347" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="691" pc="268445357" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="692" pc="268445386" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="31" lineNum="697" pc="268445415" symbol="gridrefNumToLet"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="707" pc="268445419" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="709" pc="268445423" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="710" pc="268445436" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="711" pc="268445449" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="712" pc="268445456" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="713" pc="268445463" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="715" pc="268445470" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="716" pc="268445491" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="717" pc="268445512" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="718" pc="268445533" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="720" pc="268445554" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="721" pc="268445573" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="723" pc="268445609" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="724" pc="268445622" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="725" pc="268445635" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="728" pc="268445654" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="729" pc="268445661" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="730" pc="268445668" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="731" pc="268445675" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="732" pc="268445691" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="733" pc="268445707" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="734" pc="268445723" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="737" pc="268445730" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="738" pc="268445752" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="739" pc="268445774" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="742" pc="268445796" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="743" pc="268445803" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="745" pc="268445810" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="746" pc="268445829" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="747" pc="268445848" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="748" pc="268445878" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="751" pc="268445908" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="752" pc="268445936" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="753" pc="268445969" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="755" pc="268445976" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="758" pc="268445984" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="761" pc="268446046" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="32" lineNum="763" pc="268446078" symbol="Wgs84ToOsgb36"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="33" lineNum="769" pc="268446082" symbol="padLZ"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="33" lineNum="770" pc="268446086" symbol="padLZ"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="33" lineNum="771" pc="268446104" symbol="padLZ"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="33" lineNum="772" pc="268446131" symbol="padLZ"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="33" lineNum="774" pc="268446154" symbol="padLZ"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="34" lineNum="780" pc="268446158" symbol="atan2"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="34" lineNum="781" pc="268446162" symbol="atan2"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="34" lineNum="782" pc="268446173" symbol="atan2"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="34" lineNum="783" pc="268446199" symbol="atan2"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="34" lineNum="784" pc="268446224" symbol="atan2"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="34" lineNum="785" pc="268446265" symbol="atan2"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="34" lineNum="786" pc="268446290" symbol="atan2"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="34" lineNum="787" pc="268446331" symbol="atan2"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="34" lineNum="788" pc="268446356" symbol="atan2"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="34" lineNum="789" pc="268446380" symbol="atan2"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="34" lineNum="790" pc="268446405" symbol="atan2"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="34" lineNum="792" pc="268446435" symbol="atan2"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="35" lineNum="799" pc="268446442" symbol="parseInt"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="35" lineNum="800" pc="268446446" symbol="parseInt"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="36" lineNum="806" pc="268446459" symbol="parseFloat"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="36" lineNum="807" pc="268446463" symbol="parseFloat"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="37" lineNum="813" pc="268446476" symbol="modulo"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="37" lineNum="815" pc="268446480" symbol="modulo"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="37" lineNum="104" pc="268446927" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="37" lineNum="105" pc="268446955" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="37" lineNum="106" pc="268446983" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="37" lineNum="125" pc="268447011" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionFunctions.mc" id="37" lineNum="128" pc="268447042" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionDelegate.mc" id="39" lineNum="5" pc="268446507" symbol="initialize"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionDelegate.mc" id="39" lineNum="6" pc="268446511" symbol="initialize"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionDelegate.mc" id="40" lineNum="9" pc="268446530" symbol="onMenu"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionDelegate.mc" id="40" lineNum="10" pc="268446534" symbol="onMenu"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionDelegate.mc" id="40" lineNum="11" pc="268446570" symbol="onMenu"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionDelegate.mc" id="40" lineNum="12" pc="268446587" symbol="onMenu"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionDelegate.mc" id="40" lineNum="13" pc="268446639" symbol="onMenu"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionDelegate.mc" id="41" lineNum="16" pc="268446643" symbol="onKey"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionDelegate.mc" id="41" lineNum="17" pc="268446647" symbol="onKey"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionDelegate.mc" id="41" lineNum="18" pc="268446676" symbol="onKey"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionDelegate.mc" id="41" lineNum="19" pc="268446733" symbol="onKey"/>
+        <entry filename="C:\\S\\ws\\GpsPosition\\source\\GpsPositionDelegate.mc" id="41" lineNum="3" pc="268447175" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="49" lineNum="21" pc="268446749" symbol="initialize"/>
+        <entry filename="Rez" id="49" lineNum="22" pc="268446753" symbol="initialize"/>
+        <entry filename="Rez" id="49" lineNum="23" pc="268446771" symbol="initialize"/>
+        <entry filename="Rez" id="49" lineNum="24" pc="268446793" symbol="initialize"/>
+        <entry filename="Rez" id="49" lineNum="25" pc="268446815" symbol="initialize"/>
+        <entry filename="Rez" id="49" lineNum="26" pc="268446837" symbol="initialize"/>
+        <entry filename="Rez" id="49" lineNum="27" pc="268446859" symbol="initialize"/>
+        <entry filename="Rez" id="49" lineNum="28" pc="268446881" symbol="initialize"/>
+        <entry filename="Rez" id="49" lineNum="29" pc="268446903" symbol="initialize"/>
+        <entry filename="Rez" id="49" lineNum="19" pc="268447152" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="50" lineNum="1" pc="268447126" symbol="&lt;init&gt;"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="8389716" method="true" symbol="atan2"/>
+        <entry field="true" id="53" symbol="geoFormat"/>
+        <entry id="45" method="true" symbol="parseFloat"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="4" module="true" symbol="globals/Rez/Menus"/>
+        <entry id="69" symbol="const_mgrs"/>
+        <entry field="true" id="59" symbol="posInfo"/>
+        <entry id="33" method="true" symbol="getZoneNumber"/>
+        <entry field="true" id="31" symbol="ECC_PRIME_SQUARED"/>
+        <entry field="true" id="24" symbol="GRIDSQUARE_SET_COL_SIZE"/>
+        <entry id="55" method="true" symbol="geoFormatNumberToSymbol"/>
+        <entry field="true" id="30" symbol="ECC_SQUARED"/>
+        <entry id="77" symbol="item_ukgr"/>
+        <entry id="63" method="true" symbol="onPosition"/>
+        <entry id="74" symbol="item_utm"/>
+        <entry field="true" id="27" symbol="NORTHING_OFFSET"/>
+        <entry field="true" id="61" symbol="deviceId"/>
+        <entry id="66" symbol="const_dms"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="20" symbol="FOURTHPI"/>
+        <entry id="34" method="true" symbol="LLtoUTM"/>
+        <entry id="64" symbol="const_deg"/>
+        <entry id="9" object="true" symbol="GpsPositionView"/>
+        <entry field="true" id="52" symbol="AppName"/>
+        <entry field="true" id="25" symbol="GRIDSQUARE_SET_ROW_SIZE"/>
+        <entry id="8" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="54" method="true" symbol="geoFormatSymbolToNumber"/>
+        <entry id="8389080" method="true" symbol="onMenu"/>
+        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
+        <entry id="50" object="true" symbol="CoordFormatMenu"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry id="44" method="true" symbol="parseInt"/>
+        <entry id="65" symbol="const_dm"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry id="40" method="true" symbol="LLToOSGrid"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry field="true" id="21" symbol="DEG_2_RAD"/>
+        <entry id="48" module="true" symbol="Menus"/>
+        <entry id="68" symbol="const_usng"/>
+        <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
+        <entry field="true" id="14" symbol="ngFunctionsPresent"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry field="true" id="28" symbol="k0"/>
+        <entry field="true" id="18" symbol="UTMZone"/>
+        <entry id="35" method="true" symbol="LLtoUSNG"/>
+        <entry id="67" symbol="const_utm"/>
+        <entry id="41" method="true" symbol="gridrefNumToLet"/>
+        <entry id="7" module="true" symbol="globals/Rez/JsonData"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="76" symbol="item_mgrs"/>
+        <entry id="72" symbol="item_dm"/>
+        <entry id="57" method="true" symbol="getGeoFormat"/>
+        <entry id="39" method="true" symbol="lettersHelper"/>
+        <entry field="true" id="19" symbol="zoneNumber"/>
+        <entry id="42" method="true" symbol="Wgs84ToOsgb36"/>
+        <entry field="true" id="16" symbol="UTMEasting"/>
+        <entry field="true" id="17" symbol="UTMNorthing"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry field="true" id="32" symbol="E1"/>
+        <entry id="11" object="true" symbol="GpsPositionApp"/>
+        <entry id="13" object="true" symbol="GpsPositionDelegate"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="12" object="true" symbol="GpsPositionFunctions"/>
+        <entry field="true" id="29" symbol="EQUATORIAL_RADIUS"/>
+        <entry id="8390088" module="true" object="true" symbol="JsonData"/>
+        <entry field="true" id="22" symbol="RAD_2_DEG"/>
+        <entry id="70" symbol="const_ukgr"/>
+        <entry field="true" id="49" symbol="LauncherIcon"/>
+        <entry id="36" method="true" symbol="UTMLetterDesignator"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="37" method="true" symbol="findSet"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="38" method="true" symbol="findGridLetters"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="43" method="true" symbol="padLZ"/>
+        <entry field="true" id="62" symbol="showLabels"/>
+        <entry id="46" method="true" symbol="modulo"/>
+        <entry id="56" method="true" symbol="setGeoFormat"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="8389109" method="true" symbol="onMenuItem"/>
+        <entry id="8389097" method="true" symbol="onKey"/>
+        <entry id="73" symbol="item_dms"/>
+        <entry id="75" symbol="item_usng"/>
+        <entry id="47" module="true" symbol="Layouts"/>
+        <entry id="10" object="true" symbol="GpsPositionMenuDelegate"/>
+        <entry field="true" id="23" symbol="BLOCK_SIZE"/>
+        <entry id="71" symbol="item_deg"/>
+        <entry field="true" id="15" symbol="UNDEFINED_STR"/>
+        <entry id="5" module="true" symbol="globals/Rez/Fonts"/>
+        <entry field="true" id="26" symbol="EASTING_OFFSET"/>
+        <entry field="true" id="60" symbol="deviceSettings"/>
+        <entry id="8389125" method="true" symbol="onHide"/>
+        <entry field="true" id="51" symbol="DeviceId"/>
+        <entry id="58" method="true" symbol="initGeoFormat"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435483" name="dc" stackId="1" startPc="268435479"/>
+        <entry endPc="268436996" name="longSecs" stackId="20" startPc="268436787"/>
+        <entry endPc="268436996" name="longMinsInt" stackId="19" startPc="268436787"/>
+        <entry endPc="268436996" name="latSecs" stackId="18" startPc="268436787"/>
+        <entry endPc="268436996" name="latMinsInt" stackId="17" startPc="268436787"/>
+        <entry endPc="268436996" name="longDegs" stackId="15" startPc="268436609"/>
+        <entry endPc="268436996" name="latDegs" stackId="13" startPc="268436609"/>
+        <entry endPc="268436996" name="longMins" stackId="16" startPc="268436609"/>
+        <entry endPc="268436996" name="latMins" stackId="14" startPc="268436609"/>
+        <entry endPc="268436996" name="longHemi" stackId="12" startPc="268436368"/>
+        <entry endPc="268436996" name="latHemi" stackId="10" startPc="268436368"/>
+        <entry endPc="268436996" name="long" stackId="11" startPc="268436368"/>
+        <entry endPc="268436996" name="lat" stackId="9" startPc="268436368"/>
+        <entry endPc="268436996" name="degrees" stackId="8" startPc="268436368"/>
+        <entry endPc="268437188" name="utmcoords" stackId="23" startPc="268437113"/>
+        <entry endPc="268437401" name="usngcoords" stackId="24" startPc="268437203"/>
+        <entry endPc="268437559" name="ukgrid" stackId="25" startPc="268437416"/>
+        <entry endPc="268437761" name="usngcoords" stackId="26" startPc="268437563"/>
+        <entry endPc="268437761" name="functions" stackId="22" startPc="268437053"/>
+        <entry endPc="268437761" name="degrees" stackId="21" startPc="268437053"/>
+        <entry endPc="268438706" name="speedKmh" stackId="32" startPc="268438664"/>
+        <entry endPc="268438752" name="speedMph" stackId="33" startPc="268438710"/>
+        <entry endPc="268438841" name="speedMsec" stackId="31" startPc="268436060"/>
+        <entry endPc="268438841" name="altMeters" stackId="29" startPc="268436060"/>
+        <entry endPc="268438841" name="geoFormat" stackId="7" startPc="268436060"/>
+        <entry endPc="268438841" name="altFeet" stackId="30" startPc="268436060"/>
+        <entry endPc="268438841" name="headingDeg" stackId="28" startPc="268436060"/>
+        <entry endPc="268438841" name="headingRad" stackId="27" startPc="268436060"/>
+        <entry endPc="268439094" name="battPercent" stackId="6" startPc="268435694"/>
+        <entry endPc="268439094" name="string" stackId="4" startPc="268435694"/>
+        <entry endPc="268439094" name="navStringTop" stackId="2" startPc="268435694"/>
+        <entry endPc="268439094" name="navStringBot" stackId="3" startPc="268435694"/>
+        <entry endPc="268439094" name="pos" stackId="5" startPc="268435694"/>
+        <entry arg="true" endPc="268439095" name="dc" stackId="1" startPc="268435690"/>
+        <entry arg="true" endPc="268439126" name="info" stackId="1" startPc="268439096"/>
+        <entry arg="true" endPc="268439462" name="item" stackId="1" startPc="268439150"/>
+        <entry arg="true" endPc="268439636" name="sym" stackId="1" startPc="268439486"/>
+        <entry arg="true" endPc="268439767" name="num" stackId="1" startPc="268439637"/>
+        <entry arg="true" endPc="268439812" name="format" stackId="1" startPc="268439768"/>
+        <entry endPc="268439914" name="formatNum" stackId="1" startPc="268439831"/>
+        <entry arg="true" endPc="268439932" name="state" stackId="1" startPc="268439916"/>
+        <entry arg="true" endPc="268439937" name="state" stackId="1" startPc="268439933"/>
+        <entry endPc="268440447" name="zoneNumber" stackId="4" startPc="268440014"/>
+        <entry endPc="268440447" name="lonTemp" stackId="3" startPc="268440014"/>
+        <entry arg="true" endPc="268440448" name="lat" stackId="1" startPc="268440010"/>
+        <entry arg="true" endPc="268440448" name="lon" stackId="2" startPc="268440010"/>
+        <entry endPc="268441748" name="C" stackId="11" startPc="268440453"/>
+        <entry endPc="268441748" name="A" stackId="12" startPc="268440453"/>
+        <entry endPc="268441748" name="latRad" stackId="5" startPc="268440453"/>
+        <entry endPc="268441748" name="T" stackId="10" startPc="268440453"/>
+        <entry endPc="268441748" name="lonOrigin" stackId="7" startPc="268440453"/>
+        <entry endPc="268441748" name="lonTemp" stackId="4" startPc="268440453"/>
+        <entry endPc="268441748" name="lonRad" stackId="6" startPc="268440453"/>
+        <entry endPc="268441748" name="N" stackId="9" startPc="268440453"/>
+        <entry endPc="268441748" name="M" stackId="13" startPc="268440453"/>
+        <entry endPc="268441748" name="utmcoords" stackId="3" startPc="268440453"/>
+        <entry endPc="268441748" name="lonOriginRad" stackId="8" startPc="268440453"/>
+        <entry arg="true" endPc="268441749" name="lat" stackId="1" startPc="268440449"/>
+        <entry arg="true" endPc="268441749" name="lon" stackId="2" startPc="268440449"/>
+        <entry endPc="268442184" name="i" stackId="15" startPc="268442162"/>
+        <entry endPc="268442252" name="i" stackId="18" startPc="268442230"/>
+        <entry endPc="268442302" name="USNGLetters" stackId="8" startPc="268441754"/>
+        <entry endPc="268442302" name="eastingStr" stackId="13" startPc="268441754"/>
+        <entry endPc="268442302" name="unsg_zone" stackId="11" startPc="268441754"/>
+        <entry endPc="268442302" name="northingStr" stackId="16" startPc="268441754"/>
+        <entry endPc="268442302" name="UTMEasting" stackId="6" startPc="268441754"/>
+        <entry endPc="268442302" name="USNGNorthing" stackId="9" startPc="268441754"/>
+        <entry endPc="268442302" name="usngcoords" stackId="4" startPc="268441754"/>
+        <entry endPc="268442302" name="unsg_northing" stackId="17" startPc="268441754"/>
+        <entry endPc="268442302" name="UTMNorthing" stackId="7" startPc="268441754"/>
+        <entry endPc="268442302" name="unsg_easting" stackId="14" startPc="268441754"/>
+        <entry endPc="268442302" name="coords" stackId="5" startPc="268441754"/>
+        <entry endPc="268442302" name="unsg_letters" stackId="12" startPc="268441754"/>
+        <entry endPc="268442302" name="USNGEasting" stackId="10" startPc="268441754"/>
+        <entry arg="true" endPc="268442303" name="precision" stackId="3" startPc="268441750"/>
+        <entry arg="true" endPc="268442303" name="lat" stackId="1" startPc="268441750"/>
+        <entry arg="true" endPc="268442303" name="lon" stackId="2" startPc="268441750"/>
+        <entry endPc="268443032" name="letterDesignator" stackId="2" startPc="268442308"/>
+        <entry arg="true" endPc="268443033" name="lat" stackId="1" startPc="268442304"/>
+        <entry arg="true" endPc="268443189" name="zoneNum" stackId="1" startPc="268443034"/>
+        <entry endPc="268443429" name="col" stackId="6" startPc="268443194"/>
+        <entry endPc="268443429" name="east_1m" stackId="7" startPc="268443194"/>
+        <entry endPc="268443429" name="north_1m" stackId="5" startPc="268443194"/>
+        <entry endPc="268443429" name="row" stackId="4" startPc="268443194"/>
+        <entry arg="true" endPc="268443430" name="zoneNum" stackId="1" startPc="268443190"/>
+        <entry arg="true" endPc="268443430" name="easting" stackId="3" startPc="268443190"/>
+        <entry arg="true" endPc="268443430" name="northing" stackId="2" startPc="268443190"/>
+        <entry endPc="268443952" name="l2" stackId="5" startPc="268443435"/>
+        <entry endPc="268443952" name="l1" stackId="4" startPc="268443435"/>
+        <entry arg="true" endPc="268443953" name="col" stackId="3" startPc="268443431"/>
+        <entry arg="true" endPc="268443953" name="row" stackId="2" startPc="268443431"/>
+        <entry arg="true" endPc="268443953" name="set" stackId="1" startPc="268443431"/>
+        <entry endPc="268444897" name="IIIA" stackId="34" startPc="268443958"/>
+        <entry endPc="268444897" name="N0" stackId="11" startPc="268443958"/>
+        <entry endPc="268444897" name="lon0" stackId="10" startPc="268443958"/>
+        <entry endPc="268444897" name="sinLat" stackId="18" startPc="268443958"/>
+        <entry endPc="268444897" name="V" stackId="36" startPc="268443958"/>
+        <entry endPc="268444897" name="lon" stackId="5" startPc="268443958"/>
+        <entry endPc="268444897" name="VI" stackId="37" startPc="268443958"/>
+        <entry endPc="268444897" name="N" stackId="44" startPc="268443958"/>
+        <entry endPc="268444897" name="M" stackId="26" startPc="268443958"/>
+        <entry endPc="268444897" name="tan4lat" stackId="30" startPc="268443958"/>
+        <entry endPc="268444897" name="I" stackId="31" startPc="268443958"/>
+        <entry endPc="268444897" name="cosLat" stackId="17" startPc="268443958"/>
+        <entry endPc="268444897" name="E" stackId="45" startPc="268443958"/>
+        <entry endPc="268444897" name="IV" stackId="35" startPc="268443958"/>
+        <entry endPc="268444897" name="tan2lat" stackId="29" startPc="268443958"/>
+        <entry endPc="268444897" name="II" stackId="32" startPc="268443958"/>
+        <entry endPc="268444897" name="cos5lat" stackId="28" startPc="268443958"/>
+        <entry endPc="268444897" name="dLon6" stackId="43" startPc="268443958"/>
+        <entry endPc="268444897" name="e2" stackId="13" startPc="268443958"/>
+        <entry endPc="268444897" name="dLon5" stackId="42" startPc="268443958"/>
+        <entry endPc="268444897" name="dLon4" stackId="41" startPc="268443958"/>
+        <entry endPc="268444897" name="dLon3" stackId="40" startPc="268443958"/>
+        <entry endPc="268444897" name="dLon2" stackId="39" startPc="268443958"/>
+        <entry endPc="268444897" name="n3" stackId="16" startPc="268443958"/>
+        <entry endPc="268444897" name="n2" stackId="15" startPc="268443958"/>
+        <entry endPc="268444897" name="cos3lat" stackId="27" startPc="268443958"/>
+        <entry endPc="268444897" name="lat" stackId="4" startPc="268443958"/>
+        <entry endPc="268444897" name="F0" stackId="8" startPc="268443958"/>
+        <entry endPc="268444897" name="rho" stackId="20" startPc="268443958"/>
+        <entry endPc="268444897" name="lat0" stackId="9" startPc="268443958"/>
+        <entry endPc="268444897" name="Md" stackId="25" startPc="268443958"/>
+        <entry endPc="268444897" name="Mc" stackId="24" startPc="268443958"/>
+        <entry endPc="268444897" name="n" stackId="14" startPc="268443958"/>
+        <entry endPc="268444897" name="Mb" stackId="23" startPc="268443958"/>
+        <entry endPc="268444897" name="eta2" stackId="21" startPc="268443958"/>
+        <entry endPc="268444897" name="Ma" stackId="22" startPc="268443958"/>
+        <entry endPc="268444897" name="dLon" stackId="38" startPc="268443958"/>
+        <entry endPc="268444897" name="nu" stackId="19" startPc="268443958"/>
+        <entry endPc="268444897" name="osgb36LatLong" stackId="3" startPc="268443958"/>
+        <entry endPc="268444897" name="III" stackId="33" startPc="268443958"/>
+        <entry endPc="268444897" name="b" stackId="7" startPc="268443958"/>
+        <entry endPc="268444897" name="a" stackId="6" startPc="268443958"/>
+        <entry endPc="268444897" name="E0" stackId="12" startPc="268443958"/>
+        <entry arg="true" endPc="268444898" name="longDeg" stackId="2" startPc="268443954"/>
+        <entry arg="true" endPc="268444898" name="latDeg" stackId="1" startPc="268443954"/>
+        <entry endPc="268445417" name="denominator" stackId="11" startPc="268444903"/>
+        <entry endPc="268445417" name="alphabet" stackId="9" startPc="268444903"/>
+        <entry endPc="268445417" name="l2" stackId="8" startPc="268444903"/>
+        <entry endPc="268445417" name="l1" stackId="7" startPc="268444903"/>
+        <entry endPc="268445417" name="letPair" stackId="10" startPc="268444903"/>
+        <entry endPc="268445417" name="nNumerator" stackId="13" startPc="268444903"/>
+        <entry endPc="268445417" name="e100k" stackId="4" startPc="268444903"/>
+        <entry endPc="268445417" name="n2" stackId="15" startPc="268444903"/>
+        <entry endPc="268445417" name="e2" stackId="14" startPc="268444903"/>
+        <entry endPc="268445417" name="n100k" stackId="5" startPc="268444903"/>
+        <entry endPc="268445417" name="eNumerator" stackId="12" startPc="268444903"/>
+        <entry endPc="268445417" name="gridRef" stackId="6" startPc="268444903"/>
+        <entry arg="true" endPc="268445418" name="digits" stackId="3" startPc="268444899"/>
+        <entry arg="true" endPc="268445418" name="e" stackId="1" startPc="268444899"/>
+        <entry arg="true" endPc="268445418" name="n" stackId="2" startPc="268444899"/>
+        <entry endPc="268446080" name="tanbeta" stackId="31" startPc="268445423"/>
+        <entry endPc="268446080" name="s1" stackId="23" startPc="268445423"/>
+        <entry endPc="268446080" name="y2" stackId="25" startPc="268445423"/>
+        <entry endPc="268446080" name="phi" stackId="3" startPc="268445423"/>
+        <entry endPc="268446080" name="coslambda" stackId="11" startPc="268445423"/>
+        <entry endPc="268446080" name="y1" stackId="15" startPc="268445423"/>
+        <entry endPc="268446080" name="sinlambda" stackId="10" startPc="268445423"/>
+        <entry endPc="268446080" name="ee2" stackId="28" startPc="268445423"/>
+        <entry endPc="268446080" name="rz" stackId="22" startPc="268445423"/>
+        <entry endPc="268446080" name="ry" stackId="21" startPc="268445423"/>
+        <entry endPc="268446080" name="R" stackId="30" startPc="268445423"/>
+        <entry endPc="268446080" name="rx" stackId="20" startPc="268445423"/>
+        <entry endPc="268446080" name="osgb36LatLong" stackId="34" startPc="268445423"/>
+        <entry endPc="268446080" name="e2" stackId="27" startPc="268445423"/>
+        <entry endPc="268446080" name="sinphi" stackId="8" startPc="268445423"/>
+        <entry endPc="268446080" name="z2" stackId="26" startPc="268445423"/>
+        <entry endPc="268446080" name="v" stackId="13" startPc="268445423"/>
+        <entry endPc="268446080" name="z1" stackId="16" startPc="268445423"/>
+        <entry endPc="268446080" name="lambda" stackId="4" startPc="268445423"/>
+        <entry endPc="268446080" name="cosbeta" stackId="33" startPc="268445423"/>
+        <entry endPc="268446080" name="p" stackId="29" startPc="268445423"/>
+        <entry endPc="268446080" name="sinbeta" stackId="32" startPc="268445423"/>
+        <entry endPc="268446080" name="eSq" stackId="12" startPc="268445423"/>
+        <entry endPc="268446080" name="x2" stackId="24" startPc="268445423"/>
+        <entry endPc="268446080" name="h" stackId="5" startPc="268445423"/>
+        <entry endPc="268446080" name="x1" stackId="14" startPc="268445423"/>
+        <entry endPc="268446080" name="cosphi" stackId="9" startPc="268445423"/>
+        <entry endPc="268446080" name="tz" stackId="19" startPc="268445423"/>
+        <entry endPc="268446080" name="b" stackId="7" startPc="268445423"/>
+        <entry endPc="268446080" name="ty" stackId="18" startPc="268445423"/>
+        <entry endPc="268446080" name="a" stackId="6" startPc="268445423"/>
+        <entry endPc="268446080" name="tx" stackId="17" startPc="268445423"/>
+        <entry arg="true" endPc="268446081" name="long" stackId="2" startPc="268445419"/>
+        <entry arg="true" endPc="268446081" name="lat" stackId="1" startPc="268445419"/>
+        <entry endPc="268446153" name="i" stackId="4" startPc="268446131"/>
+        <entry endPc="268446156" name="n" stackId="3" startPc="268446086"/>
+        <entry arg="true" endPc="268446157" name="w" stackId="2" startPc="268446082"/>
+        <entry arg="true" endPc="268446157" name="num" stackId="1" startPc="268446082"/>
+        <entry arg="true" endPc="268446441" name="x" stackId="2" startPc="268446158"/>
+        <entry arg="true" endPc="268446441" name="y" stackId="1" startPc="268446158"/>
+        <entry arg="true" endPc="268446458" name="numeric" stackId="1" startPc="268446442"/>
+        <entry arg="true" endPc="268446475" name="numeric" stackId="1" startPc="268446459"/>
+        <entry arg="true" endPc="268446503" name="a" stackId="1" startPc="268446476"/>
+        <entry arg="true" endPc="268446503" name="n" stackId="2" startPc="268446476"/>
+        <entry endPc="268446641" name="menu" stackId="1" startPc="268446534"/>
+        <entry arg="true" endPc="268446748" name="key" stackId="1" startPc="268446643"/>
+    </localVars>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="DeviceId"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="87" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/GpsPositionFunctions" offset="174" parentId="globals" symbolId="GpsPositionFunctions" type="class"/>
+        <dataEntry label="globals/Rez" offset="493" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/Rez/Drawables" offset="572" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Menus" offset="611" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry label="globals/Rez/Menus/CoordFormatMenu" offset="650" parentId="Menus" symbolId="CoordFormatMenu" type="class"/>
+        <dataEntry label="globals/Rez/Fonts" offset="697" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="728" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/JsonData" offset="759" parentId="Rez" symbolId="JsonData" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="790" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry label="globals/GpsPositionDelegate" offset="837" parentId="globals" symbolId="GpsPositionDelegate" type="class"/>
+        <dataEntry label="globals/GpsPositionApp" offset="900" parentId="globals" symbolId="GpsPositionApp" type="class"/>
+        <dataEntry label="globals/GpsPositionView" offset="1019" parentId="globals" symbolId="GpsPositionView" type="class"/>
+        <dataEntry label="globals/GpsPositionMenuDelegate" offset="1138" parentId="globals" symbolId="GpsPositionMenuDelegate" type="class"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" name="initialize" parent="GpsPositionView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onLayout" parent="GpsPositionView">
+            <param id="dc"/>
+            <documentation><![CDATA[<div class="description"> Load your resources here<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onHide" parent="GpsPositionView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onShow" parent="GpsPositionView">
+            <documentation><![CDATA[<div class="description"> Restore the state of the app and prepare the view to be shown<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onUpdate" parent="GpsPositionView">
+            <param id="dc"/>
+            <documentation><![CDATA[<div class="description"> Update the view<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onPosition" parent="GpsPositionView">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="GpsPositionMenuDelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onMenuItem" parent="GpsPositionMenuDelegate">
+            <param id="item"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="GpsPositionApp">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="geoFormatSymbolToNumber" parent="GpsPositionApp">
+            <param id="sym"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="geoFormatNumberToSymbol" parent="GpsPositionApp">
+            <param id="num"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="setGeoFormat" parent="GpsPositionApp">
+            <param id="format"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="getGeoFormat" parent="GpsPositionApp">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initGeoFormat" parent="GpsPositionApp">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStart" parent="GpsPositionApp">
+            <param id="state"/>
+            <documentation><![CDATA[<div class="description"> onStart() is called on application start up<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStop" parent="GpsPositionApp">
+            <param id="state"/>
+            <documentation><![CDATA[<div class="description"> onStop() is called on application shutdown<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" name="getInitialView" parent="GpsPositionApp">
+            <documentation><![CDATA[<div class="description"> Return the initial view of your application here<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" name="getZoneNumber" parent="GpsPositionFunctions">
+            <param id="lat"/>
+            <param id="lon"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="LLtoUTM" parent="GpsPositionFunctions">
+            <param id="lat"/>
+            <param id="lon"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="LLtoUSNG" parent="GpsPositionFunctions">
+            <param id="lat"/>
+            <param id="lon"/>
+            <param id="precision"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="UTMLetterDesignator" parent="GpsPositionFunctions">
+            <param id="lat"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="findSet" parent="GpsPositionFunctions">
+            <param id="zoneNum"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="findGridLetters" parent="GpsPositionFunctions">
+            <param id="zoneNum"/>
+            <param id="northing"/>
+            <param id="easting"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="lettersHelper" parent="GpsPositionFunctions">
+            <param id="set"/>
+            <param id="row"/>
+            <param id="col"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="LLToOSGrid" parent="GpsPositionFunctions">
+            <param id="latDeg"/>
+            <param id="longDeg"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="gridrefNumToLet" parent="GpsPositionFunctions">
+            <param id="e"/>
+            <param id="n"/>
+            <param id="digits"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="Wgs84ToOsgb36" parent="GpsPositionFunctions">
+            <param id="lat"/>
+            <param id="long"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="padLZ" parent="GpsPositionFunctions">
+            <param id="num"/>
+            <param id="w"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="atan2" parent="GpsPositionFunctions">
+            <param id="y"/>
+            <param id="x"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="parseInt" parent="GpsPositionFunctions">
+            <param id="numeric"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="parseFloat" parent="GpsPositionFunctions">
+            <param id="numeric"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="modulo" parent="GpsPositionFunctions">
+            <param id="a"/>
+            <param id="n"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="GpsPositionDelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onMenu" parent="GpsPositionDelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onKey" parent="GpsPositionDelegate">
+            <param id="key"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="CoordFormatMenu">
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

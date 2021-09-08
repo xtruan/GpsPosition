@@ -684,12 +684,12 @@ class GpsPositionFunctions {
       var denominator = Math.pow(10, 5-digits/2);
       var eNumerator = modulo(e,100000);
       var nNumerator = modulo(n,100000);
-      var e = parseInt(eNumerator / denominator);
-      var n = parseInt(nNumerator / denominator);
+      var e2 = parseInt(eNumerator / denominator);
+      var n2 = parseInt(nNumerator / denominator);
       
       gridRef[0] = letPair;
-      gridRef[1] = padLZ(e,digits/2);
-      gridRef[2] = padLZ(n,digits/2);
+      gridRef[1] = padLZ(e2,digits/2);
+      gridRef[2] = padLZ(n2,digits/2);
       
       // stringify
       //var ukgrid = gridRef[0] + " " + gridRef[1] + " " + gridRef[2];
