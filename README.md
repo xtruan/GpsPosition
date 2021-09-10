@@ -4,7 +4,7 @@ GPS Position app for Garmin ConnectIQ - https://apps.garmin.com/en-US/apps/12097
 Simple app to display current position information in a variety of different formats. Color of position text indicates GPS signal strength, color of battery text indicates battery life. UTM/USNG/MGRS positions are using NAD83/WGS84 datum, UK Grid (Ordnance Survey National Grid) positions is using OSGB36 datum.
 ***NOTE: GPS must be turned on first by going to Settings - Sensors - GPS
 
-Tested on simulator for all supported devices and on vivoactive hardware.
+Tested on simulator for all supported devices and on Forerunner 55 and vivoactive hardware.
 
 Changelog:
 * 3.0 - Added support for MANY more devices! Cleaned up layout to work better on more devices.

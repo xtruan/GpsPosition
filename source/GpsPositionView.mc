@@ -162,8 +162,9 @@ class GpsPositionView extends Ui.View {
                     }
                 }
             } else {
+                // invalid format, reset to Degs/Mins/Secs
                 navStringTop = "...";
-                App.getApp().setGeoFormat(:const_deg);
+                App.getApp().setGeoFormat(:const_dms); // Degs/Mins/Secs
             }
             
             // display navigation (position) string
@@ -193,7 +194,7 @@ class GpsPositionView extends Ui.View {
             } else {
                 string = "";
             }
-            string = string + headingDeg.format("%.2f") + " deg";
+            string = string + headingDeg.format("%.1f") + " deg";
             pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - 2;
             dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
             
@@ -206,9 +207,9 @@ class GpsPositionView extends Ui.View {
                 string = "";
             }
             if (deviceSettings.distanceUnits == Sys.UNIT_METRIC) {
-            	string = string + " " + altMeters.format("%.2f") + " m";
+            	string = string + altMeters.format("%.1f") + " m";
             } else { // deviceSettings.distanceUnits == Sys.UNIT_STATUTE
-            	string = string + " " + altFeet.format("%.2f") + " ft";
+            	string = string + altFeet.format("%.1f") + " ft";
             }
             pos = pos + Gfx.getFontHeight(Gfx.FONT_TINY);
             dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
@@ -222,10 +223,10 @@ class GpsPositionView extends Ui.View {
             }
             if (deviceSettings.distanceUnits == Sys.UNIT_METRIC) {
                 var speedKmh = speedMsec * 3.6;
-                string = string + " " + speedKmh.format("%.2f") + " km/h";
+                string = string + speedKmh.format("%.1f") + " km/h";
             } else { // deviceSettings.distanceUnits == Sys.UNIT_STATUTE
                 var speedMph = speedMsec * 2.23694;
-                string = string + " " + speedMph.format("%.2f") + " mph";
+                string = string + speedMph.format("%.1f") + " mph";
             }
             pos = pos + Gfx.getFontHeight(Gfx.FONT_TINY);
             dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
