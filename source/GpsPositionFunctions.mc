@@ -1,9 +1,5 @@
-using Toybox.Application as App;
-using Toybox.WatchUi as Ui;
-using Toybox.Graphics as Gfx;
+using Toybox.Math as Math;
 using Toybox.System as Sys;
-using Toybox.Lang as Lang;
-using Toybox.Position as Pos;
 
 class GpsPositionFunctions {
 
@@ -87,17 +83,7 @@ class GpsPositionFunctions {
 //    NAD83 and WGS84 are equivalent for all practical purposes.
 //    (NAD27 computations are irrelevant to Google Maps applications)
 //  
-//
-
-//****************************************************************************
-
-    var ngFunctionsPresent = true;
-    var UNDEFINED_STR = "undefined";
-    var UTMEasting;
-    var UTMNorthing;
-    var UTMZone;      // 3 chars...two digits and letter
-    var zoneNumber;   // integer...two digits
-    
+//  
     
 //******************************** Constants ********************************/
     
@@ -197,11 +183,12 @@ class GpsPositionFunctions {
 //    output is in the input array utmcoords
 //        utmcoords[0] = easting
 //        utmcoords[1] = northing (NEGATIVE value in southern hemisphere)
-//        utmcoords[2] = zone
+//        utmcoords[2] = UTM zone
+//        utmcoords[3] = zone number
 
 //**************************************************************************/
     function LLtoUTM(lat,lon) {
-      var utmcoords = new [3];
+      var utmcoords = new [4];
       // utmcoords is a 2-D array declared by the calling routine
     
       lat = parseFloat(lat);
@@ -220,13 +207,15 @@ class GpsPositionFunctions {
       var latRad = lat     * DEG_2_RAD;
       var lonRad = lonTemp * DEG_2_RAD;
     
-      zoneNumber = getZoneNumber(lat, lon);
+      // integer...two digits
+      var zoneNumber = getZoneNumber(lat, lon);
     
       var lonOrigin = (zoneNumber - 1) * 6 - 180 + 3;  // +3 puts origin in middle of zone
       var lonOriginRad = lonOrigin * DEG_2_RAD;
     
       // compute the UTM Zone from the latitude and longitude
-      UTMZone = zoneNumber + "" + UTMLetterDesignator(lat);
+      // 3 chars...two digits and letter
+      var UTMZone = zoneNumber + "" + UTMLetterDesignator(lat);
     
       var N = EQUATORIAL_RADIUS / Math.sqrt(1 - ECC_SQUARED * 
                                 Math.sin(latRad) * Math.sin(latRad));
@@ -242,16 +231,16 @@ class GpsPositionFunctions {
             - 5 * (ECC_SQUARED * ECC_SQUARED * ECC_SQUARED) / 256) * latRad 
             - ( 3 * ECC_SQUARED / 8 + 3 * ECC_SQUARED * ECC_SQUARED / 32  
             + 45 * ECC_SQUARED * ECC_SQUARED * ECC_SQUARED / 1024) 
-                * Math.sin(2 * latRad) + (15 * ECC_SQUARED * ECC_SQUARED / 256 
+            * Math.sin(2 * latRad) + (15 * ECC_SQUARED * ECC_SQUARED / 256 
             + 45 * ECC_SQUARED * ECC_SQUARED * ECC_SQUARED / 1024) * Math.sin(4 * latRad) 
             - (35 * ECC_SQUARED * ECC_SQUARED * ECC_SQUARED / 3072) * Math.sin(6 * latRad));
     
-      UTMEasting = (k0 * N * (A + (1 - T + C) * (A * A * A) / 6
-                    + (5 - 18 * T + T * T + 72 * C - 58 * ECC_PRIME_SQUARED )
-                    * (A * A * A * A * A) / 120)
-                    + EASTING_OFFSET);
+      var UTMEasting = (k0 * N * (A + (1 - T + C) * (A * A * A) / 6
+                      + (5 - 18 * T + T * T + 72 * C - 58 * ECC_PRIME_SQUARED )
+                      * (A * A * A * A * A) / 120)
+                      + EASTING_OFFSET);
     
-      UTMNorthing = (k0 * (M + N * Math.tan(latRad) * ( (A * A) / 2 + (5 - T + 9 
+      var UTMNorthing = (k0 * (M + N * Math.tan(latRad) * ( (A * A) / 2 + (5 - T + 9 
                       * C + 4 * C * C ) * (A * A * A * A) / 24
                       + (61 - 58 * T + T * T + 600 * C - 330 * ECC_PRIME_SQUARED )
                       * (A * A * A * A * A * A) / 720)));
@@ -266,6 +255,9 @@ class GpsPositionFunctions {
       utmcoords[0] = parseInt(UTMEasting);
       utmcoords[1] = parseInt(UTMNorthing);
       utmcoords[2] = UTMZone;
+      
+      // stash zone number in utmcoords[3] so we don't have to recompute later
+      utmcoords[3] = zoneNumber;
       
       return utmcoords;
     }
@@ -310,9 +302,13 @@ class GpsPositionFunctions {
       var coords = LLtoUTM(lat, lon);
       var UTMEasting = coords[0];
       var UTMNorthing = coords[1];
+      
+      // get pre-computed zone number
+      // integer...two digits
+      var zoneNumber = coords[3];
     
       // ...then convert UTM to USNG
-    
+      
       var USNGLetters  = findGridLetters(zoneNumber, UTMNorthing, UTMEasting);
       var USNGNorthing = parseInt(UTMNorthing + 0.5) % BLOCK_SIZE;
       var USNGEasting  = parseInt(UTMEasting + 0.5)  % BLOCK_SIZE;
