@@ -4,6 +4,7 @@ using Toybox.Graphics as Gfx;
 using Toybox.System as Sys;
 using Toybox.Lang as Lang;
 using Toybox.Position as Pos;
+using Toybox.Timer;
 
 class GpsPositionView extends Ui.View {
 
@@ -11,6 +12,8 @@ class GpsPositionView extends Ui.View {
     hidden var deviceSettings = null;
     hidden var deviceId = null;
     hidden var showLabels = true;
+    hidden var progressTimer = null;
+    hidden var progressDots = "";
     
     function initialize() {
         View.initialize();
@@ -18,7 +21,17 @@ class GpsPositionView extends Ui.View {
 
     //! Load your resources here
     function onLayout(dc as Dc) {
+        progressTimer = new Timer.Timer();
+        progressTimer.start(method(:updateProgress), 1000, true);
     }
+    
+    function updateProgress() {
+	    progressDots = progressDots + ".";
+	    if (progressDots.length() > 3) {
+	    	progressDots = "";
+	    }
+	    Ui.requestUpdate();
+	}
 
     function onHide() {
         Pos.enableLocationEvents(Position.LOCATION_DISABLE, method(:onPosition));
@@ -238,7 +251,7 @@ class GpsPositionView extends Ui.View {
         else {
             // display default text for no GPS
             dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
-            dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2) - Gfx.getFontHeight(Gfx.FONT_SMALL), Gfx.FONT_SMALL, "Waiting for GPS...", Gfx.TEXT_JUSTIFY_CENTER );
+            dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2) - Gfx.getFontHeight(Gfx.FONT_SMALL), Gfx.FONT_SMALL, "Waiting for GPS" + progressDots, Gfx.TEXT_JUSTIFY_CENTER );
             dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
             dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2), Gfx.FONT_SMALL, "Position unavailable", Gfx.TEXT_JUSTIFY_CENTER );
         }
@@ -247,6 +260,9 @@ class GpsPositionView extends Ui.View {
 
     // position change callback
     function onPosition(info) {
+        if (progressTimer != null) {
+            progressTimer.stop();
+        }
         posInfo = info;
         Ui.requestUpdate();
     }

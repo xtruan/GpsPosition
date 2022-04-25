@@ -7,6 +7,7 @@ Simple app to display current position information in a variety of different for
 Tested on simulator for all supported devices and on Forerunner 55 and vivoactive hardware.
 
 Changelog:
+* 3.0.5 - Added progress dots animation.
 * 3.0.4 - Added support for additional devices.
 * 3.0 - Added support for MANY more devices! Cleaned up layout to work better on more devices.
 * 2.6 - Added support for vivoactive HR and Forerunner 735XT! Minor adjustments to layout.
