@@ -1,4 +1,5 @@
 using Toybox.Application as App;
+using Toybox.System as Sys;
 using Toybox.WatchUi as Ui;
 
 class GpsPositionApp extends App.AppBase {
@@ -54,7 +55,7 @@ class GpsPositionApp extends App.AppBase {
     // set geoFormat var and write to properties
     function setGeoFormat(format) {
         geoFormat = format;
-        setProperty("geo", geoFormatSymbolToNumber(format));
+        setPropertySafe("geo", geoFormatSymbolToNumber(format));
     }
     
     // return current geoFormat
@@ -64,12 +65,38 @@ class GpsPositionApp extends App.AppBase {
     
     // initialize geoFormat var to current value in properties (called at app startup)
     function initGeoFormat() {
-        var formatNum = getProperty("geo");
+        var formatNum = getPropertySafe("geo");
         if (formatNum != null && formatNum != -1) {
             setGeoFormat(geoFormatNumberToSymbol(formatNum));
         } else {
             setGeoFormat(:const_dms);
         }
+    }
+    
+    function setPropertySafe(key, val) {
+    	var deviceSettings = Sys.getDeviceSettings();
+		var ver = deviceSettings.monkeyVersion;
+    	if ( ver != null && ver[0] != null && ver[1] != null && 
+    		( (ver[0] == 2 && ver[1] >= 4) || ver[0] > 2 ) ) {
+    		// new school devices (>2.4.0) use Storage
+    		App.Storage.setValue(key, val);
+    	} else {
+    		// old school devices use AppBase properties
+    		setProperty(key, val);
+    	}
+    }
+    
+    function getPropertySafe(key) {
+    	var deviceSettings = Sys.getDeviceSettings();
+		var ver = deviceSettings.monkeyVersion;
+    	if ( ver != null && ver[0] != null && ver[1] != null && 
+    		( (ver[0] == 2 && ver[1] >= 4) || ver[0] > 2 ) ) {
+    		// new school devices (>2.4.0) use Storage
+    		return App.Storage.getValue(key);
+    	} else {
+    		// old school devices use AppBase properties
+    		return getProperty(key);
+    	}
     }
 
     //! onStart() is called on application start up
