@@ -4,7 +4,7 @@ using Toybox.WatchUi as Ui;
 
 class GpsPositionApp extends App.AppBase {
 
-    hidden var geoFormat;
+    hidden var geoFormat = :const_dms;
     
     function initialize() {
         AppBase.initialize();
