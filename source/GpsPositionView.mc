@@ -84,55 +84,23 @@ class GpsPositionView extends Ui.View {
             }
             
             var geoFormat = App.getApp().getGeoFormat();
-            // the built in helper function (toGeoString) sucks!!!
             if (geoFormat == :const_deg || geoFormat == :const_dm || geoFormat == :const_dms) {
-                var degrees = posInfo.position.toDegrees();
-                var lat = 0.0;
-                var latHemi = "?";
-                var long = 0.0;
-                var longHemi = "?";
-                // do latitude hemisphere
-                if (degrees[0] < 0) {
-                    lat = degrees[0] * -1;
-                    latHemi = "S";
-                } else {
-                    lat = degrees[0];
-                    latHemi = "N";
-                }
-                // do longitude hemisphere
-                if (degrees[1] < 0) {
-                    long = degrees[1] * -1;
-                    longHemi = "W";
-                } else {
-                    long = degrees[1];
-                    longHemi = "E";
-                }
-                
+                var formatter = new GpsPositionFormatter(posInfo);
                 // if decimal degrees, we're done
                 if (geoFormat == :const_deg) {
-                    navStringTop = latHemi + " " + lat.format("%.6f");
-                    navStringBot = longHemi + " " + long.format("%.6f");
-                    //string = posInfo.position.toGeoString(Pos.GEO_DEG);
+                    var fDeg = formatter.getDeg();
+                    navStringTop = fDeg[0];
+                    navStringBot = fDeg[1];
                 // do conversions for degs mins or degs mins secs
-                } else { // :const_dm OR :const_dms
-                    var latDegs = lat.toNumber();
-                    var latMins = (lat - latDegs) * 60;
-                    var longDegs = long.toNumber();
-                    var longMins = (long - longDegs) * 60;
-                    if (geoFormat == :const_dm) {
-                        navStringTop = latHemi + " " + latDegs.format("%i") + " " + latMins.format("%.4f") + "'"; 
-                        navStringBot = longHemi + " " + longDegs.format("%i") + " " + longMins.format("%.4f") + "'";
-                        //string = posInfo.position.toGeoString(Pos.GEO_DM);
-                    } else { // :const_dms
-                        var latMinsInt = latMins.toNumber();
-                        var latSecs = (latMins - latMinsInt) * 60;
-                        var longMinsInt = longMins.toNumber();
-                        var longSecs = (longMins - longMinsInt) * 60;
-                        navStringTop = latHemi + " " + latDegs.format("%i") + " " + latMinsInt.format("%i") + "' " + latSecs.format("%.2f") + "\""; 
-                        navStringBot = longHemi + " " + longDegs.format("%i") + " " + longMinsInt.format("%i") + "' " + longSecs.format("%.2f") + "\"";
-                        //string = posInfo.position.toGeoString(Pos.GEO_DMS);
-                    }
-                } 
+                } else if (geoFormat == :const_dm) {
+                    var fDM = formatter.getDM();
+                    navStringTop = fDM[0]; 
+                    navStringBot = fDM[1];
+                } else { // :const_dms
+                    var fDMS = formatter.getDMS();
+                    navStringTop = fDMS[0]; 
+                    navStringBot = fDMS[1];
+                }
             } else if (geoFormat == :const_utm || geoFormat == :const_usng || geoFormat == :const_mgrs ||geoFormat == :const_ukgr) {
                 var degrees = posInfo.position.toDegrees();
                 var functions = new GpsPositionFunctions();

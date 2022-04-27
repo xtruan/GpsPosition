@@ -7,6 +7,7 @@ Simple app to display current position information in a variety of different for
 Tested on simulator for all supported devices and on Forerunner 55 and vivoactive hardware.
 
 Changelog:
+* 3.0.7 - Refactored out GPS formatting into separate class.
 * 3.0.6 - Changed storage mode to work with CIQ 4.0.0 and above.
 * 3.0.5 - Added progress dots animation.
 * 3.0.4 - Added support for additional devices.
