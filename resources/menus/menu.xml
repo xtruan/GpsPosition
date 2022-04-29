@@ -5,5 +5,8 @@
     <menu-item id="item_utm">UTM (WGS84)</menu-item>
     <menu-item id="item_usng">USNG (WGS84)</menu-item>
     <menu-item id="item_mgrs">MGRS (WGS84)</menu-item>
+    <menu-item id="item_qth">QTH/IARU Loc.</menu-item>
     <menu-item id="item_ukgr">UK Grid (OSGB36)</menu-item>
+    <menu-item id="item_sgrlv95">Swiss Grid (LV95)</menu-item>
+    <menu-item id="item_sgrlv03">Swiss Grid (LV03)</menu-item>
 </menu>

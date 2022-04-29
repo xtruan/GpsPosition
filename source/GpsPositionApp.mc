@@ -2,6 +2,7 @@ using Toybox.Application as App;
 using Toybox.System as Sys;
 using Toybox.WatchUi as Ui;
 
+(:glance)
 class GpsPositionApp extends App.AppBase {
 
     hidden var geoFormat = :const_dms;
@@ -27,6 +28,12 @@ class GpsPositionApp extends App.AppBase {
              return 5; // MGRS (WGS84)
         } else if (sym == :const_ukgr) {
              return 6; // UK Grid (OSGB36)
+        } else if (sym == :const_qth) {
+             return 7; // Maidenhead Locator / QTH Locator / IARU Locator
+        } else if (sym == :const_sgrlv95) {
+             return 8; // Swiss Grid LV95
+        } else if (sym == :const_sgrlv03) {
+             return 9; // Swiss Grid LV03
         } else {
             return -1; // Error condition
         }
@@ -47,8 +54,16 @@ class GpsPositionApp extends App.AppBase {
              return :const_usng; // USNG (WGS84)
         } else if (num == 5) {
              return :const_mgrs; // MGRS (WGS84)
-        } else { // num == 6
+        } else if (num == 6) {
              return :const_ukgr; // UK Grid (OSGB36)
+        } else if (num == 7) {
+             return :const_qth;  // Maidenhead Locator / QTH Locator / IARU Locator
+        } else if (num == 8) {
+             return :const_sgrlv95; // Swiss Grid LV95
+        } else if (num == 9) {
+             return :const_sgrlv03; // Swiss Grid LV03
+        } else {
+             return :const_dms;  // Degs/Mins/Secs (default)
         }
     }
     
@@ -74,29 +89,29 @@ class GpsPositionApp extends App.AppBase {
     }
     
     function setPropertySafe(key, val) {
-    	var deviceSettings = Sys.getDeviceSettings();
-		var ver = deviceSettings.monkeyVersion;
-    	if ( ver != null && ver[0] != null && ver[1] != null && 
-    		( (ver[0] == 2 && ver[1] >= 4) || ver[0] > 2 ) ) {
-    		// new school devices (>2.4.0) use Storage
-    		App.Storage.setValue(key, val);
-    	} else {
-    		// old school devices use AppBase properties
-    		setProperty(key, val);
-    	}
+        var deviceSettings = Sys.getDeviceSettings();
+        var ver = deviceSettings.monkeyVersion;
+        if ( ver != null && ver[0] != null && ver[1] != null && 
+            ( (ver[0] == 2 && ver[1] >= 4) || ver[0] > 2 ) ) {
+            // new school devices (>2.4.0) use Storage
+            App.Storage.setValue(key, val);
+        } else {
+            // old school devices use AppBase properties
+            setProperty(key, val);
+        }
     }
     
     function getPropertySafe(key) {
-    	var deviceSettings = Sys.getDeviceSettings();
-		var ver = deviceSettings.monkeyVersion;
-    	if ( ver != null && ver[0] != null && ver[1] != null && 
-    		( (ver[0] == 2 && ver[1] >= 4) || ver[0] > 2 ) ) {
-    		// new school devices (>2.4.0) use Storage
-    		return App.Storage.getValue(key);
-    	} else {
-    		// old school devices use AppBase properties
-    		return getProperty(key);
-    	}
+        var deviceSettings = Sys.getDeviceSettings();
+        var ver = deviceSettings.monkeyVersion;
+        if ( ver != null && ver[0] != null && ver[1] != null && 
+            ( (ver[0] == 2 && ver[1] >= 4) || ver[0] > 2 ) ) {
+            // new school devices (>2.4.0) use Storage
+            return App.Storage.getValue(key);
+        } else {
+            // old school devices use AppBase properties
+            return getProperty(key);
+        }
     }
 
     //! onStart() is called on application start up
@@ -112,5 +127,5 @@ class GpsPositionApp extends App.AppBase {
     function getInitialView() {
         return [ new GpsPositionView(), new GpsPositionDelegate() ];
     }
-
+    
 }

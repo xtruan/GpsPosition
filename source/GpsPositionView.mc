@@ -12,6 +12,8 @@ class GpsPositionView extends Ui.View {
     hidden var deviceSettings = null;
     hidden var deviceId = null;
     hidden var showLabels = true;
+    hidden var isMono = false;
+    hidden var isOcto = false;
     hidden var progressTimer = null;
     hidden var progressDots = "";
     
@@ -26,12 +28,12 @@ class GpsPositionView extends Ui.View {
     }
     
     function updateProgress() {
-	    progressDots = progressDots + ".";
-	    if (progressDots.length() > 3) {
-	    	progressDots = "";
-	    }
-	    Ui.requestUpdate();
-	}
+        progressDots = progressDots + ".";
+        if (progressDots.length() > 3) {
+            progressDots = "";
+        }
+        Ui.requestUpdate();
+    }
 
     function onHide() {
         Pos.enableLocationEvents(Position.LOCATION_DISABLE, method(:onPosition));
@@ -41,6 +43,10 @@ class GpsPositionView extends Ui.View {
         Pos.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onPosition));
         deviceSettings = Sys.getDeviceSettings();
         deviceId = Ui.loadResource(Rez.Strings.DeviceId);
+        isOcto = deviceId != null && deviceId.equals("octo");
+        // only octo watches are mono... at least for now
+        isMono = isOcto;
+        //System.println(deviceId);
         if (deviceId.equals("vivoactive_hr")) {
             showLabels = false;
         }
@@ -48,6 +54,9 @@ class GpsPositionView extends Ui.View {
 
     //! Update the view
     function onUpdate(dc as Dc) {
+//        // Get position
+//        var posInfo = App.getApp().getCurrentPosition();
+    
         // holders for position data
         var navStringTop = "";
         var navStringBot = "";
@@ -61,7 +70,9 @@ class GpsPositionView extends Ui.View {
         
         // display battery life
         var battPercent = Sys.getSystemStats().battery;
-        if (battPercent > 50.0) {
+        if (isMono) {
+            dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
+        } else if (battPercent > 50.0) {
             dc.setColor( Gfx.COLOR_GREEN, Gfx.COLOR_TRANSPARENT );
         } else if (battPercent > 20.0) {
             dc.setColor( Gfx.COLOR_YELLOW, Gfx.COLOR_TRANSPARENT );
@@ -70,101 +81,52 @@ class GpsPositionView extends Ui.View {
         }
         string = "Bat: " + battPercent.format("%.1f") + "%";
         pos = pos + Gfx.getFontHeight(Gfx.FONT_TINY) - 4;
-        dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
+        if (isOcto) {
+            dc.drawText( (dc.getWidth() / 3) - 2, (dc.getHeight() / 8) - 2, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
+        } else {
+            dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
+        }
         
         if( posInfo != null ) {
+            if (progressTimer != null) {
+                progressTimer.stop();
+            }
+            
+            var signalStrength = "?";
             if (posInfo.accuracy == Pos.QUALITY_GOOD) {
                 dc.setColor( Gfx.COLOR_GREEN, Gfx.COLOR_TRANSPARENT );
+                signalStrength = "|||||";
             } else if (posInfo.accuracy == Pos.QUALITY_USABLE) {
                 dc.setColor( Gfx.COLOR_YELLOW, Gfx.COLOR_TRANSPARENT );
+                signalStrength = "|||-";
             } else if (posInfo.accuracy == Pos.QUALITY_POOR) {
                 dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
+                signalStrength = "|--";
             } else {
                 dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
+                signalStrength = "---";
+            }
+            if (isMono) {
+                dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
+            }
+            if (isOcto) {
+                dc.drawText( dc.getWidth() - (dc.getWidth() / 6) - 2, 
+                             (dc.getHeight() / 8) - 2, 
+                             Gfx.FONT_TINY, 
+                             "Sig: " + signalStrength, 
+                             Gfx.TEXT_JUSTIFY_CENTER );
             }
             
             var geoFormat = App.getApp().getGeoFormat();
-            if (geoFormat == :const_deg || geoFormat == :const_dm || geoFormat == :const_dms) {
-                var formatter = new GpsPositionFormatter(posInfo);
-                // if decimal degrees, we're done
-                if (geoFormat == :const_deg) {
-                    var fDeg = formatter.getDeg();
-                    navStringTop = fDeg[0];
-                    navStringBot = fDeg[1];
-                // do conversions for degs mins or degs mins secs
-                } else if (geoFormat == :const_dm) {
-                    var fDM = formatter.getDM();
-                    navStringTop = fDM[0]; 
-                    navStringBot = fDM[1];
-                } else { // :const_dms
-                    var fDMS = formatter.getDMS();
-                    navStringTop = fDMS[0]; 
-                    navStringBot = fDMS[1];
-                }
-            } else if (geoFormat == :const_utm || geoFormat == :const_usng || geoFormat == :const_mgrs ||geoFormat == :const_ukgr) {
-                var degrees = posInfo.position.toDegrees();
-                var functions = new GpsPositionFunctions();
-                if (geoFormat == :const_utm) {
-                    var utmcoords = functions.LLtoUTM(degrees[0], degrees[1]);
-                    navStringTop = "" + utmcoords[2] + " " + utmcoords[0];
-                    navStringBot = "" + utmcoords[1];
-                } else if (geoFormat == :const_usng) {
-                    var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
-                    if (usngcoords[1].length() == 0 || usngcoords[2].length() == 0 || usngcoords[3].length() == 0) {
-                        navStringTop = "" + usngcoords[0]; // error message
-                    } else {
-                        navStringTop = "" + usngcoords[0] + " " + usngcoords[1];
-                        navStringBot = "" + usngcoords[2] + " " + usngcoords[3];
-                    }
-                } else if (geoFormat == :const_ukgr) {
-                    var ukgrid = functions.LLToOSGrid(degrees[0], degrees[1]);
-                    if (ukgrid[1].length() == 0 || ukgrid[2].length() == 0) {
-                        navStringTop = ukgrid[0]; // error message
-                    } else {
-                        navStringTop = "" + ukgrid[0] + " " + ukgrid[1];
-                        navStringBot =  "" + ukgrid[2];
-                    }
-                } else { // :const_mgrs
-                    // this function only works in sim, not device for MGRS, boo!
-                    //navStringTop = posInfo.position.toGeoString(Pos.GEO_MGRS);
-                    
-                    // even though MGRS letters are provided on device, I think they're wrong
-                    //var mgrszone = posInfo.position.toGeoString(Pos.GEO_MGRS).substring(0, 6);
-                    //var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
-                    //navStringTop = "" + mgrszone + " " + usngcoords[2] + " " + usngcoords[3];
-                    
-                    // so, just do the same thing as USNG since it's using the correct datum to be equivalent to MGRS
-                    var usngcoords = functions.LLtoUSNG(degrees[0], degrees[1], 5);
-                    if (usngcoords[1].length() == 0 || usngcoords[2].length() == 0 || usngcoords[3].length() == 0) {
-                        navStringTop = "" + usngcoords[0]; // error message
-                    } else {
-                        navStringTop = "" + usngcoords[0] + " " + usngcoords[1];
-                        navStringBot = "" + usngcoords[2] + " " + usngcoords[3];
-                    }
-                }
-            } else {
-                // invalid format, reset to Degs/Mins/Secs
-                navStringTop = "...";
-                App.getApp().setGeoFormat(:const_dms); // Degs/Mins/Secs
-            }
+            var formatter = new PosInfoFormatter(posInfo);
+            var nav = formatter.format(geoFormat);
+            navStringTop = nav[0];
+            navStringBot = nav[1];
             
-            // display navigation (position) string
-            if (navStringBot.length() != 0) {
-            	pos = pos + Gfx.getFontHeight(Gfx.FONT_SMALL);
-                dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_MEDIUM, navStringTop, Gfx.TEXT_JUSTIFY_CENTER );
-                pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - 6;
-                dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_MEDIUM, navStringBot, Gfx.TEXT_JUSTIFY_CENTER );
+            // display navigation (position) string for non-octo
+            if (!isOcto) {
+                pos = drawNavString(dc, pos, navStringTop, navStringBot);
             }
-            else {
-            	pos = pos + Gfx.getFontHeight(Gfx.FONT_SMALL);
-                dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_MEDIUM, navStringTop, Gfx.TEXT_JUSTIFY_CENTER );
-                pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - 6;
-            }
-            
-            // draw border around position
-            //dc.setColor( Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT );
-            //dc.drawLine(0, (dc.getHeight() / 2) - 62, dc.getWidth(), (dc.getHeight() / 2) - 62);
-            //dc.drawLine(0, (dc.getHeight() / 2) - 18, dc.getWidth(), (dc.getHeight() / 2) - 18);
             
             // display heading
             dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
@@ -175,9 +137,32 @@ class GpsPositionView extends Ui.View {
             } else {
                 string = "";
             }
-            string = string + headingDeg.format("%.1f") + " deg";
-            pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - 2;
-            dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
+            if (geoFormat == :const_mgrs) {
+                // if MGRS, display heading in mil
+                var headingMil = headingDeg * 17.7777778;
+                headingMil = modulo(headingMil + 6400, 6400);
+                headingMil = (headingMil / 10).toNumber() * 10;
+                string = string + headingMil.format("%i") + " mil";
+            } else {
+                // else, display heading in degrees
+                headingDeg = modulo(headingDeg + 360, 360);
+                string = string + headingDeg.format("%i") + " deg";
+            }
+            //pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - 2;
+            pos = pos + Gfx.getFontHeight(Gfx.FONT_TINY);
+            if (isOcto) {
+                pos = pos + 2;
+                dc.drawText( (dc.getWidth() / 3) - 2, pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
+            } else {
+                dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
+            }
+            
+            // display navigation (position) string for octo
+            if (isOcto) {
+                pos = pos + 4;
+                pos = drawNavString(dc, pos, navStringTop, navStringBot);
+                pos = pos + 2;
+            }
             
             // display altitude
             var altMeters = posInfo.altitude;
@@ -188,9 +173,9 @@ class GpsPositionView extends Ui.View {
                 string = "";
             }
             if (deviceSettings.distanceUnits == Sys.UNIT_METRIC) {
-            	string = string + altMeters.format("%.1f") + " m";
+                string = string + altMeters.format("%.1f") + " m";
             } else { // deviceSettings.distanceUnits == Sys.UNIT_STATUTE
-            	string = string + altFeet.format("%.1f") + " ft";
+                string = string + altFeet.format("%.1f") + " ft";
             }
             pos = pos + Gfx.getFontHeight(Gfx.FONT_TINY);
             dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
@@ -218,12 +203,47 @@ class GpsPositionView extends Ui.View {
         }
         else {
             // display default text for no GPS
+            var posShift = 0;
+            if (isOcto) {
+                posShift = 10;
+            }
+            
             dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
-            dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2) - Gfx.getFontHeight(Gfx.FONT_SMALL), Gfx.FONT_SMALL, "Waiting for GPS" + progressDots, Gfx.TEXT_JUSTIFY_CENTER );
-            dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
-            dc.drawText( (dc.getWidth() / 2), (dc.getHeight() / 2), Gfx.FONT_SMALL, "Position unavailable", Gfx.TEXT_JUSTIFY_CENTER );
+            dc.drawText( (dc.getWidth() / 2), posShift + (dc.getHeight() / 2) - Gfx.getFontHeight(Gfx.FONT_SMALL), Gfx.FONT_SMALL, "Waiting for GPS" + progressDots, Gfx.TEXT_JUSTIFY_CENTER );
+            if (isMono) {
+                dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
+            } else {
+                dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
+            }
+            dc.drawText( (dc.getWidth() / 2), posShift + (dc.getHeight() / 2), Gfx.FONT_SMALL, "Position unavailable", Gfx.TEXT_JUSTIFY_CENTER );
         }
         
+    }
+    
+    function drawNavString(dc, screenPos, navStringTop, navStringBot) {
+        // display navigation (position) string
+        var pos = screenPos;
+        if (navStringBot.length() != 0) {
+            pos = pos + Gfx.getFontHeight(Gfx.FONT_SMALL);
+            dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_MEDIUM, navStringTop, Gfx.TEXT_JUSTIFY_CENTER );
+            pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - 6;
+            dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_MEDIUM, navStringBot, Gfx.TEXT_JUSTIFY_CENTER );
+        }
+        else {
+            pos = pos + Gfx.getFontHeight(Gfx.FONT_SMALL);
+            dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_MEDIUM, navStringTop, Gfx.TEXT_JUSTIFY_CENTER );
+            pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - 6;
+        }
+        pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - Gfx.getFontHeight(Gfx.FONT_TINY);
+        return pos;
+    }
+    
+//
+// modulo operation
+//
+    function modulo(a, n) {
+        // a % n
+        return a - (n * (a/n).toNumber());
     }
 
     // position change callback
