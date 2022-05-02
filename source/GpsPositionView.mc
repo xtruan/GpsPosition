@@ -40,8 +40,8 @@ class GpsPositionView extends Ui.View {
     }
     //! Restore the state of the app and prepare the view to be shown
     function onShow() {
-        Pos.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onPosition));
         deviceSettings = Sys.getDeviceSettings();
+        startPositioning();
         deviceId = Ui.loadResource(Rez.Strings.DeviceId);
         isOcto = deviceId != null && deviceId.equals("octo");
         // only octo watches are mono... at least for now
@@ -238,12 +238,69 @@ class GpsPositionView extends Ui.View {
         return pos;
     }
     
-//
-// modulo operation
-//
+    //
+    // modulo operation
+    //
     function modulo(a, n) {
         // a % n
         return a - (n * (a/n).toNumber());
+    }
+    
+    function startPositioning() {
+        var ver = deviceSettings.monkeyVersion;
+        // custom constellations only in CIQ >= 3.2.0
+        if ( ver != null && ver[0] != null && ver[1] != null && 
+            ( (ver[0] == 3 && ver[1] >= 2) || ver[0] > 3 ) ) {
+            if (enablePositioningWithConstellations([
+                    Pos.CONSTELLATION_GPS,
+                    Pos.CONSTELLATION_GLONASS, 
+                    Pos.CONSTELLATION_GALILEO
+            ])) {
+                System.println("Constellations: GPS/GLO/GAL");
+                return true;
+            }
+            if (enablePositioningWithConstellations([
+                    Pos.CONSTELLATION_GPS,
+                    Pos.CONSTELLATION_GLONASS
+            ])) {
+                System.println("Constellations: GPS/GLO");
+                return true;
+            }
+            if (enablePositioningWithConstellations([
+                    Pos.CONSTELLATION_GPS,
+                    Pos.CONSTELLATION_GALILEO,
+            ])) {
+                System.println("Constellations: GPS/GAL");
+                return true;
+            }
+            if (enablePositioningWithConstellations([
+                    Pos.CONSTELLATION_GPS
+            ])) {
+                System.println("Constellation: GPS");
+                return true;
+            }
+        } else {
+            Pos.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onPosition));
+            System.println("Constellation: GPS (Legacy Mode)");
+        }
+        return true;
+    }
+    
+    function enablePositioningWithConstellations(constellations) {
+        var success = false;
+        try {
+            Pos.enableLocationEvents({
+                    :acquisitionType => Pos.LOCATION_CONTINUOUS,
+                    :constellations => constellations
+                },
+                method(:onPosition)
+            );
+            success = true;
+        } catch (ex) {
+            System.println(ex.getErrorMessage() + ": " + constellations.toString());
+            success = false;
+        }
+        return success;
     }
 
     // position change callback
