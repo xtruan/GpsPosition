@@ -22,7 +22,7 @@ Color of position text indicates GPS signal strength. Color of battery text indi
 Tested on simulator for all supported devices and on Forerunner 55 and vivoactive hardware.
 
 Changelog:
-* 3.1.3 - Added SK-42 formats.
+* 3.1.4 - Added SK-42 formats.
 * 3.1.1 - Better GNSS constellation support.
 * 3.1.0 - Added Swiss grid. Major refactor/cleanup.
 * 3.0.9 - Added Maidenhead Locator/QTH Locator/IARU Locator. Heading now displays in mil in MGRS mode.
