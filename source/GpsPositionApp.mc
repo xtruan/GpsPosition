@@ -34,6 +34,10 @@ class GpsPositionApp extends App.AppBase {
              return 8; // Swiss Grid LV95
         } else if (sym == :const_sgrlv03) {
              return 9; // Swiss Grid LV03
+        } else if (sym == :const_sk42_deg) {
+             return 10; // SK-42 (Degrees)
+        } else if (sym == :const_sk42_grid) {
+             return 11; // SK-42 (Orthogonal)
         } else {
             return -1; // Error condition
         }
@@ -62,6 +66,10 @@ class GpsPositionApp extends App.AppBase {
              return :const_sgrlv95; // Swiss Grid LV95
         } else if (num == 9) {
              return :const_sgrlv03; // Swiss Grid LV03
+        } else if (num == 10) {
+             return :const_sk42_deg; // SK-42 (Degrees)
+        } else if (num == 11) {
+             return :const_sk42_grid; // SK-42 (Orthogonal)
         } else {
              return :const_dms;  // Degs/Mins/Secs (default)
         }

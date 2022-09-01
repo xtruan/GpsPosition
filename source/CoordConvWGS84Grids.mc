@@ -798,7 +798,7 @@ class CoordConvWGS84Grids {
     }
 
 //
-// cast to float (integer)
+// cast to float
 //
     function parseFloat(numeric) {
         return numeric.toFloat();

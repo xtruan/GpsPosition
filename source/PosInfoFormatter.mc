@@ -21,8 +21,7 @@ class PosInfoFormatter {
         posInfo = pPosInfo;
     }
     
-    function initLatLong() {
-        var degrees = posInfo.position.toDegrees();
+    function initLatLong(degrees) {
         var lat = 0.0;
         var latHemi = "?";
         var long = 0.0;
@@ -47,7 +46,7 @@ class PosInfoFormatter {
     }
     
     function getDeg() {
-        var LLH = initLatLong();
+        var LLH = initLatLong(posInfo.position.toDegrees());
         // if decimal degrees, we're done
         var navStringTop = LLH[0] + " " + LLH[1].format("%.6f") + DEG_SIGN;
         var navStringBot = LLH[2] + " " + LLH[3].format("%.6f") + DEG_SIGN;
@@ -59,7 +58,7 @@ class PosInfoFormatter {
     }
     
     function getDM() {
-        var LLH = initLatLong();
+        var LLH = initLatLong(posInfo.position.toDegrees());
         // do conversions for degs mins
         var latDegs = LLH[1].toNumber();
         var latMins = (LLH[1] - latDegs) * 60;
@@ -76,7 +75,7 @@ class PosInfoFormatter {
     }
     
     function getDMS() {
-        var LLH = initLatLong();
+        var LLH = initLatLong(posInfo.position.toDegrees());
         // do conversions for degs mins secs
         var latDegs = LLH[1].toNumber();
         var latMins = (LLH[1] - latDegs) * 60;
@@ -217,6 +216,41 @@ class PosInfoFormatter {
         return [navStringTop, navStringBot];
     }
     
+    function getSK42(gridMode) {
+        if (DEBUG) {
+            new CoordConvSK42().testSK42();
+        }
+    
+        var degrees = posInfo.position.toDegrees();
+        var altitude = posInfo.altitude;
+        
+        var convertSK42 = new CoordConvSK42();
+        var coords = convertSK42
+            .WGS84ToSK42Coords(degrees[0], degrees[1], altitude);
+            
+        if (gridMode) {
+            coords = convertSK42
+                .SK42CoordsToSK42Grid(coords[0], coords[1]);
+        }
+        
+        var navStringTop = "";
+        var navStringBot = "";
+        if (coords.size() == 2) {
+            if (gridMode) {
+                navStringTop = "X " + coords[1].format("%i");
+                navStringBot = "Y " + coords[0].format("%i");
+            } else {
+                var LLH = initLatLong(coords);
+                navStringTop = LLH[0] + " " + LLH[1].format("%.6f") + DEG_SIGN;
+                navStringBot = LLH[2] + " " + LLH[3].format("%.6f") + DEG_SIGN;
+            }
+        } else {
+            navStringTop = coords[0];  // error message
+            navStringBot = "";
+        }
+        return [navStringTop, navStringBot];
+    }
+    
     function format(geoFormat) {
         if (geoFormat == :const_deg) {
              return getDeg(); // Degs
@@ -238,6 +272,10 @@ class PosInfoFormatter {
              return getSGRLV95(); // Swiss Grid LV95
         } else if (geoFormat == :const_sgrlv03) {
              return getSGRLV03(); // Swiss Grid LV03
+        } else if (geoFormat == :const_sk42_deg) {
+             return getSK42(false); // SK-42 (Degrees)
+        } else if (geoFormat == :const_sk42_grid) {
+             return getSK42(true); // SK-42 (Orthogonal)
         } else {
             App.getApp().setGeoFormat(:const_dms); // Degs/Mins/Secs
             return getDMS(); // Degs/Mins/Secs (default)

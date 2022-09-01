@@ -29,6 +29,10 @@ class GpsPositionMenuDelegate extends Ui.MenuInputDelegate {
             App.getApp().setGeoFormat(:const_sgrlv95); // Swiss Grid LV95
         } else if (item == :item_sgrlv03) {
             App.getApp().setGeoFormat(:const_sgrlv03); // Swiss Grid LV03
+        } else if (item == :item_sk42_deg) {
+            App.getApp().setGeoFormat(:const_sk42_deg); // SK-42 (Degrees)
+        } else if (item == :item_sk42_grid) {
+            App.getApp().setGeoFormat(:const_sk42_grid); // SK-42 (Orthog.)
         }
     } 
     
