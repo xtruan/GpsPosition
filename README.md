@@ -10,8 +10,8 @@ Simple app to display current position information in a variety of different for
 * MGRS (WGS84)
 * QTH Locator (Maidenhead / IARU)
 * UK Grid (OSGB36)
-* Swiss Grid (LV95)
-* Swiss Grid (LV03)
+* Swiss Grid (LV95) - Not available in Glance mode due to memory limitations, MGRS will be shown instead
+* Swiss Grid (LV03) - Not available in Glance mode due to memory limitations, MGRS will be shown instead
 * SK-42 (Degrees)
 * SK-42 (Orthogonal)
 
@@ -22,6 +22,7 @@ Color of position text indicates GPS signal strength. Color of battery text indi
 Tested on simulator for all supported devices and on Forerunner 55 and vivoactive hardware.
 
 Changelog:
+* 3.2.0 - Added support for Edge/Handheld devices.
 * 3.1.5 - Degree symbol display fix.
 * 3.1.4 - Added SK-42 formats.
 * 3.1.1 - Better GNSS constellation support.

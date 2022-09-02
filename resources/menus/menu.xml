@@ -1,5 +1,5 @@
 <menu id="CoordFormatMenu">
-    <menu-item id="item_deg">Degs</menu-item>
+    <menu-item id="item_deg">Degrees</menu-item>
     <menu-item id="item_dm">Degs/Mins</menu-item>
     <menu-item id="item_dms">Degs/Mins/Secs</menu-item>
     <menu-item id="item_utm">UTM (WGS84)</menu-item>
@@ -9,6 +9,6 @@
     <menu-item id="item_ukgr">UK Grid (OSGB36)</menu-item>
     <menu-item id="item_sgrlv95">Swiss Grid (LV95)</menu-item>
     <menu-item id="item_sgrlv03">Swiss Grid (LV03)</menu-item>
-    <menu-item id="item_sk42_deg">SK-42 (Degrees)</menu-item>
-    <menu-item id="item_sk42_grid">SK-42 (Orthog.)</menu-item>
+    <menu-item id="item_sk42_deg">SK-42 Degrees</menu-item>
+    <menu-item id="item_sk42_grid">SK-42 Orthog.</menu-item>
 </menu>

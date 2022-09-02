@@ -3,7 +3,7 @@ using Toybox.Math as Math;
 (:glance)
 class CoordConvSK42 {
 
-    /// CoordConvSwissGrid.mc by Struan Clark (2022)
+    /// CoordConvSK42.mc by Struan Clark (2022)
     /// Major components translated to Monkey C from Java library here: https://gis.stackexchange.com/questions/418151/how-to-convert-wgs84-degrees-coordinates-to-sk42-in-meters-in-java
 
     function WGS84ToSK42Coords(pLat, pLon, pAlt)

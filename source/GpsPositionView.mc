@@ -146,7 +146,11 @@ class GpsPositionView extends Ui.View {
             } else {
                 // else, display heading in degrees
                 headingDeg = modulo(headingDeg + 360, 360);
-                string = string + headingDeg.format("%i") + " deg";
+                var degSign = formatter.DEG_SIGN;
+                if (degSign.length() == 0) {
+                   degSign = " deg";
+                }
+                string = string + headingDeg.format("%i") + degSign;
             }
             //pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - 2;
             pos = pos + Gfx.getFontHeight(Gfx.FONT_TINY);

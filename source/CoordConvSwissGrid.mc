@@ -1,6 +1,5 @@
 using Toybox.Math as Math;
 
-(:glance)
 class CoordConvSwissGrid {
 
 /// CoordConvSwissGrid.mc by Struan Clark (2022)
