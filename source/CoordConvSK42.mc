@@ -243,6 +243,7 @@ class CoordConvSK42 {
 ////        SK:N 55.75579 E 037.619079
 //
 //        // TEST - Kyiv - GLSV
+//        // https://net.tnt-tpi.com/page
 //        loc = "Kyiv - GLSV";
 //        lat = 50.36;
 //        lon = 30.5;
