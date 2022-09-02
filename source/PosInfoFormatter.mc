@@ -190,7 +190,7 @@ class PosInfoFormatter {
         var degrees = posInfo.position.toDegrees();
         var maidenhead = new CoordConvMaidenhead();
         if (DEBUG) {
-            maidenhead.testGridSquare();
+//            maidenhead.testGridSquare();
         }
         
         var navStringTop = "LOC";
@@ -232,17 +232,17 @@ class PosInfoFormatter {
         return [navStringTop, navStringBot];
     }
     
-    function getSK42(gridMode) {
+    function getSK42(gridMode, geoFormat) {
+        var convertSK42 = new CoordConvSK42();
         if (DEBUG) {
-            new CoordConvSK42().testSK42();
+//            convertSK42.testSK42();
         }
     
         var degrees = posInfo.position.toDegrees();
         var altitude = posInfo.altitude;
         
-        var convertSK42 = new CoordConvSK42();
         var coords = convertSK42
-            .WGS84ToSK42Coords(degrees[0], degrees[1], altitude);
+            .WGS84ToSK42Coords(degrees[0], degrees[1], altitude, geoFormat);
             
         if (gridMode) {
             coords = convertSK42
@@ -251,17 +251,17 @@ class PosInfoFormatter {
         
         var navStringTop = "";
         var navStringBot = "";
-        if (coords.size() == 2) {
+        if (coords.size() >= 2) {
             if (gridMode) {
-                navStringTop = "X " + coords[1].format("%i");
-                navStringBot = "Y " + coords[0].format("%i");
+                navStringTop = "X " + coords[0].format("%i");
+                navStringBot = "Y " + coords[1].format("%i");
             } else {
                 var LLH = initLatLong(coords);
                 navStringTop = LLH[0] + " " + LLH[1].format("%.6f") + DEG_SIGN;
                 navStringBot = LLH[2] + " " + LLH[3].format("%.6f") + DEG_SIGN;
             }
         } else {
-            navStringTop = coords[0];  // error message
+            navStringTop = "SK-42 ERROR";  // error message
             navStringBot = "";
         }
         return [navStringTop, navStringBot];
@@ -289,9 +289,11 @@ class PosInfoFormatter {
         } else if (geoFormat == :const_sgrlv03) {
              return getSGRLV03(); // Swiss Grid LV03
         } else if (geoFormat == :const_sk42_deg) {
-             return getSK42(false); // SK-42 (Degrees)
+             return getSK42(false, geoFormat); // SK-42 (Degrees)
         } else if (geoFormat == :const_sk42_grid) {
-             return getSK42(true); // SK-42 (Orthogonal)
+             return getSK42(true, geoFormat); // SK-42 (Orthogonal)
+        } else if (geoFormat == :const_etrs89_usk2000_grid) {
+             return getSK42(true, geoFormat); // USK-2000 (Orthogonal)
         } else {
             App.getApp().setGeoFormat(:const_dms); // Degs/Mins/Secs
             return getDMS(); // Degs/Mins/Secs (default)

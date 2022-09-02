@@ -213,51 +213,51 @@ class CoordConvMaidenhead {
         return [lat, lon];
     }
     
-    /* Test the grid square latitude and longitude conversion functions. */
-    function testGridSquare() {
-//        // First four test examples are from "Conversion Between Geodetic and Grid Locator Systems",
-//        // by Edmund T. Tyson N5JTY QST January 1989
-//        // original test data in Python / citations by Walter Underwood K6WRU
-//        // last test and coding into Javascript from Python by Paul Brewer KI6CQ
-//        var testData = [
-//            ['Munich', [48.14666, 11.60833], 'JN58td'],
-//            ['Montevideo', [-34.91, -56.21166], 'GF15vc'],
-//            ['Washington, DC', [38.92, -77.065], 'FM18lw'],
-//            ['Wellington', [-41.28333 174.745], 'RE78ir'],
-//            ['Newington, CT (W1AW)', [41.714775, -72.727260], 'FN31pr'],
-//            ['Palo Alto (K6WRU)', [37.413708,-122.1073236], 'CM87wj'],
-//            ['Chattanooga (KI6CQ/4)', [35.0542, -85.1142], "EM75kb"],
-//            ['Buxton (N1SH)', [43.686292, -70.549876], 'FN43rq']
-//        ];
-//        var i=0,l=testData.length,result='',result2,result3,thisPassed=0,totalPassed=0;
-//        for(i=0;i<l;++i){
-//            result = latLonToGridSquare.apply({}, testData[i][1]);
-//            result2 = gridSquareToLatLon(result);
-//            result3 = latLonToGridSquare(result2);
-//            thisPassed = (result===testData[i][2]) && (result3===testData[i][2]);
-//            console.log("test "+i+": "+testData[i][0]+" "+JSON.stringify(testData[i][1])+
-//                        " result = "+result+" result2 = "+result2+" result3 = "+result3+" expected= "+testData[i][2]+
-//                        " passed = "+thisPassed);
-//            totalPassed += thisPassed;
+//    /* Test the grid square latitude and longitude conversion functions. */
+//    function testGridSquare() {
+////        // First four test examples are from "Conversion Between Geodetic and Grid Locator Systems",
+////        // by Edmund T. Tyson N5JTY QST January 1989
+////        // original test data in Python / citations by Walter Underwood K6WRU
+////        // last test and coding into Javascript from Python by Paul Brewer KI6CQ
+////        var testData = [
+////            ['Munich', [48.14666, 11.60833], 'JN58td'],
+////            ['Montevideo', [-34.91, -56.21166], 'GF15vc'],
+////            ['Washington, DC', [38.92, -77.065], 'FM18lw'],
+////            ['Wellington', [-41.28333 174.745], 'RE78ir'],
+////            ['Newington, CT (W1AW)', [41.714775, -72.727260], 'FN31pr'],
+////            ['Palo Alto (K6WRU)', [37.413708,-122.1073236], 'CM87wj'],
+////            ['Chattanooga (KI6CQ/4)', [35.0542, -85.1142], "EM75kb"],
+////            ['Buxton (N1SH)', [43.686292, -70.549876], 'FN43rq']
+////        ];
+////        var i=0,l=testData.length,result='',result2,result3,thisPassed=0,totalPassed=0;
+////        for(i=0;i<l;++i){
+////            result = latLonToGridSquare.apply({}, testData[i][1]);
+////            result2 = gridSquareToLatLon(result);
+////            result3 = latLonToGridSquare(result2);
+////            thisPassed = (result===testData[i][2]) && (result3===testData[i][2]);
+////            console.log("test "+i+": "+testData[i][0]+" "+JSON.stringify(testData[i][1])+
+////                        " result = "+result+" result2 = "+result2+" result3 = "+result3+" expected= "+testData[i][2]+
+////                        " passed = "+thisPassed);
+////            totalPassed += thisPassed;
+////        }
+////        System.println("" + totalPassed + " of " + l + " test passed");
+////        return totalPassed == l;
+//
+//        var testData = [];
+//        testData.add([48.14666, 11.60833]);     // 'JN58td'
+//        testData.add([-34.91, -56.21166]);      // 'GF15vc'
+//        testData.add([38.92, -77.065]);         // 'FM18lw'
+//        testData.add([-41.28333, 174.745]);     // 'RE78ir'
+//        testData.add([41.714775, -72.727260]);  // 'FN31pr'
+//        testData.add([37.413708,-122.1073236]); // 'CM87wj'
+//        testData.add([35.0542, -85.1142]);      // 'EM75kb'
+//        testData.add([43.686292, -70.549876]);  // 'FN43rq'
+//        
+//        for (var i = 0; i < testData.size(); i++) {
+//            var grid = latLonToGridSquare(testData[i][0], testData[i][1]);
+//            System.println("TEST: " + grid);
 //        }
-//        System.println("" + totalPassed + " of " + l + " test passed");
-//        return totalPassed == l;
-
-        var testData = [];
-        testData.add([48.14666, 11.60833]);     // 'JN58td'
-        testData.add([-34.91, -56.21166]);      // 'GF15vc'
-        testData.add([38.92, -77.065]);         // 'FM18lw'
-        testData.add([-41.28333, 174.745]);     // 'RE78ir'
-        testData.add([41.714775, -72.727260]);  // 'FN31pr'
-        testData.add([37.413708,-122.1073236]); // 'CM87wj'
-        testData.add([35.0542, -85.1142]);      // 'EM75kb'
-        testData.add([43.686292, -70.549876]);  // 'FN43rq'
-        
-        for (var i = 0; i < testData.size(); i++) {
-            var grid = latLonToGridSquare(testData[i][0], testData[i][1]);
-            System.println("TEST: " + grid);
-        }
-    }
+//    }
     
 //    HamGridSquare = {
 //        latLonForGrid: latLonForGrid,
