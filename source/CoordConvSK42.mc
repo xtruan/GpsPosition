@@ -178,7 +178,7 @@ class CoordConvSK42 {
 //        System.println(loc + " - SK42 Grid: " + coords);
 //        
 ////        // TEST - Kyiv (actual)
-////        X 6324226 Y 5593947
+////        Y 6324226 X 5593947
 ////        N 50.450169 E 30.525049
 ////        
 ////        // TEST - Kyiv (expected)
@@ -216,7 +216,7 @@ class CoordConvSK42 {
 //        System.println(loc + " - SK42 Grid: " + coords);
 //        
 ////        // TEST - Moscow (actual)
-////        X 7413305 Y 6182341
+////        Y 7413305 X 6182341
 ////        N 55.755760 E 37.619171
 ////        
 ////        // TEST - Moscow (expected)
