@@ -1,4 +1,5 @@
 using Toybox.Application as App;
+using Toybox.System as Sys;
 using Toybox.Position as Pos;
 
 (:glance)
@@ -10,15 +11,30 @@ class PosInfoFormatter {
     const DEBUG = false;
     
     // compatibility mode for very old CIQ devices (1.x.x)
-    const USE_USNG_FOR_MGRS = true;
+    var USE_USNG_FOR_MGRS = true;
     
     // degree symbol
-    const DEG_SIGN = ""; //StringUtil.utf8ArrayToString([0xC2,0xB0]);
+    var DEG_SIGN = "";
     
     hidden var posInfo = null;
     
     function initialize(pPosInfo) {
         posInfo = pPosInfo;
+        // super conservative version check
+        if (getSystemMajorVersion() >= 3) {
+            USE_USNG_FOR_MGRS = false;
+            DEG_SIGN = StringUtil.utf8ArrayToString([0xC2,0xB0]);
+        }
+    }
+    
+    function getSystemMajorVersion() {
+        var deviceSettings = System.getDeviceSettings();
+        var ver = deviceSettings.monkeyVersion;
+        if ( ver != null && ver[0] != null && ver[1] != null ) {
+            return ver[0];
+        } else {
+            return 0;
+        }
     }
     
     function initLatLong(degrees) {
