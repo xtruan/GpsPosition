@@ -22,7 +22,7 @@ class GpsPositionView extends Ui.View {
     }
 
     //! Load your resources here
-    function onLayout(dc as Dc) {
+    function onLayout(dc as Gfx.Dc) {
         progressTimer = new Timer.Timer();
         progressTimer.start(method(:updateProgress), 1000, true);
     }
@@ -53,7 +53,7 @@ class GpsPositionView extends Ui.View {
     }
 
     //! Update the view
-    function onUpdate(dc as Dc) {
+    function onUpdate(dc as Gfx.Dc) {
 //        // Get position
 //        var posInfo = App.getApp().getCurrentPosition();
     
