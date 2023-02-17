@@ -1,3 +1,4 @@
+using Toybox.System as Sys;
 using Toybox.WatchUi as Ui;
 
 class GpsPositionDelegate extends Ui.BehaviorDelegate {
@@ -14,11 +15,15 @@ class GpsPositionDelegate extends Ui.BehaviorDelegate {
     }
     
     function onKey(key) {
-        //System.println(key.getKey());
+        Sys.println("Key: " + key.getKey());
         if (key.getKey() == Ui.KEY_UP || key.getKey() == Ui.KEY_ENTER) {
             onMenu();
+            return true;
+        } else if (key.getKey() == Ui.KEY_ESC) {
+        	Sys.println("Quitting!");
+        	return false;
         }
-        return true;
+        return false;
     }
 
 }
