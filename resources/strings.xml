@@ -1,4 +1,18 @@
 <resources>
     <string id="AppName">GPS</string>
     <string id="DeviceId">default</string>
+    <string id="GPSFormatTitle">GPS Format</string>
+    
+    <string id="item_deg">Degrees</string>
+    <string id="item_dm">Degs/Mins</string>
+    <string id="item_dms">Degs/Mins/Secs</string>
+    <string id="item_utm">UTM (WGS84)</string>
+    <string id="item_usng">USNG (WGS84)</string>
+    <string id="item_mgrs">MGRS (WGS84)</string>
+    <string id="item_qth">QTH/IARU Loc.</string>
+    <string id="item_ukgr">UK Grid (OSGB36)</string>
+    <string id="item_sgrlv95">Swiss Grid (LV95)</string>
+    <string id="item_sgrlv03">Swiss Grid (LV03)</string>
+    <string id="item_sk42_deg">SK-42 Degrees</string>
+    <string id="item_sk42_grid">SK-42 Orthog.</string>
 </resources>

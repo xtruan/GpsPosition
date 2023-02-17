@@ -1,6 +1,7 @@
 using Toybox.Application as App;
 using Toybox.System as Sys;
 using Toybox.WatchUi as Ui;
+using Toybox.Application.Properties as Props;
 
 (:glance)
 class GpsPositionApp extends App.AppBase {
@@ -102,7 +103,7 @@ class GpsPositionApp extends App.AppBase {
         if ( ver != null && ver[0] != null && ver[1] != null && 
             ( (ver[0] == 2 && ver[1] >= 4) || ver[0] > 2 ) ) {
             // new school devices (>2.4.0) use Storage
-            App.Storage.setValue(key, val);
+            Props.setValue(key, val);
         } else {
             // old school devices use AppBase properties
             setProperty(key, val);
@@ -115,7 +116,7 @@ class GpsPositionApp extends App.AppBase {
         if ( ver != null && ver[0] != null && ver[1] != null && 
             ( (ver[0] == 2 && ver[1] >= 4) || ver[0] > 2 ) ) {
             // new school devices (>2.4.0) use Storage
-            return App.Storage.getValue(key);
+            return Props.getValue(key);
         } else {
             // old school devices use AppBase properties
             return getProperty(key);

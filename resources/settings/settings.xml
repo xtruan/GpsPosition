@@ -1,0 +1,20 @@
+<settings>
+    
+    <setting propertyKey="@Properties.geo" title="@Strings.GPSFormatTitle">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.item_deg</listEntry>
+            <listEntry value="1">@Strings.item_dm</listEntry>
+            <listEntry value="2">@Strings.item_dms</listEntry>
+            <listEntry value="3">@Strings.item_utm</listEntry>
+            <listEntry value="4">@Strings.item_usng</listEntry>
+            <listEntry value="5">@Strings.item_mgrs</listEntry>
+            <listEntry value="7">@Strings.item_qth</listEntry>
+            <listEntry value="6">@Strings.item_ukgr</listEntry>
+            <listEntry value="8">@Strings.item_sgrlv95</listEntry>
+            <listEntry value="9">@Strings.item_sgrlv03</listEntry>
+            <listEntry value="10">@Strings.item_sk42_deg</listEntry>
+            <listEntry value="11">@Strings.item_sk42_grid</listEntry>
+        </settingConfig>
+    </setting>
+
+</settings>
