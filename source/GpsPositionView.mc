@@ -34,6 +34,21 @@ class GpsPositionView extends Ui.View {
         }
         Ui.requestUpdate();
     }
+    
+    function getClockTime() {
+        var clockTime = Sys.getClockTime();
+        var hours = clockTime.hour;
+        if (!Sys.getDeviceSettings().is24Hour) {
+            if (hours > 12) {
+                hours = hours - 12;
+            }
+            else if (hours == 0) {
+                hours = 12;
+            }
+        }
+        var timeString = Lang.format("$1$:$2$:$3$", [hours.format("%02d"), clockTime.min.format("%02d"), clockTime.sec.format("%02d")]);
+        return "-- " + timeString + " --";
+    }
 
     function onHide() {
         Pos.enableLocationEvents(Position.LOCATION_DISABLE, method(:onPosition));
@@ -122,6 +137,8 @@ class GpsPositionView extends Ui.View {
             var nav = formatter.format(geoFormat);
             navStringTop = nav[0];
             navStringBot = nav[1];
+            //Sys.println(geoFormat);
+            //Sys.println(nav);
             
             // display navigation (position) string for non-octo
             if (!isOcto) {
@@ -137,7 +154,10 @@ class GpsPositionView extends Ui.View {
             } else {
                 string = "";
             }
-            if (geoFormat == :const_mgrs) {
+            // override heading to clock in Ranger mode
+            if (geoFormat == :const_ranger_utm || geoFormat == :const_ranger_mgrs) {
+                string = getClockTime();
+            } else if (geoFormat == :const_mgrs) {
                 // if MGRS, display heading in mil
                 var headingMil = headingDeg * 17.7777778;
                 headingMil = modulo(headingMil + 6400, 6400);
@@ -176,7 +196,11 @@ class GpsPositionView extends Ui.View {
             } else {
                 string = "";
             }
-            if (deviceSettings.distanceUnits == Sys.UNIT_METRIC) {
+            // override altitude to secondary nav in Ranger mode
+            if (geoFormat == :const_ranger_utm || geoFormat == :const_ranger_mgrs) {
+                string = nav[2];
+            }
+            else if (deviceSettings.distanceUnits == Sys.UNIT_METRIC) {
                 string = string + altMeters.format("%.1f") + " m";
             } else { // deviceSettings.distanceUnits == Sys.UNIT_STATUTE
                 string = string + altFeet.format("%.1f") + " ft";
@@ -191,7 +215,11 @@ class GpsPositionView extends Ui.View {
             } else {
                 string = "";
             }
-            if (deviceSettings.distanceUnits == Sys.UNIT_METRIC) {
+            // override speed to secondary nav in Ranger mode
+            if (geoFormat == :const_ranger_utm || geoFormat == :const_ranger_mgrs) {
+                string = nav[3];
+            }
+            else if (deviceSettings.distanceUnits == Sys.UNIT_METRIC) {
                 var speedKmh = speedMsec * 3.6;
                 string = string + speedKmh.format("%.1f") + " km/h";
             } else { // deviceSettings.distanceUnits == Sys.UNIT_STATUTE

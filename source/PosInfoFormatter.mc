@@ -294,6 +294,16 @@ class PosInfoFormatter {
              return getSK42(true, geoFormat); // SK-42 (Orthogonal)
         } else if (geoFormat == :const_etrs89_usk2000_grid) {
              return getSK42(true, geoFormat); // USK-2000 (Orthogonal)
+        } else if (geoFormat == :const_ranger_utm) {
+            var ret = [];
+            ret.addAll(getUTM());
+            ret.addAll(getDeg());
+            return ret; // Ranger (UTM)
+        } else if (geoFormat == :const_ranger_mgrs) {
+            var ret = [];
+            ret.addAll(getMGRS());
+            ret.addAll(getDeg());
+            return ret; // Ranger (MGRS)
         } else {
             App.getApp().setGeoFormat(:const_dms); // Degs/Mins/Secs
             return getDMS(); // Degs/Mins/Secs (default)

@@ -39,6 +39,10 @@ class GpsPositionApp extends App.AppBase {
              return 10; // SK-42 (Degrees)
         } else if (sym == :const_sk42_grid) {
              return 11; // SK-42 (Orthogonal)
+        } else if (sym == :const_ranger_utm) {
+             return 50; // Ranger (UTM)
+        } else if (sym == :const_ranger_mgrs) {
+             return 51; // Ranger (MGRS)
         } else {
             return -1; // Error condition
         }
@@ -47,6 +51,7 @@ class GpsPositionApp extends App.AppBase {
     // property store can't handle symbol types 
     // this method converts from number to symbol for reading from properties
     function geoFormatNumberToSymbol(num) {
+        //System.println(num);
         if (num == 0) {
              return :const_deg;  // Degs
         } else if (num == 1) {
@@ -71,6 +76,10 @@ class GpsPositionApp extends App.AppBase {
              return :const_sk42_deg; // SK-42 (Degrees)
         } else if (num == 11) {
              return :const_sk42_grid; // SK-42 (Orthogonal)
+        } else if (num == 50) {
+             return :const_ranger_utm; // Ranger (UTM)
+        } else if (num == 51) {
+             return :const_ranger_mgrs; // Ranger (MGRS)
         } else {
              return :const_dms;  // Degs/Mins/Secs (default)
         }

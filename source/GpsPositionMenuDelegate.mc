@@ -33,6 +33,10 @@ class GpsPositionMenuDelegate extends Ui.MenuInputDelegate {
             App.getApp().setGeoFormat(:const_sk42_deg); // SK-42 (Degrees)
         } else if (item == :item_sk42_grid) {
             App.getApp().setGeoFormat(:const_sk42_grid); // SK-42 (Orthog.)
+        } else if (item == :item_ranger_utm) {
+            App.getApp().setGeoFormat(:const_ranger_utm); // Ranger (UTM)
+        } else if (item == :item_ranger_mgrs) {
+            App.getApp().setGeoFormat(:const_ranger_mgrs); // Ranger (MGRS)
         }
     } 
     

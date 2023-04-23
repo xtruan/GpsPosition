@@ -22,6 +22,7 @@ Color of position text indicates GPS signal strength. Color of battery text indi
 Tested on simulator for all supported devices and on Forerunner 55 and vivoactive hardware.
 
 Changelog:
+* 3.3.0 - Added Ranger mode to display UTM/MGRS, decimal degrees, and time.
 * 3.2.0 - Added support for Edge/Handheld devices.
 * 3.1.5 - Degree symbol display fix.
 * 3.1.4 - Added SK-42 formats.
