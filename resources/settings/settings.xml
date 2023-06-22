@@ -14,6 +14,7 @@
             <listEntry value="9">@Strings.item_sgrlv03</listEntry>
             <listEntry value="10">@Strings.item_sk42_deg</listEntry>
             <listEntry value="11">@Strings.item_sk42_grid</listEntry>
+            <listEntry value="12">@Strings.item_lks92_grid</listEntry>
             <listEntry value="50">@Strings.item_ranger_utm</listEntry>
             <listEntry value="51">@Strings.item_ranger_mgrs</listEntry>
         </settingConfig>

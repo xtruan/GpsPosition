@@ -267,6 +267,40 @@ class PosInfoFormatter {
         return [navStringTop, navStringBot];
     }
     
+    function getLKS92() {
+        var convertLKS92 = new CoordConvLKS92();
+        if (DEBUG) {
+//            var test = [58.079501574948, 25.189986971284];
+//            System.println("A: " + convertLKS92.convertLatLonToXY(test).toString());
+//            System.println("B: " + [570181.00, 438180.00].toString());
+//            test = [56.172282784562, 28.095216442873];
+//            System.println("A: " + convertLKS92.convertLatLonToXY(test).toString());
+//            System.println("B: " + [754190.00, 232806.00].toString());
+//            test = [55.675228242509, 26.580528487143];
+//            System.println("A: " + convertLKS92.convertLatLonToXY(test).toString());
+//            System.println("B: " + [662269.00, 172953.00].toString());
+//            test = [56.377008455189, 20.979185882058];
+//            System.println("A: " + convertLKS92.convertLatLonToXY(test).toString());
+//            System.println("B: " + [313470.00, 252137.00].toString());
+        }
+    
+        var degrees = posInfo.position.toDegrees();
+        
+        var coords = convertLKS92
+            .convertLatLonToXY(degrees);
+        
+        var navStringTop = "";
+        var navStringBot = "";
+        if (coords.size() >= 2) {
+            navStringTop = "X " + coords[0].format("%i");
+            navStringBot = "Y " + coords[1].format("%i");
+        } else {
+            navStringTop = "LKS-92 ERROR";  // error message
+            navStringBot = "";
+        }
+        return [navStringTop, navStringBot];
+    }
+    
     function format(geoFormat) {
         if (geoFormat == :const_deg) {
              return getDeg(); // Degs
@@ -294,6 +328,8 @@ class PosInfoFormatter {
              return getSK42(true, geoFormat); // SK-42 (Orthogonal)
         } else if (geoFormat == :const_etrs89_usk2000_grid) {
              return getSK42(true, geoFormat); // USK-2000 (Orthogonal)
+        } else if (geoFormat == :const_lks92_grid) {
+             return getLKS92(); // LKS-92 Grid
         } else if (geoFormat == :const_ranger_utm) {
             var ret = [];
             ret.addAll(getUTM());

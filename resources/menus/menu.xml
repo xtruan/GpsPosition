@@ -11,6 +11,7 @@
     <menu-item id="item_sgrlv03">Swiss Grid (LV03)</menu-item>
     <menu-item id="item_sk42_deg">SK-42 Degrees</menu-item>
     <menu-item id="item_sk42_grid">SK-42 Orthog.</menu-item>
+    <menu-item id="item_lks92_grid">LKS-92 Grid</menu-item>
     <menu-item id="item_ranger_utm">Ranger (UTM)</menu-item>
     <menu-item id="item_ranger_mgrs">Ranger (MGRS)</menu-item>
 </menu>

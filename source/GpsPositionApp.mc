@@ -39,6 +39,8 @@ class GpsPositionApp extends App.AppBase {
              return 10; // SK-42 (Degrees)
         } else if (sym == :const_sk42_grid) {
              return 11; // SK-42 (Orthogonal)
+        } else if (sym == :const_lks92_grid) {
+             return 12; // LKS-92 Grid
         } else if (sym == :const_ranger_utm) {
              return 50; // Ranger (UTM)
         } else if (sym == :const_ranger_mgrs) {
@@ -76,6 +78,8 @@ class GpsPositionApp extends App.AppBase {
              return :const_sk42_deg; // SK-42 (Degrees)
         } else if (num == 11) {
              return :const_sk42_grid; // SK-42 (Orthogonal)
+        } else if (num == 12) {
+             return :const_lks92_grid; // LKS-92 Grid
         } else if (num == 50) {
              return :const_ranger_utm; // Ranger (UTM)
         } else if (num == 51) {

@@ -14,6 +14,7 @@ Simple app to display current position information in a variety of different for
 * Swiss Grid (LV03) - Not available in Glance mode due to memory limitations, MGRS will be shown instead
 * SK-42 (Degrees)
 * SK-42 (Orthogonal)
+* LKS-92 Grid
 
 Color of position text indicates GPS signal strength. Color of battery text indicates battery life. UTM/USNG/MGRS positions are using NAD83/WGS84 datum, UK Grid (Ordnance Survey National Grid) positions is using OSGB36 datum.
 
@@ -22,6 +23,7 @@ Color of position text indicates GPS signal strength. Color of battery text indi
 Tested on simulator for all supported devices and on Forerunner 55 and vivoactive hardware.
 
 Changelog:
+* 3.3.2 - Added LKS-92 format.
 * 3.3.0 - Added Ranger mode to display UTM/MGRS, decimal degrees, and time.
 * 3.2.0 - Added support for Edge/Handheld devices.
 * 3.1.5 - Degree symbol display fix.
