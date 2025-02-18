@@ -26,7 +26,7 @@ jobs:
       - run: mv -f manifest.ci.xml manifest.xml
       - run: openssl genrsa -out test_priv_rsa.pem 4096
       - run: openssl pkcs8 -topk8 -inform PEM -outform DER -in test_priv_rsa.pem -out test_priv_rsa.der -nocrypt
-      - run: echo "TEST_PRIV_RSA_BASE64=$(cat test_priv_rsa.der | base64 -w0)" >> $GITHUB_ENV
+      - run: echo "TEST_PRIV_RSA_BASE64=$(cat test_priv_rsa.der | base64 -w0)" #>> $GITHUB_ENV
       - name: Test on device ${{ matrix.device }}
         id: run_tests
         uses: adamjakab/action-connectiq-builder@v1
