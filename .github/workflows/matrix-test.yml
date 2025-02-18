@@ -29,5 +29,5 @@ jobs:
         uses: adamjakab/action-connectiq-builder@v1
         with:
           operation: TEST
-          check_type_level: 0
+          type_check_level: 0
           device: ${{ matrix.device }}
