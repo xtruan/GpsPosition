@@ -23,6 +23,7 @@ Color of position text indicates GPS signal strength. Color of battery text indi
 Tested on simulator for all supported devices and on Forerunner 55 and vivoactive hardware.
 
 Changelog:
+* 3.4.0 - Updated GPS logic. Added support for Instinct 3 series.
 * 3.3.2 - Added LKS-92 format.
 * 3.3.0 - Added Ranger mode to display UTM/MGRS, decimal degrees, and time.
 * 3.2.0 - Added support for Edge/Handheld devices.

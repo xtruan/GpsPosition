@@ -51,7 +51,7 @@ class GpsPositionView extends Ui.View {
     }
 
     function onHide() {
-        Pos.enableLocationEvents(Position.LOCATION_DISABLE, method(:onPosition));
+        Pos.enableLocationEvents(Pos.LOCATION_DISABLE, method(:onPosition));
     }
     //! Restore the state of the app and prepare the view to be shown
     function onShow() {
@@ -280,6 +280,49 @@ class GpsPositionView extends Ui.View {
     
     function startPositioning() {
         var ver = deviceSettings.monkeyVersion;
+        
+        // custom configurations only in CIQ >= 3.3.6 (using 3.4.0 for our purposes)
+        if ( ver != null && ver[0] != null && ver[1] != null && 
+            ( (ver[0] == 3 && ver[1] >= 4) || ver[0] > 3 ) ) {
+            if (Pos has :CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1_L5 && 
+		        Pos.hasConfigurationSupport(Pos.CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1_L5)) {
+                if (enablePositioningWithConfiguration(Pos.CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1_L5)) {
+                    System.println("Configuration: GPS/GLO/GAL/BEI/L1/L5");
+                    return true;
+                }
+            } else if (Pos has :CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1 &&
+		               Pos.hasConfigurationSupport(Pos.CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1)) {
+                if (enablePositioningWithConfiguration(Pos.CONFIGURATION_GPS_GLONASS_GALILEO_BEIDOU_L1)) {
+		            System.println("Configuration: GPS/GLO/GAL/BEI/L1");
+                    return true;
+                }
+            } else if (Pos has :CONFIGURATION_GPS_GLONASS &&
+		               Pos.hasConfigurationSupport(Pos.CONFIGURATION_GPS_GLONASS)) {
+                if (enablePositioningWithConfiguration(Pos.CONFIGURATION_GPS_GLONASS)) {
+		            System.println("Configuration: GPS/GLO");
+                    return true;
+                }
+            } else if (Pos has :CONFIGURATION_GPS_GALILEO &&
+		               Pos.hasConfigurationSupport(Pos.CONFIGURATION_GPS_GALILEO)) {
+                if (enablePositioningWithConfiguration(Pos.CONFIGURATION_GPS_GALILEO)) {
+		            System.println("Configuration: GPS/GAL");
+                    return true;
+                }
+            } else if (Pos has :CONFIGURATION_GPS_BEIDOU &&
+		               Pos.hasConfigurationSupport(Pos.CONFIGURATION_GPS_BEIDOU)) {
+                if (enablePositioningWithConfiguration(Pos.CONFIGURATION_GPS_BEIDOU)) {
+		            System.println("Configuration: GPS/BEI");
+                    return true;
+                }
+            } else if (Pos has :CONFIGURATION_GPS &&
+		               Pos.hasConfigurationSupport(Pos.CONFIGURATION_GPS)) {
+                if (enablePositioningWithConfiguration(Pos.CONFIGURATION_GPS)) {
+		            System.println("Configuration: GPS");
+                    return true;
+                }
+            }
+        } 
+        
         // custom constellations only in CIQ >= 3.2.0
         if ( ver != null && ver[0] != null && ver[1] != null && 
             ( (ver[0] == 3 && ver[1] >= 2) || ver[0] > 3 ) ) {
@@ -312,8 +355,8 @@ class GpsPositionView extends Ui.View {
                 return true;
             }
         } else {
-            Pos.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onPosition));
-            System.println("Constellation: GPS (Legacy Mode)");
+            Pos.enableLocationEvents(Pos.LOCATION_CONTINUOUS, method(:onPosition));
+            System.println("GPS (Legacy Mode)");
         }
         return true;
     }
@@ -330,6 +373,23 @@ class GpsPositionView extends Ui.View {
             success = true;
         } catch (ex) {
             System.println(ex.getErrorMessage() + ": " + constellations.toString());
+            success = false;
+        }
+        return success;
+    }
+    
+    function enablePositioningWithConfiguration(configuration) {
+        var success = false;
+        try {
+            Pos.enableLocationEvents({
+                    :acquisitionType => Pos.LOCATION_CONTINUOUS,
+                    :configuration => configuration
+                },
+                method(:onPosition)
+            );
+            success = true;
+        } catch (ex) {
+            System.println(ex.getErrorMessage() + ": " + configuration.toString());
             success = false;
         }
         return success;
