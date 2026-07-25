@@ -160,12 +160,12 @@ class GpsPositionView extends Ui.View {
             } else if (geoFormat == :const_mgrs) {
                 // if MGRS, display heading in mil
                 var headingMil = headingDeg * 17.7777778;
-                headingMil = modulo(headingMil + 6400, 6400);
+                headingMil = CoordConvUtils.modulo(headingMil + 6400, 6400);
                 headingMil = (headingMil / 10).toNumber() * 10;
                 string = string + headingMil.format("%i") + " mil";
             } else {
                 // else, display heading in degrees
-                headingDeg = modulo(headingDeg + 360, 360);
+                headingDeg = CoordConvUtils.modulo(headingDeg + 360, 360);
                 var degSign = formatter.DEG_SIGN;
                 if (degSign.length() == 0) {
                    degSign = " deg";
@@ -268,14 +268,6 @@ class GpsPositionView extends Ui.View {
         }
         pos = pos + Gfx.getFontHeight(Gfx.FONT_MEDIUM) - Gfx.getFontHeight(Gfx.FONT_TINY);
         return pos;
-    }
-    
-    //
-    // modulo operation
-    //
-    function modulo(a, n) {
-        // a % n
-        return a - (n * (a/n).toNumber());
     }
     
     function startPositioning() {

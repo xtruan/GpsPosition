@@ -131,8 +131,8 @@ class CoordConvWGS84Grids {
     
     function getZoneNumber(lat, lon) {
     
-      lat = parseFloat(lat);
-      lon = parseFloat(lon);
+      lat = CoordConvUtils.parseFloat(lat);
+      lon = CoordConvUtils.parseFloat(lon);
     
       // sanity check on input
       ////////////////////////////////   /*
@@ -142,8 +142,8 @@ class CoordConvWGS84Grids {
       ////////////////////////////////  */
     
       // convert 0-360 to [-180 to 180] range
-      var lonTemp = (lon + 180) - parseInt((lon + 180) / 360) * 360 - 180; 
-      var zoneNumber = parseInt((lonTemp + 180) / 6) + 1;
+      var lonTemp = (lon + 180) - CoordConvUtils.parseInt((lon + 180) / 360) * 360 - 180; 
+      var zoneNumber = CoordConvUtils.parseInt((lonTemp + 180) / 6) + 1;
     
       // Handle special case of west coast of Norway
       if ( lat >= 56.0 && lat < 64.0 && lonTemp >= 3.0 && lonTemp < 12.0 ) {
@@ -192,8 +192,8 @@ class CoordConvWGS84Grids {
       var utmcoords = new [4];
       // utmcoords is a 2-D array declared by the calling routine
     
-      lat = parseFloat(lat);
-      lon = parseFloat(lon);
+      lat = CoordConvUtils.parseFloat(lat);
+      lon = CoordConvUtils.parseFloat(lon);
     
       // sanity check on input - turned off when testing with Generic Viewer
       /////////////////////  /*
@@ -204,7 +204,7 @@ class CoordConvWGS84Grids {
     
       // Make sure the longitude is between -180.00 .. 179.99..
       // Convert values on 0-360 range to this range.
-      var lonTemp = (lon + 180) - parseInt((lon + 180) / 360) * 360 - 180;
+      var lonTemp = (lon + 180) - CoordConvUtils.parseInt((lon + 180) / 360) * 360 - 180;
       var latRad = lat     * DEG_2_RAD;
       var lonRad = lonTemp * DEG_2_RAD;
     
@@ -253,8 +253,8 @@ class CoordConvWGS84Grids {
           UTMNorthing += NORTHING_OFFSET;
       }
     
-      utmcoords[0] = parseInt(UTMEasting);
-      utmcoords[1] = parseInt(UTMNorthing);
+      utmcoords[0] = CoordConvUtils.parseInt(UTMEasting);
+      utmcoords[1] = CoordConvUtils.parseInt(UTMNorthing);
       utmcoords[2] = UTMZone;
       
       // stash zone number in utmcoords[3] so we don't have to recompute later
@@ -285,8 +285,8 @@ class CoordConvWGS84Grids {
     
       var usngcoords = new [4];
 
-      lat = parseFloat(lat);
-      lon = parseFloat(lon);
+      lat = CoordConvUtils.parseFloat(lat);
+      lon = CoordConvUtils.parseFloat(lon);
       
       // Constrain reporting USNG coords to the latitude range [80S .. 84N]
       //////////////////////
@@ -311,12 +311,12 @@ class CoordConvWGS84Grids {
       // ...then convert UTM to USNG
       
       var USNGLetters  = findGridLetters(zoneNumber, UTMNorthing, UTMEasting);
-      var USNGNorthing = parseInt(UTMNorthing + 0.5) % BLOCK_SIZE;
-      var USNGEasting  = parseInt(UTMEasting + 0.5)  % BLOCK_SIZE;
+      var USNGNorthing = CoordConvUtils.parseInt(UTMNorthing + 0.5) % BLOCK_SIZE;
+      var USNGEasting  = CoordConvUtils.parseInt(UTMEasting + 0.5)  % BLOCK_SIZE;
     
       // added... truncate digits to achieve specified precision
-      USNGNorthing = parseInt(USNGNorthing / Math.pow(10,(5-precision)));
-      USNGEasting = parseInt(USNGEasting / Math.pow(10,(5-precision)));
+      USNGNorthing = CoordConvUtils.parseInt(USNGNorthing / Math.pow(10,(5-precision)));
+      USNGEasting = CoordConvUtils.parseInt(USNGEasting / Math.pow(10,(5-precision)));
       
       var unsg_zone = getZoneNumber(lat, lon) +  UTMLetterDesignator(lat);
       var unsg_letters = USNGLetters;
@@ -368,7 +368,7 @@ class CoordConvWGS84Grids {
 //**************************************************************************/
     
     function UTMLetterDesignator(lat) {
-      lat = parseFloat(lat);
+      lat = CoordConvUtils.parseFloat(lat);
     
       var letterDesignator;
     
@@ -433,7 +433,7 @@ class CoordConvWGS84Grids {
     
     function findSet(zoneNum) {
     
-      zoneNum = parseInt(zoneNum);
+      zoneNum = CoordConvUtils.parseInt(zoneNum);
       zoneNum = zoneNum % 6; 
       
       if (zoneNum == 0) {
@@ -463,13 +463,13 @@ class CoordConvWGS84Grids {
     
     function findGridLetters(zoneNum, northing, easting) {
     
-      zoneNum  = parseInt(zoneNum);
-      northing = parseFloat(northing);
-      easting  = parseFloat(easting);
+      zoneNum  = CoordConvUtils.parseInt(zoneNum);
+      northing = CoordConvUtils.parseFloat(northing);
+      easting  = CoordConvUtils.parseFloat(easting);
       var row = 1;
     
       // northing coordinate to single-meter precision
-      var north_1m = parseInt(northing + 0.5);
+      var north_1m = CoordConvUtils.parseInt(northing + 0.5);
     
       // Get the row position for the square identifier that contains the point
       while (north_1m >= BLOCK_SIZE) {
@@ -482,7 +482,7 @@ class CoordConvWGS84Grids {
       var col = 0;
     
       // easting coordinate to single-meter precision
-      var east_1m = parseInt(easting + 0.5);
+      var east_1m = CoordConvUtils.parseInt(easting + 0.5);
     
       // Get the column position for the square identifier that contains the point
       while (east_1m >= BLOCK_SIZE) {
@@ -580,10 +580,10 @@ class CoordConvWGS84Grids {
 //
     function LLToOSGrid(latDeg, longDeg) {
       
-      // Glasgow, Scotland LL in WGS84 (for testing)
-      //latDeg = 55.86246;
-      //longDeg = -4.253709;
-      // should return NS 59050 65549
+//      Glasgow, Scotland LL in WGS84 (for testing)
+//      latDeg = 55.86246;
+//      longDeg = -4.253709;
+//      should return NS 59050 65549
       
       var osgb36LatLong = Wgs84ToOsgb36(latDeg, longDeg);
       
@@ -597,44 +597,12 @@ class CoordConvWGS84Grids {
       var F0 = 0.9996012717;                         // NatGrid scale factor on central meridian
       var lat0 = (DEG_2_RAD * 49), lon0 = (DEG_2_RAD * -2);  // NatGrid true origin
       var N0 = -100000, E0 = 400000;                 // northing & easting of true origin, metres
-      var e2 = 1 - (b*b)/(a*a);                      // eccentricity squared
-      var n = (a-b)/(a+b), n2 = n*n, n3 = n*n*n;
-    
-      var cosLat = Math.cos(lat);
-      var sinLat = Math.sin(lat);
-      var nu = a*F0/Math.sqrt(1-e2*sinLat*sinLat);              // transverse radius of curvature
-      var rho = a*F0*(1-e2)/Math.pow(1-e2*sinLat*sinLat, 1.5);  // meridional radius of curvature
-      var eta2 = nu/rho-1;
-    
-      var Ma = (1 + n + (5/4)*n2 + (5/4)*n3) * (lat-lat0);
-      var Mb = (3*n + 3*n*n + (21/8)*n3) * Math.sin(lat-lat0) * Math.cos(lat+lat0);
-      var Mc = ((15/8)*n2 + (15/8)*n3) * Math.sin(2*(lat-lat0)) * Math.cos(2*(lat+lat0));
-      var Md = (35/24)*n3 * Math.sin(3*(lat-lat0)) * Math.cos(3*(lat+lat0));
-      var M = b * F0 * (Ma - Mb + Mc - Md);              // meridional arc
-    
-      var cos3lat = cosLat*cosLat*cosLat;
-      var cos5lat = cos3lat*cosLat*cosLat;
-      var tan2lat = Math.tan(lat)*Math.tan(lat);
-      var tan4lat = tan2lat*tan2lat;
-    
-      var I = M + N0;
-      var II = (nu/2)*sinLat*cosLat;
-      var III = (nu/24)*sinLat*cos3lat*(5-tan2lat+9*eta2);
-      var IIIA = (nu/720)*sinLat*cos5lat*(61-58*tan2lat+tan4lat);
-      var IV = nu*cosLat;
-      var V = (nu/6)*cos3lat*(nu/rho-tan2lat);
-      var VI = (nu/120) * cos5lat * (5 - 18*tan2lat + tan4lat + 14*eta2 - 58*tan2lat*eta2);
-    
-      var dLon = lon-lon0;
-      var dLon2 = dLon*dLon;
-      var dLon3 = dLon2*dLon;
-      var dLon4 = dLon3*dLon;
-      var dLon5 = dLon4*dLon;
-      var dLon6 = dLon5*dLon;
-    
-      var N = I + II*dLon2 + III*dLon4 + IIIA*dLon6;
-      var E = E0 + IV*dLon + V*dLon3 + VI*dLon5;
-      
+
+      // Shared Transverse Mercator projection -> [Easting, Northing]
+      var en = CoordConvUtils.latLonToTransverseMercator(lat, lon, a, b, F0, lat0, lon0, N0, E0);
+      var E = en[0];
+      var N = en[1];
+
       //Sys.println("N: " + N.format("%.6f") + ", E:" + E.format("%.6f"));
     
       return gridrefNumToLet(E, N, 10);
@@ -651,8 +619,8 @@ class CoordConvWGS84Grids {
 //**************************************************************************/
     function gridrefNumToLet(e, n, digits) {
       // get the 100km-grid indices
-      var e100k = parseInt(e/100000);
-      var n100k = parseInt(n/100000);
+      var e100k = CoordConvUtils.parseInt(e/100000);
+      var n100k = CoordConvUtils.parseInt(n/100000);
       
       var gridRef = new [3];
       
@@ -664,7 +632,7 @@ class CoordConvWGS84Grids {
       }
     
       // translate those into numeric equivalents of the grid letters
-      var l1 = (19-n100k) - (19-n100k)%5 + parseInt((e100k+10)/5);
+      var l1 = (19-n100k) - (19-n100k)%5 + CoordConvUtils.parseInt((e100k+10)/5);
       var l2 = (19-n100k)*5%25 + e100k%5;
     
       var alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -679,10 +647,10 @@ class CoordConvWGS84Grids {
     
       // strip 100km-grid indices from easting & northing, and reduce precision
       var denominator = Math.pow(10, 5-digits/2);
-      var eNumerator = modulo(e,100000);
-      var nNumerator = modulo(n,100000);
-      var e2 = parseInt(eNumerator / denominator);
-      var n2 = parseInt(nNumerator / denominator);
+      var eNumerator = CoordConvUtils.modulo(e,100000);
+      var nNumerator = CoordConvUtils.modulo(n,100000);
+      var e2 = CoordConvUtils.parseInt(eNumerator / denominator);
+      var n2 = CoordConvUtils.parseInt(nNumerator / denominator);
       
       gridRef[0] = letPair;
       gridRef[1] = padLZ(e2,digits/2);
@@ -788,28 +756,6 @@ class CoordConvWGS84Grids {
         } else {
             return -999;
         }
-    }
-    
-//
-// cast to number (integer)
-//
-    function parseInt(numeric) {
-        return numeric.toNumber();
-    }
-
-//
-// cast to float
-//
-    function parseFloat(numeric) {
-        return numeric.toFloat();
-    }
-    
-//
-// modulo operation
-//
-    function modulo(a, n) {
-        // a % n
-        return a - (n * (a/n).toNumber());
     }
     
 }

@@ -8,9 +8,9 @@ class CoordConvSK42 {
 
     function WGS84ToSK42Coords(pLat, pLon, pAlt, datum)
     {
-        var latWgs84 = parseFloat(pLat);
-        var longWgs84 = parseFloat(pLon);
-        var heightWgs84 = parseFloat(pAlt);
+        var latWgs84 = CoordConvUtils.parseFloat(pLat);
+        var longWgs84 = CoordConvUtils.parseFloat(pLon);
+        var heightWgs84 = CoordConvUtils.parseFloat(pAlt);
         
         // Part 1: Converting Wgs84 geographical coordinates(longitude and latitude in degrees) to SK42 geographical coordinates(longitude and latitude in degrees)
         var ro = 206264.8062; //The number of angular seconds in radians
@@ -93,20 +93,17 @@ class CoordConvSK42 {
     function SK42CoordsToSK42Grid(pLat, pLon)
     {
         
-        var SK42_LatDegrees = parseFloat(pLat);
-        var SK42_LongDegrees = parseFloat(pLon);
+        var SK42_LatDegrees = CoordConvUtils.parseFloat(pLat);
+        var SK42_LongDegrees = CoordConvUtils.parseFloat(pLon);
         
         // Part 2: Converting of SK42 geographical coordinates (latitude and longitude in degrees) into SK42 rectangular coordinates (easting and northing in meters)        
         // Number of the Gauss-Kruger zone
-        var zone = parseFloat(parseInt(SK42_LongDegrees / 6.0 + 1.0));
+        var zone = CoordConvUtils.parseFloat(CoordConvUtils.parseInt(SK42_LongDegrees / 6.0 + 1.0));
         //System.println("G-K Zone: " + zone);
 
         // Parameters of the Krasovsky ellipsoid
         var a = 6378245.0;          //Large (equatorial) semi-axis
         var b = 6356863.019;        //Small (polar) semi-axis
-        var e2 = (Math.pow(a, 2.0) - Math.pow(b, 2.0)) / Math.pow(a, 2.0);  //Eccentricity
-        var n = (a-b) / (a+b);      //Flatness
-
 
         // Parameters of the Gauss-Kruger zone
         var F = 1.0;                   //Scale factor
@@ -119,46 +116,11 @@ class CoordConvSK42 {
         var Lat = SK42_LatDegrees * Math.PI / 180.0;
         var Lon = SK42_LongDegrees * Math.PI / 180.0;
 
-        // Calculating variables for conversion
-        var sinLat = Math.sin(Lat);
-        var cosLat = Math.cos(Lat);
-        var tanLat = Math.tan(Lat);
+        // Shared Transverse Mercator projection -> [Easting, Northing]
+        var en = CoordConvUtils.latLonToTransverseMercator(Lat, Lon, a, b, F, Lat0, Lon0, N0, E0);
 
-        var v = a * F * Math.pow(1-e2*Math.pow(sinLat,2.0),-0.5);
-        var p = a*F*(1-e2) * Math.pow(1-e2*Math.pow(sinLat,2.0),-1.5);
-        var n2 = v/p-1;
-        var M1 = (1+n+5.0/4.0 * Math.pow(n,2.0) + 5.0/4.0 * Math.pow(n,3.0)) * (Lat-Lat0);
-        var M2 = (3.0*n+3.0 * Math.pow(n,2.0) + 21.0/8.0 * Math.pow(n,3.0)) * Math.sin(Lat - Lat0) * Math.cos(Lat + Lat0);
-        var M3 = (15.0/8.0 * Math.pow(n,2.0) + 15.0/8.0 * Math.pow(n,3.0))*Math.sin(2.0 * (Lat - Lat0))*Math.cos(2.0 * (Lat + Lat0));
-        var M4 = 35.0/24.0 * Math.pow(n,3.0) * Math.sin(3.0 * (Lat - Lat0)) * Math.cos(3.0 * (Lat + Lat0));
-        var M = b*F*(M1-M2+M3-M4);
-        var I = M+N0;
-        var II = v/2.0 * sinLat * cosLat;
-        var III = v/24.0 * sinLat * Math.pow(cosLat,3.0) * (5.0-Math.pow(tanLat,2.0)+9.0*n2);
-        var IIIA = v/720.0 * sinLat * Math.pow(cosLat,5.0) * (61.0-58.0*Math.pow(tanLat,2.0)+Math.pow(tanLat,4.0));
-        var IV = v * cosLat;
-        var V = v/6.0 * Math.pow(cosLat,3.0) * (v/p-Math.pow(tanLat,2.0));
-        var VI = v/120.0 * Math.pow(cosLat,5.0) * (5.0-18.0*Math.pow(tanLat,2.0)+Math.pow(tanLat,4.0)+14.0*n2-58.0*Math.pow(tanLat,2.0)*n2);
-
-        // Calculation of the north and east offset (in meters)
-        var N = I+II * Math.pow(Lon-Lon0,2.0)+III * Math.pow(Lon-Lon0,4.0)+IIIA * Math.pow(Lon-Lon0,6.0);
-        var E = E0+IV * (Lon-Lon0)+V * Math.pow(Lon-Lon0,3.0)+VI * Math.pow(Lon-Lon0,5.0);
-
-        return [N, E];
-    }
-    
-//
-// cast to number (integer)
-//
-    function parseInt(numeric) {
-        return numeric.toNumber();
-    }
-    
-//
-// cast to float
-//
-    function parseFloat(numeric) {
-        return numeric.toFloat();
+        // Return in the original [North, East] order expected by callers
+        return [en[1], en[0]];
     }
     
 //    function testSK42() {

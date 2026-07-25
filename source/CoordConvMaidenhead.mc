@@ -47,7 +47,7 @@ class CoordConvMaidenhead {
             rLat, rLon;
     
         // Parameter Validataion
-        var lat = parseFloat(latitude);
+        var lat = CoordConvUtils.parseFloat(latitude);
     
         if (lat.abs() == 90.0) {
             System.println("grid squares invalid at N/S poles");
@@ -59,7 +59,7 @@ class CoordConvMaidenhead {
             return "INVALID";
         }
     
-        var lon = parseFloat(longitude);
+        var lon = CoordConvUtils.parseFloat(longitude);
     
           if (lon.abs() > 180) {
             System.println("invalid longitude: " + lon);
@@ -69,14 +69,14 @@ class CoordConvMaidenhead {
         // Latitude
         adjLat = lat + 90;
         fieldLat = "" + UPPERCASE.toCharArray()[(adjLat / 10).toNumber()];
-        squareLat = "" + modulo(adjLat, 10).toNumber();
+        squareLat = "" + CoordConvUtils.modulo(adjLat, 10).toNumber();
         rLat = (adjLat - (adjLat).toNumber()) * 60;
         subLat = "" + LOWERCASE.toCharArray()[(rLat / 2.5).toNumber()];
           
         // Longitude
           adjLon = lon + 180;
           fieldLon = "" + UPPERCASE.toCharArray()[(adjLon / 20).toNumber()];
-          squareLon = "" + modulo((adjLon / 2), 10).toNumber();
+          squareLon = "" + CoordConvUtils.modulo((adjLon / 2), 10).toNumber();
           rLon = (adjLon - 2 * (adjLon / 2).toNumber()) * 60;
         subLon = "" + LOWERCASE.toCharArray()[(rLon / 5).toNumber()];
           
@@ -129,8 +129,8 @@ class CoordConvMaidenhead {
 //            throw "HamGridSquare -- can not convert object -- " + param1;
 //        }
     
-        lat = parseFloat(param1);
-        lon = parseFloat(param2);
+        lat = CoordConvUtils.parseFloat(param1);
+        lon = CoordConvUtils.parseFloat(param2);
         return gridForLatLon(lat, lon);
     }
     
@@ -172,11 +172,11 @@ class CoordConvMaidenhead {
     }
     
     function lat4(g) {
-        return 10 * (g.toCharArray()[1] - 'A') + parseInt(g.toCharArray()[3]) - 90;
+        return 10 * (g.toCharArray()[1] - 'A') + CoordConvUtils.parseInt(g.toCharArray()[3]) - 90;
     }
     
     function lon4(g) {
-        return 20 * (g.toCharArray()[0] - 'A') + 2 * parseInt(g.toCharArray()[2]) - 180;
+        return 20 * (g.toCharArray()[0] - 'A') + 2 * CoordConvUtils.parseInt(g.toCharArray()[2]) - 180;
     }
     
     /* Get the latitude and longitude for a Maidenhead (grid square) Locator.
@@ -267,25 +267,4 @@ class CoordConvMaidenhead {
 //          test: testGridSquare
 //    };
     
-//
-// cast to number (integer)
-//
-    function parseInt(numeric) {
-        return numeric.toNumber();
-    }
-
-//
-// cast to float
-//
-    function parseFloat(numeric) {
-        return numeric.toFloat();
-    }
-    
-//
-// modulo operation
-//
-    function modulo(a, n) {
-        // a % n
-        return a - (n * (a/n).toNumber());
-    }
 }
