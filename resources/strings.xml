@@ -18,4 +18,5 @@
     <string id="item_lks92_grid">LKS-92 Grid</string>
     <string id="item_ranger_utm">Ranger (UTM)</string>
     <string id="item_ranger_mgrs">Ranger (MGRS)</string>
+    <string id="item_info">[Info]</string>
 </resources>

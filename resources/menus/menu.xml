@@ -14,4 +14,5 @@
     <menu-item id="item_lks92_grid">LKS-92 Grid</menu-item>
     <menu-item id="item_ranger_utm">Ranger (UTM)</menu-item>
     <menu-item id="item_ranger_mgrs">Ranger (MGRS)</menu-item>
+    <menu-item id="item_info">[Info]</menu-item>
 </menu>

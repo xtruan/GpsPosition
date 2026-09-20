@@ -39,6 +39,8 @@ class GpsPositionMenuDelegate extends Ui.MenuInputDelegate {
             App.getApp().setGeoFormat(:const_ranger_utm); // Ranger (UTM)
         } else if (item == :item_ranger_mgrs) {
             App.getApp().setGeoFormat(:const_ranger_mgrs); // Ranger (MGRS)
+        } else if (item == :item_info) {
+            App.getApp().setGeoFormat(:const_info); // [Info]
         }
     } 
     

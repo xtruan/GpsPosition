@@ -15,7 +15,8 @@ class GpsPositionView extends Ui.View {
     hidden var isMono = false;
     hidden var isOcto = false;
     hidden var progressTimer = null;
-    hidden var progressDots = "";
+    hidden var progressDots = ".";
+    hidden var msgColor = Gfx.COLOR_GREEN;
     
     function initialize() {
         View.initialize();
@@ -30,7 +31,14 @@ class GpsPositionView extends Ui.View {
     function updateProgress() {
         progressDots = progressDots + ".";
         if (progressDots.length() > 3) {
-            progressDots = "";
+            progressDots = ".";
+        }
+        if (progressDots.length() == 1) {
+            msgColor = Gfx.COLOR_PINK;
+        } else if (progressDots.length() == 2) {
+            msgColor = Gfx.COLOR_GREEN;
+        } else {
+            msgColor = Gfx.COLOR_BLUE;
         }
         Ui.requestUpdate();
     }
@@ -102,7 +110,26 @@ class GpsPositionView extends Ui.View {
             dc.drawText( (dc.getWidth() / 2), pos, Gfx.FONT_TINY, string, Gfx.TEXT_JUSTIFY_CENTER );
         }
         
-        if( posInfo != null ) {
+        var geoFormat = App.getApp().getGeoFormat();
+        if (geoFormat == :const_info) {
+            // display info/about text for info mode
+            var posShift = 0;
+            if (isOcto) {
+                posShift = 10;
+            }
+            
+            dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
+            dc.drawText( (dc.getWidth() / 2), posShift + (dc.getHeight() / 2) - Gfx.getFontHeight(Gfx.FONT_SMALL), Gfx.FONT_SMALL, "Developed by", Gfx.TEXT_JUSTIFY_CENTER );
+            if (isMono) {
+                dc.setColor( Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT );
+            } else {
+                dc.setColor( msgColor, Gfx.COLOR_TRANSPARENT );
+            }
+            dc.drawText( (dc.getWidth() / 2), posShift + (dc.getHeight() / 2), Gfx.FONT_SMALL, "Struan Clark", Gfx.TEXT_JUSTIFY_CENTER );
+            dc.drawText( (dc.getWidth() / 2), posShift + (dc.getHeight() / 2) + Gfx.getFontHeight(Gfx.FONT_SMALL), Gfx.FONT_TINY, "KF0ZDQ", Gfx.TEXT_JUSTIFY_CENTER );
+        }
+        else if( posInfo != null ) {
+            // display position if we have GPS and we're not in [Info] mode
             if (progressTimer != null) {
                 progressTimer.stop();
             }
@@ -132,7 +159,7 @@ class GpsPositionView extends Ui.View {
                              Gfx.TEXT_JUSTIFY_CENTER );
             }
             
-            var geoFormat = App.getApp().getGeoFormat();
+            //var geoFormat = App.getApp().getGeoFormat();
             var formatter = new PosInfoFormatter(posInfo);
             var nav = formatter.format(geoFormat);
             navStringTop = nav[0];
@@ -391,6 +418,10 @@ class GpsPositionView extends Ui.View {
     function onPosition(info) {
         if (progressTimer != null) {
             progressTimer.stop();
+        }
+        if (!isMono) {
+          // update the progress anim in the position callback for [Info]
+          updateProgress();
         }
         posInfo = info;
         Ui.requestUpdate();

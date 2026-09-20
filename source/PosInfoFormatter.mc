@@ -330,6 +330,8 @@ class PosInfoFormatter {
              return getSK42(true, geoFormat); // USK-2000 (Orthogonal)
         } else if (geoFormat == :const_lks92_grid) {
              return getLKS92(); // LKS-92 Grid
+        } else if (geoFormat == :const_info) {
+             return ["Developed by", "Struan Clark"]; // [Info] fallback 
         } else if (geoFormat == :const_ranger_utm) {
             var ret = [];
             ret.addAll(getUTM());
